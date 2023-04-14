@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: center;
+    width: 85vw;
+    height: 15vh;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    color: green;
+    font-size: 20px;
+    user-select: none;
+
+    .header_block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 75vw;
+        .router_div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 35vw;
+            // color: #777777;
+            .router_text{
+                color: #999999;
+                text-decoration: solid;
+            }
+
+            .router_text:hover{
+                color: #777777;
+                cursor: pointer;
+                text-decoration: none;
+            }
+        }
+    }
+}

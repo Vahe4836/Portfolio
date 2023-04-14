@@ -1,0 +1,20 @@
+.work_info_cards_flex{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgba(70, 61, 61, 0.6);
+    .work_info_cards{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .work_info_card{
+            width: 220px;
+            height: 250px;
+            padding: 2em;
+            color: rgb(158, 158, 158);
+            background-color: black;
+            .work_info_card_title{
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
