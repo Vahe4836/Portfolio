@@ -30,7 +30,13 @@
             .router_text:hover{
                 color: #777777;
                 cursor: pointer;
-                text-decoration: none;
+                text-decoration: solid 2px white;
+            }
+
+            .router_text:active{
+                color: #777777;
+                cursor: pointer;
+                text-decoration: solid 2px white;
             }
         }
     }
