@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./HomeWelcome.scss";
 
 
@@ -14,7 +15,7 @@ export default function HomeWelcome() {
                 </div>
                 <div className="download_hire_button_div">
                     <button className="home_button">Download my CV</button>
-                    <button className="home_button">Hire me</button>
+                    <button className="home_button"><Link to="/contact" className="home_hire_me_link">Hire me</Link></button>
                 </div>
             </div>
         </div>

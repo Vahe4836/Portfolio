@@ -5,6 +5,8 @@
     color: rgb(182, 182, 182);
     border: 2px whitesmoke solid;
     border-radius: 20px;
+    margin: 8px;
+    border: 2px #777777 solid;
     font-size: 22px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,10 +26,12 @@
 .home_projects_div {
 
     padding: 20px 0px 20px 0px;
+    cursor: pointer;
     // background-color: rgb(128, 128, 128);
 
     .home_my_projects_title {
-        font-size: 28px;
+        font-size: 29px;
+        font-family:cursive;
         padding: 10px 0px 30px 0px;
         text-align: center;
         color: whitesmoke;

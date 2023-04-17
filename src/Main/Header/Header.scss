@@ -21,20 +21,22 @@
             justify-content: space-between;
             align-items: center;
             width: 35vw;
-            // color: #777777;
             .router_text{
-                color: #999999;
-                text-decoration: solid;
+                color: #c4c4c4;
+                text-decoration: none;
+                transition: 0.1s ease-in;
             }
 
             .router_text:hover{
                 color: #777777;
                 cursor: pointer;
-                text-decoration: solid 2px white;
+                transition: 0.1s ease-in;
+                // text-decoration: underline 1px #999999;
+                // text-underline-offset: 5px;
             }
 
-            .router_text:active{
-                color: #777777;
+            .router_text:indeterminate{
+                color: #999999;
                 cursor: pointer;
                 text-decoration: solid 2px white;
             }

@@ -1,0 +1,68 @@
+%home_skills_template {
+    width: 20vw;
+    height: 30vh;
+    text-align: center;
+    color: rgb(182, 182, 182);
+    border: 2px whitesmoke solid;
+    border-radius: 20px;
+    font-size: 22px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+%home_skills_text {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.home_skills_div {
+
+    padding: 20px 0px 20px 0px;
+    // background-color: rgb(128, 128, 128);
+
+    .home_my_skills_title {
+        font-size: 28px;
+        padding: 10px 0px 30px 0px;
+        text-align: center;
+        color: whitesmoke;
+    }
+
+    .home_skills_border {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        // background-color: aqua;
+
+        .home_skills_html {
+            @extend %home_skills_template;
+            background-image: url("../../../../images/background/abstract-dark-background-geometric-shapes-black-vector-27402314.jpg");
+
+            .home_skills_text {
+                @extend %home_skills_text;
+            }
+        }
+
+        .home_skills_css {
+            @extend %home_skills_template;
+            .home_skills_text {
+                @extend %home_skills_text;
+            }
+            background-image: url("../../../../images/background/abstract-geometric-shapes-texture-triangles-backdrop-triangle-background-structure-wallpaper-white-black-143560257.jpg");
+        }
+
+        .home_skills_other {
+            @extend %home_skills_template;
+            .home_skills_text {
+                @extend %home_skills_text;
+            }
+            background-image: url("../../../../images/background/black-background-with-geometric-lines_1053-593.avif");
+        }
+    }
+}
