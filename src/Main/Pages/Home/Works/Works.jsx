@@ -1,6 +1,6 @@
-import front_end_icon from '../../../../images/home_icons/png-clipart-front-and-back-ends-computer-icons-front-end-web-development-programing-miscellaneous-angle.png';
-import back_end_icon from '../../../../images/home_icons/3667919.png';
-import seo_icon from '../../../../images/home_icons/1688476.png';
+import front_end_icon from '../../../../images/home_icons/3667919.png';
+import back_end_icon from '../../../../images/home_icons/Back_end_icon.png';
+import seo_icon from '../../../../images/home_icons/seo_optimization_icon.png';
 import "./Works.scss";
 
 
@@ -32,7 +32,7 @@ export default function Works() {
                 {works_info.map((item) => {
                     return (
                         <div className="work_info_card">
-                            <img style={{ backgroundColor: "white" }} src={item.icon} alt={item.alt} width="50px" height="50px" />
+                            <img src={item.icon} alt={item.alt} width="38px" height="38px" className='work_info_card_icon' />
                             <h3 className="work_info_card_title">{item.name}</h3>
                             <p className="work_info_text">{item.text}</p>
                         </div>

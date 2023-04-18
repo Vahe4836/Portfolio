@@ -26,47 +26,57 @@
 .home_projects_div {
 
     padding: 20px 0px 20px 0px;
-    cursor: pointer;
     // background-color: rgb(128, 128, 128);
+    background-color: rgba(70, 61, 61, 0.6);
 
     .home_my_projects_title {
         font-size: 29px;
-        font-family:cursive;
+        font-family: cursive;
         padding: 10px 0px 30px 0px;
         text-align: center;
         color: whitesmoke;
+        user-select: none;
     }
 
-    .home_projects_border {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        // background-color: aqua;
+    .link_to_contact_from_home {
+        text-decoration: none;
 
-        .home_project_auto_electric {
-            @extend %home_project_template;
-            background-image: url("../../../../images/background/abstract-dark-background-geometric-shapes-black-vector-27402314.jpg");
+        .home_projects_border {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            // background-color: aqua;
 
-            .home_project_text {
-                @extend %home_project_text;
+            .home_project_auto_electric {
+                @extend %home_project_template;
+                background-image: url("../../../../images/background/abstract-dark-background-geometric-shapes-black-vector-27402314.jpg");
+
+                .home_project_text {
+                    @extend %home_project_text;
+                }
             }
-        }
 
-        .home_project_spy_game {
-            @extend %home_project_template;
-            .home_project_text {
-                @extend %home_project_text;
-            }
-            background-image: url("../../../../images/background/abstract-geometric-shapes-texture-triangles-backdrop-triangle-background-structure-wallpaper-white-black-143560257.jpg");
-        }
+            .home_project_spy_game {
+                @extend %home_project_template;
 
-        .home_project_other {
-            @extend %home_project_template;
-            .home_project_text {
-                @extend %home_project_text;
+                .home_project_text {
+                    @extend %home_project_text;
+                }
+
+                background-image: url("../../../../images/background/abstract-geometric-shapes-texture-triangles-backdrop-triangle-background-structure-wallpaper-white-black-143560257.jpg");
             }
-            background-image: url("../../../../images/background/black-background-with-geometric-lines_1053-593.avif");
+
+            .home_project_other {
+                @extend %home_project_template;
+
+                .home_project_text {
+                    @extend %home_project_text;
+                }
+
+                background-image: url("../../../../images/background/black-background-with-geometric-lines_1053-593.avif");
+            }
         }
     }
 }
