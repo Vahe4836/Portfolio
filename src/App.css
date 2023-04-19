@@ -13,8 +13,27 @@ body {
 
 .container {
   height: 100%;
-  background: #c47328;
+  background: linear-gradient(-45deg, orange,  #3f67f9, rgb(22, 163, 46), rgb(41, 142, 41));
+  background-size: 600% 600%;
+  /* transition: all 4s linear; */
+  animation: backgroundAnimation 5s infinite linear;
 }
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 
 .hex {
   background: url("./images/background/Hexagon.svg") repeat;
@@ -27,6 +46,7 @@ body {
   z-index: 1;
 }
 
+
 .bg {
   position: absolute;
   top: 50%;
@@ -34,7 +54,7 @@ body {
   transform: translate(-50%, -50%);
   height: 200px;
   width: 200px;
-  background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%);
+  /* background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%); */
   filter: blur(10px);
   z-index: 0;
 }
