@@ -13,7 +13,7 @@ body {
 
 .container {
   height: 100%;
-  background: linear-gradient(-45deg, orange,  #3f67f9, rgb(22, 163, 46), rgb(41, 142, 41));
+  background: linear-gradient(-95deg, #0000ff, rgb(20, 255, 59), rgb(255, 194, 80));
   background-size: 600% 600%;
   /* transition: all 4s linear; */
   animation: backgroundAnimation 5s infinite linear;
