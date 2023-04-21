@@ -2,21 +2,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow: hidden; */
-  /* min-height: 100vh; */
-  /* position: relative; */
-  /* height: 1px;
-  min-height: 300px;  */
-  /* height: 100%; */
 }
-
 
 .container {
   height: 100%;
   background: linear-gradient(-95deg, #0000ff, rgb(20, 255, 59), rgb(255, 194, 80));
   background-size: 600% 600%;
-  /* transition: all 4s linear; */
-  animation: backgroundAnimation 5s infinite linear;
+  /* transition: all 5.5s linear; */
+  animation: backgroundAnimation 5.5s infinite linear;
 }
 
 @keyframes backgroundAnimation {
@@ -33,28 +26,9 @@ body {
   }
 }
 
-
-
 .hex {
   background: url("./images/background/Hexagon.svg") repeat;
   position: relative;
-  /* top: 0;
-  left: 0;
-  width: 100%; */
-  /* height: 100%; */
   background-size: 230px;
   z-index: 1;
-}
-
-
-.bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 200px;
-  width: 200px;
-  /* background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%); */
-  filter: blur(10px);
-  z-index: 0;
 }

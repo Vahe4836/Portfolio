@@ -4,7 +4,7 @@ import "./Footer.scss";
 
 export default function Footer() {
     return (
-        <div className="footer">
+        <footer className="footer">
             <div className="footer_div">
                 <div className="footer_contacts">
                     <div className="footer_contact_icon_text">
@@ -27,6 +27,6 @@ export default function Footer() {
                     <div className="footer_social_icon"></div>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }

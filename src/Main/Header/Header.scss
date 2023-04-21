@@ -8,26 +8,43 @@
     font-size: 20px;
     user-select: none;
 
-    .header_block{
+    .header_block {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 75vw;
-        .github_link{
-            cursor: pointer;
+
+        .github_link_block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .github_icon {
+                width: 18px;
+                height: 18px;
+                background-color: #777777;
+                margin-right: 4px;
+            }
+
+            .github_link {
+                color: white;
+                text-decoration: none;
+                cursor: pointer;
+            }
         }
+
         .router_div {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 35vw;
-            .router_text{
+
+            .router_text {
                 color: #c4c4c4;
                 text-decoration: none;
                 transition: 0.1s ease-in;
             }
 
-            .router_text:hover{
+            .router_text:hover {
                 color: #777777;
                 cursor: pointer;
                 transition: 0.1s ease-in;
@@ -35,7 +52,7 @@
                 // text-underline-offset: 5px;
             }
 
-            .router_text:indeterminate{
+            .router_text:indeterminate {
                 color: #999999;
                 cursor: pointer;
                 text-decoration: solid 2px white;
