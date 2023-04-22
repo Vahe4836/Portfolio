@@ -11,85 +11,130 @@
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
+    background: conic-gradient(rgb(230, 145, 67) 340deg, rgba(255, 255, 255, 0) 0deg);
 }
 
-%home_skills_text {
-    margin: 0;
+%home_skill_persent_animation {
+    width: 90%;
+    height: 90%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background-color: black;
+    background-color: bisque;
+    border-radius: 50%;
+}
+
+%home_skills_text {
+    margin: 4px;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(70, 70, 70);
 }
 
 
 .home_skills_div {
 
+    width: 85vw;
     padding: 20px 0px 20px 0px;
-    // background-color: rgb(128, 128, 128);
     background-color: rgba(70, 61, 61, 0.6);
 
     .home_my_skills_title {
         font-size: 28px;
-        padding: 10px 0px 30px 0px;
+        padding: 30px 0px 10px 0px;
         text-align: center;
         color: whitesmoke;
         font-family: cursive;
         user-select: none;
     }
 
-    .link_to_contact_from_home {
-        text-decoration: none;
 
-        .home_skills_border {
+    .home_skills_border {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        // width: 70vw;
+
+        .link_to_pages_from_home {
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 10px;
-            // background-color: aqua;
+            text-decoration: none;
+            // width: 928px;
+
 
             .home_skills_html {
                 @extend %home_skills_template;
-                // background-image: url("../../../../images/background/abstract-dark-background-geometric-shapes-black-vector-27402314.jpg");
-                background-color: darkorange;
 
-                .home_skills_text {
-                    @extend %home_skills_text;
+                .home_skill_persent_animation {
+
+                    @extend %home_skill_persent_animation;
+
+                    .home_skill_icon_text {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        .home_skills_text {
+                            @extend %home_skills_text;
+                        }
+                        .home_percent_text{
+                            margin: 12px;
+                            text-align: center;
+                            font-size: 29px;
+                        }
+                    }
+
+
+                   
                 }
+
+
             }
+
 
             .home_skills_css {
                 @extend %home_skills_template;
 
-                .home_skills_text {
-                    @extend %home_skills_text;
-                }
+                .home_skill_persent_animation {
 
-                // background-image: url("../../../../images/background/abstract-geometric-shapes-texture-triangles-backdrop-triangle-background-structure-wallpaper-white-black-143560257.jpg");
-                background-color: navy;
+                    @extend %home_skill_persent_animation;
+
+                    .home_skills_text {
+                        @extend %home_skills_text;
+                    }
+                }
             }
+
 
             .home_skills_sass {
                 @extend %home_skills_template;
 
-                .home_skills_text {
-                    @extend %home_skills_text;
-                }
+                .home_skill_persent_animation {
 
-                // background-image: url("../../../../images/background/abstract-geometric-shapes-texture-triangles-backdrop-triangle-background-structure-wallpaper-white-black-143560257.jpg");
-                background-color: darkmagenta;
+                    @extend %home_skill_persent_animation;
+
+                    .home_skills_text {
+                        @extend %home_skills_text;
+                    }
+                }
             }
+
 
             .home_skills_other {
                 @extend %home_skills_template;
 
-                .home_skills_text {
-                    @extend %home_skills_text;
+                .home_skill_persent_animation {
+
+                    @extend %home_skill_persent_animation;
+
+                    .home_skills_text {
+                        @extend %home_skills_text;
+                    }
+
                 }
 
-                // background-image: url("../../../../images/background/black-background-with-geometric-lines_1053-593.avif");
                 background-color: black;
             }
         }

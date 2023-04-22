@@ -1,4 +1,4 @@
-import front_end_icon from '../../../../images/home_icons/3667919.png';
+import front_end_icon from '../../../../images/home_icons/front_end_icon.png';
 import back_end_icon from '../../../../images/home_icons/Back_end_icon.png';
 import seo_icon from '../../../../images/home_icons/seo_optimization_icon.png';
 import "./Works.scss";

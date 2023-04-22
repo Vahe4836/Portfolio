@@ -17,7 +17,7 @@ function App() {
           <div className='hex'>
             <Main />
           </div>
-          <div className='bg'>Useref</div>
+          <div className='bg'></div>
         </div>
       </BrowserRouter>
     </div>
