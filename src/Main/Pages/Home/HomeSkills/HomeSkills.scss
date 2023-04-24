@@ -1,3 +1,5 @@
+// Templates
+
 %home_skills_template {
     width: 200px;
     height: 200px;
@@ -11,10 +13,10 @@
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    background: conic-gradient(rgb(230, 145, 67) 340deg, rgba(255, 255, 255, 0) 0deg);
+    // background: conic-gradient(rgb(230, 145, 67) 340deg, rgba(255, 255, 255, 0) 0deg);
 }
 
-%home_skill_persent_animation {
+%home_skill_percentage_animation {
     width: 90%;
     height: 90%;
     position: absolute;
@@ -27,10 +29,29 @@
 
 %home_skills_text {
     margin: 4px;
-    font-size: 13px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, serif;
     color: rgb(70, 70, 70);
 }
+
+%home_skill_icon_text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%home_percentage_text{
+    margin: 12px;
+    text-align: center;
+    font-size: 25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+
+// SCSS code
 
 
 .home_skills_div {
@@ -66,44 +87,60 @@
 
             .home_skills_html {
                 @extend %home_skills_template;
+                // background: conic-gradient(rgb(230, 145, 67) 340deg, rgba(255, 255, 255, 0) 0deg);
+                // animation: 2s infinite html linear;
+                // transition: all 2s linear;
+                .home_skill_percentage_animation {
 
-                .home_skill_persent_animation {
-
-                    @extend %home_skill_persent_animation;
+                    @extend %home_skill_percentage_animation;
 
                     .home_skill_icon_text {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
+                        @extend %home_skill_icon_text;
                         .home_skills_text {
                             @extend %home_skills_text;
+                            
                         }
-                        .home_percent_text{
-                            margin: 12px;
-                            text-align: center;
-                            font-size: 29px;
-                            color: black;
+                        .home_percentage_text{
+                            @extend %home_percentage_text;
                         }
                     }
 
-
-                   
                 }
 
-
             }
+
+            // @keyframes html {
+            //     0%{
+            //         background: conic-gradient(rgb(230, 145, 67) 0deg, rgba(255, 255, 255, 0) 0deg);
+            //         transition: all 2s linear;
+            //     }
+            //     50%{
+            //         background: conic-gradient(rgb(230, 145, 67) 120deg, rgba(255, 255, 255, 0) 0deg);
+            //         transition: all 2s linear;
+            //     }
+            //     100%{
+            //         background: conic-gradient(rgb(230, 145, 67) 340deg, rgba(255, 255, 255, 0) 0deg);
+            //         transition: all 2s linear;
+            //     }
+            // }
 
 
             .home_skills_css {
                 @extend %home_skills_template;
+                background: conic-gradient(rgb(39, 81, 232) 340deg, rgba(255, 255, 255, 0) 0deg);
 
-                .home_skill_persent_animation {
+                .home_skill_percentage_animation {
 
-                    @extend %home_skill_persent_animation;
+                    @extend %home_skill_percentage_animation;
 
-                    .home_skills_text {
-                        @extend %home_skills_text;
+                    .home_skill_icon_text {
+                        @extend %home_skill_icon_text;
+                        .home_skills_text {
+                            @extend %home_skills_text;
+                        }
+                        .home_percentage_text{
+                            @extend %home_percentage_text;
+                        }
                     }
                 }
             }
@@ -111,13 +148,20 @@
 
             .home_skills_sass {
                 @extend %home_skills_template;
+                background: conic-gradient(rgb(148, 71, 129) 340deg, rgba(255, 255, 255, 0) 0deg);
 
-                .home_skill_persent_animation {
+                .home_skill_percentage_animation {
 
-                    @extend %home_skill_persent_animation;
+                    @extend %home_skill_percentage_animation;
 
-                    .home_skills_text {
-                        @extend %home_skills_text;
+                    .home_skill_icon_text {
+                        @extend %home_skill_icon_text;
+                        .home_skills_text {
+                            @extend %home_skills_text;
+                        }
+                        .home_percentage_text{
+                            @extend %home_percentage_text;
+                        }
                     }
                 }
             }
@@ -126,12 +170,18 @@
             .home_skills_other {
                 @extend %home_skills_template;
 
-                .home_skill_persent_animation {
+                .home_skill_percentage_animation {
 
-                    @extend %home_skill_persent_animation;
+                    @extend %home_skill_percentage_animation;
 
-                    .home_skills_text {
-                        @extend %home_skills_text;
+                    .home_skill_icon_text {
+                        @extend %home_skill_icon_text;
+                        .home_skills_text {
+                            @extend %home_skills_text;
+                        }
+                        .home_percentage_text{
+                            @extend %home_percentage_text;
+                        }
                     }
 
                 }
