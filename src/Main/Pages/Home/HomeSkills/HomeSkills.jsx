@@ -18,14 +18,14 @@ let data_home_skills = [
         img: css_icon,
         alt: "css_icon",
         percentage: 90,
-        backgroundColor: "rgb(230, 145, 67)"
+        backgroundColor: "rgb(30, 45, 255)"
     },
     {
         name: "SASS/SCSS",
         img: sass_icon,
         alt: "sass_icon",
         percentage: 80,
-        backgroundColor: "rgb(230, 145, 67)"
+        backgroundColor: "rgb(230, 45, 157)"
     }
 ]
 
