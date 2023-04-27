@@ -23,7 +23,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(255, 226, 189);
+    background-color: rgb(252, 230, 202);
     border-radius: 50%;
 }
 
@@ -33,39 +33,42 @@
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, serif;
     color: rgb(70, 70, 70);
+    position: relative;
 }
 
-%home_skill_icon_text{
+%home_skill_icon_text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    user-select: none;
 }
 
-%home_percentage_text{
+%home_percentage_text {
     margin: 12px;
     text-align: center;
     font-size: 25px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
 }
 
 
-// SCSS code
+// Style
 
 
 .home_skills_div {
-
     width: 85vw;
-    padding: 20px 0px 20px 0px;
+    padding: 20px 0px 50px 0px;
     background-color: rgba(70, 61, 61, 0.6);
 
     .home_my_skills_title {
         font-size: 28px;
-        padding: 30px 0px 10px 0px;
+        padding: 20px 0px 20px 0px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', Times, serif;
+        letter-spacing: 2px;
         text-align: center;
         color: whitesmoke;
-        font-family: cursive;
+        background-color: rgba(0, 0, 0, 0.2);
         user-select: none;
     }
 
@@ -75,37 +78,35 @@
         justify-content: center;
         align-items: center;
         border-radius: 10px;
-        // width: 70vw;
 
         .link_to_pages_from_home {
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            // width: 928px;
 
 
             .home_skills_html {
                 @extend %home_skills_template;
-                // background: conic-gradient(rgb(230, 145, 67) 340deg, rgba(255, 255, 255, 0) 0deg);
-                // animation: 2s infinite html linear;
-                // transition: all 2s linear;
+
                 .home_skill_percentage_animation {
 
                     @extend %home_skill_percentage_animation;
 
                     .home_skill_icon_text {
                         @extend %home_skill_icon_text;
+
                         .home_skills_text {
                             @extend %home_skills_text;
-                            
+
                         }
-                        .home_percentage_text{
+
+                        .home_percentage_text {
                             @extend %home_percentage_text;
                         }
                     }
-
                 }
+
 
             }
 
@@ -135,10 +136,12 @@
 
                     .home_skill_icon_text {
                         @extend %home_skill_icon_text;
+
                         .home_skills_text {
                             @extend %home_skills_text;
                         }
-                        .home_percentage_text{
+
+                        .home_percentage_text {
                             @extend %home_percentage_text;
                         }
                     }
@@ -156,10 +159,12 @@
 
                     .home_skill_icon_text {
                         @extend %home_skill_icon_text;
+
                         .home_skills_text {
                             @extend %home_skills_text;
                         }
-                        .home_percentage_text{
+
+                        .home_percentage_text {
                             @extend %home_percentage_text;
                         }
                     }
@@ -167,26 +172,44 @@
             }
 
 
-            .home_skills_other {
-                @extend %home_skills_template;
+            .home_skill_percentage_animation {
 
-                .home_skill_percentage_animation {
+                @extend %home_skill_percentage_animation;
 
-                    @extend %home_skill_percentage_animation;
+                .home_skill_icon_text {
+                    @extend %home_skill_icon_text;
 
-                    .home_skill_icon_text {
-                        @extend %home_skill_icon_text;
-                        .home_skills_text {
-                            @extend %home_skills_text;
-                        }
-                        .home_percentage_text{
-                            @extend %home_percentage_text;
-                        }
+                    .home_skills_text {
+                        @extend %home_skills_text;
+                    }
+
+                    .home_percentage_text {
+                        @extend %home_percentage_text;
                     }
 
                 }
 
-                background-color: black;
+                .other_div {
+                    width: 200px;
+                    height: 200px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: rgba(0, 0, 0, 0.7);
+
+                    .other_skills_text {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 32px;
+                        color: rgb(182, 182, 182);
+                        margin: 0;
+                        user-select: none;
+                    }
+                }
             }
         }
     }

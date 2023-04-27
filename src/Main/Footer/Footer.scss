@@ -39,10 +39,11 @@
             justify-content: space-between;
             align-items: center;
             width: 20vw;
-            .footer_social_icon{
-                width: 40px;
-                height: 40px;
-                background-color: darkgreen;
+            .footer_icon{
+                border: 2px rgb(231, 231, 231) solid;
+                border-radius: 12px;
+                user-select: none;
+                cursor: pointer;
             }
         }
     }

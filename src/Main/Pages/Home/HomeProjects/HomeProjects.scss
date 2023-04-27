@@ -1,3 +1,5 @@
+// Templates
+
 %home_project_template {
     width: 20vw;
     height: 30vh;
@@ -5,7 +7,8 @@
     border-radius: 20px;
     margin: 8px;
     border: 2px #777777 solid;
-    font-size: 22px;
+    font-size: 24px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -18,13 +21,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
     border-radius: 20px;
 }
 
-%home_project_text{
+%home_project_text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -32,32 +35,37 @@
     margin: 0;
 }
 
+// Style
 
 .home_projects_div {
 
     padding: 20px 0px 20px 0px;
-    // background-color: rgb(128, 128, 128);
     background-color: rgba(70, 61, 61, 0.6);
 
     .home_my_projects_title {
         font-size: 29px;
-        font-family: cursive;
-        padding: 10px 0px 30px 0px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', Times, serif;
+        letter-spacing: 2px;
+        padding: 20px 0px 20px 0px;
         text-align: center;
-        color: white;
+        color: whitesmoke;
+        background-color: rgba(0, 0, 0, 0.2);
         user-select: none;
     }
 
-    .link_to_pages_from_home {
-        text-decoration: none;
 
-        .home_projects_border {
+    .home_projects_border {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+
+        .link_to_pages_from_home {
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 10px;
+            text-decoration: none;
             cursor: pointer;
-            // background-color: aqua;
 
             .home_project_auto_electric {
                 @extend %home_project_template;
@@ -65,7 +73,8 @@
 
                 .home_project_opacity {
                     @extend %home_project_opacity;
-                    .home_project_text{
+
+                    .home_project_text {
                         @extend %home_project_text;
                     }
                 }
@@ -76,7 +85,8 @@
 
                 .home_project_opacity {
                     @extend %home_project_opacity;
-                    .home_project_text{
+
+                    .home_project_text {
                         @extend %home_project_text;
                     }
                 }
@@ -89,8 +99,10 @@
 
                 .home_project_opacity {
                     @extend %home_project_opacity;
-                    .home_project_text{
+
+                    .home_project_text {
                         @extend %home_project_text;
+                        user-select: none;
                     }
                 }
 
