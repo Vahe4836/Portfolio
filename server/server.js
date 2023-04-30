@@ -1,18 +1,38 @@
 import express from "express";
 import path from "path";
+import fs from "fs"
 
 const app = express();
 
-app.get("/", (req,res) => {
-    res.sendFile(path.resolve("../client/public/index.html"));
-})
 
 
-app.get("/projects", (req,res) => {
-    res.sendFile(path.resolve("./server/portfolio_json/Projects.json"));
+
+// app.get("/", (req,res) => {
+
+
+// })
+
+app.use(express.static("../client/build"));
+
+
+app.get("/db/projects/", (req, res) => {
+    const filePath = path.resolve('./portfolio_json/projects.json')
+    fs.readFile(filePath, 'utf8', function (err, data) {
+        if (err) {
+            return console.log(err);
+        }
+        res.send(data);
+    });
 });
 
 
-app.use(express.static("portfolio"));
+app.get('*', function (request, response) {
+    const filePath = path.resolve("../client/build/index.html")
+    response.sendFile(filePath);
+  });
 
-app.listen(3000);
+
+
+
+
+app.listen(5000);

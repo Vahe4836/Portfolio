@@ -1,8 +1,25 @@
+import { useEffect, useState } from 'react';
 import './Projects.scss';
 
 
 
 export default function Projects() {
+
+
+    const [data,setData] = useState([])
+
+    useEffect(()=>{
+
+        fetch("/db/projects").then(res => res.json()).then(res => {
+            console.log(res,"ress");
+        })
+
+    },[])
+
+
+
+
+
     return (
         <div className='projects_page'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
