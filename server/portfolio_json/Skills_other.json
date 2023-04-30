@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Problem solving",
+        "img": "",
+        "alt": "problem_icon",
+        "percentage": 72
+    },
+    {
+        "name": "Communication",
+        "img": "",
+        "alt": "communication_icon",
+        "percentage": 76
+    },
+    {
+        "name": "SEO optimization",
+        "img": "",
+        "alt": "seo_icon",
+        "percentage": 67
+    }
+]

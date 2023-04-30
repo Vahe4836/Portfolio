@@ -1,0 +1,55 @@
+[
+    {
+        "name": "HTML/HTML5",
+        "img": "",
+        "alt": "html_icon",
+        "percentage": 94
+    },
+    {
+        "name": "CSS/CSS3",
+        "img": "",
+        "alt": "css_icon",
+        "percentage": 88
+    },{
+        "name": "SASS/SCSS",
+        "img": "",
+        "alt": "sass_icon",
+        "percentage": 83
+    },
+    {
+        "name": "Javascript",
+        "img": "",
+        "alt": "javascript_icon",
+        "percentage": 77
+    },
+    {
+        "name": "React.js",
+        "img": "",
+        "alt": "react_icon",
+        "percentage": 81
+    },
+    {
+        "name": "Redux/Redux(toolkit)",
+        "img": "",
+        "alt": "redux_icon",
+        "percentage": 79
+    },
+    {
+        "name": "Next.js",
+        "img": "",
+        "alt": "next_icon",
+        "percentage": 68
+    },
+    {
+        "name": "Git",
+        "img": "",
+        "alt": "git_icon",
+        "percentage": 72
+    },
+    {
+        "name": "GitHub",
+        "img": "",
+        "alt": "github_icon",
+        "percentage": 83
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "name": "This portfolio",
+        "img": "",
+        "url": "",
+        "alt": "portfolio_image",
+        "duration": "20 day",
+        "technologies": "HTML/HTML5, SCSS, React.js, Express.js, MongoDB"
+    },
+    {
+        "name": "Spy game",
+        "img": "",
+        "url": "",
+        "alt": "spy_game_image",
+        "duration": "30 day",
+        "technologies": "HTML/HTML5, SCSS, React.js, Redux(toolkit)"
+    },
+    {
+        "name": "Card_game",
+        "img": "",
+        "url": "",
+        "alt": "card_game_image",
+        "duration": "15 day",
+        "technologies": "HTML/HTML5, CSS/CSS3, Javascript"
+    },
+    {
+        "name": "Autoelectric website",
+        "img": "",
+        "url": "",
+        "alt": "autoelectric_website_image",
+        "duration": "25 day",
+        "technologies": "HTML/HTML5, CSS/CSS3, Javascript"
+    }
+]

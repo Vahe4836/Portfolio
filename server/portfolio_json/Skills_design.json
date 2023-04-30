@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Figma",
+        "img": "",
+        "alt": "figma_icon",
+        "percentage": 84
+    },
+    {
+        "name": "Photoshop",
+        "img": "",
+        "alt": "photoshop_icon",
+        "percentage": 68
+    }
+]
