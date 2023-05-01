@@ -1,34 +1,42 @@
 [
     {
+        "id": 0,
         "name": "This portfolio",
-        "img": "",
-        "url": "",
+        "img": "../../../images/home_projects/autoelectric.png",
+        "github_url": "vahehovakimyan/portfolio",
+        "project_url": "https://portfolio.vercel.app",
         "alt": "portfolio_image",
-        "duration": "20 day",
-        "technologies": "HTML/HTML5, SCSS, React.js, Express.js, MongoDB"
+        "technologies": "HTML/HTML5, SCSS, React.js, Express.js, MongoDB",
+        "duration": "20 day"
     },
     {
+        "id": 1,
         "name": "Spy game",
-        "img": "",
-        "url": "",
+        "img": "../../../images/home_projects/spyGameImage.png",
+        "github_url": "vahehovakimyan/spy_game",
+        "project_url": "https://spy-game.vercel.app",
         "alt": "spy_game_image",
-        "duration": "30 day",
-        "technologies": "HTML/HTML5, SCSS, React.js, Redux(toolkit)"
+        "technologies": "HTML/HTML5, SCSS, React.js, Redux(toolkit)",
+        "duration": "30 day"
     },
     {
-        "name": "Card_game",
-        "img": "",
-        "url": "",
+        "id": 2,
+        "name": "Card game",
+        "img": "../../../images/home_projects/autoelectric.png",
+        "github_url": "vahehovakimyan/card_game", 
+        "project_url": "https://card-game.vercel.app",
         "alt": "card_game_image",
-        "duration": "15 day",
-        "technologies": "HTML/HTML5, CSS/CSS3, Javascript"
+        "technologies": "HTML/HTML5, CSS/CSS3, Javascript",
+        "duration": "15 day"
     },
     {
+        "id": 3,
         "name": "Autoelectric website",
-        "img": "",
-        "url": "",
+        "img": "../../../images/home_projects/autoelectric.png",
+        "github_url": "vahehovakimyan/autoelectricwebsite",
+        "project_url": "https://autoelectric.vercel.app",
         "alt": "autoelectric_website_image",
-        "duration": "25 day",
-        "technologies": "HTML/HTML5, CSS/CSS3, Javascript"
+        "technologies": "HTML/HTML5, CSS/CSS3, Javascript",
+        "duration": "25 day"
     }
 ]

@@ -7,7 +7,7 @@ export default function Header() {
         <div className="header">
             <div className="header_block">
                 <div className="github_link_block">
-                    <div className="github_icon"></div><a href="https://github.com/Vahe4836" className="github_link">My GitHub</a>
+                    <div className="github_icon"></div><a href="https://github.com/vahehovakimyan" className="github_link" target="_blank">My GitHub</a>
                 </div>
                 <nav>
 

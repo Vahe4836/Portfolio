@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.27268e13.css",
-    "main.js": "/static/js/main.643b59f8.js",
+    "main.css": "/static/css/main.b1d111e6.css",
+    "main.js": "/static/js/main.bd87aa83.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
     "static/media/home_person_image.jpg": "/static/media/home_person_image.1cbca46341ea9dcf95bc.jpg",
-    "static/media/Autoelectric.png": "/static/media/Autoelectric.696404b67bc294874594.png",
+    "static/media/autoelectric.png": "/static/media/autoelectric.696404b67bc294874594.png",
     "static/media/black-background-with-geometric-lines_1053-593.avif": "/static/media/black-background-with-geometric-lines_1053-593.9576f6095921a328265d.avif",
-    "static/media/spy_game_image.png": "/static/media/spy_game_image.ce8f943fa38fe351bba2.png",
+    "static/media/spyGameImage.png": "/static/media/spyGameImage.ce8f943fa38fe351bba2.png",
     "static/media/home_sass_icon.png": "/static/media/home_sass_icon.231c7325c5a1db4fcafb.png",
     "static/media/home_html_icon.png": "/static/media/home_html_icon.bec97b0d0ab5cb40f45a.png",
     "static/media/home_css_icon.png": "/static/media/home_css_icon.e1a28a4008e212217f76.png",
     "static/media/Hexagon.svg": "/static/media/Hexagon.3fcf186fe4ed2760f526.svg",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.27268e13.css.map": "/static/css/main.27268e13.css.map",
-    "main.643b59f8.js.map": "/static/js/main.643b59f8.js.map",
+    "main.b1d111e6.css.map": "/static/css/main.b1d111e6.css.map",
+    "main.bd87aa83.js.map": "/static/js/main.bd87aa83.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.27268e13.css",
-    "static/js/main.643b59f8.js"
+    "static/css/main.b1d111e6.css",
+    "static/js/main.bd87aa83.js"
   ]
 }

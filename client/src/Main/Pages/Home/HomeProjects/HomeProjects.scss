@@ -69,7 +69,7 @@
 
             .home_project_auto_electric {
                 @extend %home_project_template;
-                background-image: url("../../../../images/home_projects/Autoelectric.png");
+                background-image: url("../../../../images/home_projects/autoelectric.png");
 
                 .home_project_opacity {
                     @extend %home_project_opacity;
@@ -91,7 +91,7 @@
                     }
                 }
 
-                background-image: url("../../../../images/home_projects/spy_game_image.png");
+                background-image: url("../../../../images/home_projects/spyGameImage.png");
             }
 
             .home_project_other {

@@ -1,4 +1,3 @@
-import "./Home.scss";
 import HomeProjects from "./HomeProjects/HomeProjects";
 import HomeSkills from "./HomeSkills/HomeSkills";
 import HomeWelcome from "./HomeWelcome/HomeWelcome";
