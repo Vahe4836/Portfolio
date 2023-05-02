@@ -13,8 +13,8 @@
         "id": 1,
         "name": "Spy game",
         "img": "../../../images/home_projects/spyGameImage.png",
-        "github_url": "vahehovakimyan/spy_game",
-        "project_url": "https://spy-game.vercel.app",
+        "github_url": "https://github.com/VaheHovakimyan/test",
+        "project_url": "https://test-vahe4836.vercel.app/",
         "alt": "spy_game_image",
         "technologies": "HTML/HTML5, SCSS, React.js, Redux(toolkit)",
         "duration": "30 day"
@@ -23,8 +23,8 @@
         "id": 2,
         "name": "Card game",
         "img": "../../../images/home_projects/autoelectric.png",
-        "github_url": "vahehovakimyan/card_game", 
-        "project_url": "https://card-game.vercel.app",
+        "github_url": "https://github.com/VaheHovakimyan/Card_game", 
+        "project_url": "https://card-game-fruit.w3spaces.com/",
         "alt": "card_game_image",
         "technologies": "HTML/HTML5, CSS/CSS3, Javascript",
         "duration": "15 day"
@@ -33,8 +33,8 @@
         "id": 3,
         "name": "Autoelectric website",
         "img": "../../../images/home_projects/autoelectric.png",
-        "github_url": "vahehovakimyan/autoelectricwebsite",
-        "project_url": "https://autoelectric.vercel.app",
+        "github_url": "https://github.com/VaheHovakimyan/Autoelectric",
+        "project_url": "https://autoelectric.vercel.app/",
         "alt": "autoelectric_website_image",
         "technologies": "HTML/HTML5, CSS/CSS3, Javascript",
         "duration": "25 day"

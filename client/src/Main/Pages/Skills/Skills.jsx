@@ -6,12 +6,15 @@ import './Skills.scss';
 export default function Skills() {
 
     
-    const [data, setData] = useState([]);
+    const [frontEndData, setFrontEndData] = useState([]);
+    const [backEndData, setBackEndData] = useState([]);
+    const [designData, setDesignData] = useState([]);
 
     useEffect(() => {
 
-        fetch("/db/skills").then(res => res.json()).then(res => {
+        fetch("/db/skills/frontEnd").then(res => res.json()).then(res => {
             console.log(res, "skills");
+            setFrontEndData(res);
         })
 
     }, []);
@@ -19,7 +22,7 @@ export default function Skills() {
 
     return (
         <div className='skills_page'>
-
+            
         </div>
     )
 }

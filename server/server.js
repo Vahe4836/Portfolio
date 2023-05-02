@@ -14,7 +14,7 @@ app.use(express.static("../client/build"));
 
 
 app.get("/db/projects/", (req, res) => {
-    const filePath = path.resolve('./portfolio_json/projects.json')
+    const filePath = path.resolve('./portfolio_json/projects.json');
     fs.readFile(filePath, 'utf8', function (err, data) {
         if (err) {
             return console.log(err);
@@ -24,8 +24,8 @@ app.get("/db/projects/", (req, res) => {
 });
 
 
-app.get("/db/skills/", (req, res) => {
-    const filePath = path.resolve('./portfolio_json/skills_front_end.json')
+app.get("/db/skills/frontEnd", (req, res) => {
+    const filePath = path.resolve('./portfolio_json/skills_front_end.json');
     fs.readFile(filePath, 'utf8', function (err, data) {
         if (err) {
             return console.log(err);
@@ -33,6 +33,17 @@ app.get("/db/skills/", (req, res) => {
         res.send(data);
     });
 });
+
+
+app.get("db/skills/backEnd", (req, res) => {
+    const filePath = path.resolve('./portfolio_json/skills_back_end.json');
+    fs.readFile(filePath, 'utf8', function(err, data) {
+        if (err) {
+            return console.log(err);
+        }
+        res.send(data);
+    })
+})
 
 
 app.get('*', function (request, response) {

@@ -32,21 +32,27 @@ export default function Projects() {
                         <div className='projects_div'>
                             <div className='project_all_elements'>
                                 <h3 className='project_name'>{item.name}</h3>
-                                {/* <div className='project_elements_to_center'> */}
-                                    <div className='project_image_div'>
-                                        <a href={item.project_url} target='_blank'>
-                                            <img src={img} alt={item.alt} className='project_image' />
-                                            <div className='to_project_link_opacity'></div>
-                                        </a>
-                                    </div>
-                                {/* </div> */}
-                                    <div className='project_elements'>
-                                        <p className='project_element'>Project : {item.project_url}</p>
-                                        <p className='project_element'>GitHub : {item.github_url}</p>
-                                        <p className='project_element'>Technologies : {item.technologies} </p>
-                                        <p className='project_element'>Duration : {item.duration}</p>
-                                    </div>
+                                <div className='project_image_div'>
+                                    <a href={item.project_url} target='_blank'>
+                                        <img src={img} alt={item.alt} className='project_image' />
+                                        <div className='to_project_link_opacity'></div>
+                                    </a>
                                 </div>
+                                <div className='project_elements'>
+                                    <p className='project_element'>
+                                        <span style={{fontWeight: "700"}}>Project : </span>{item.project_url}
+                                    </p>
+                                    <p className='project_element'>
+                                        <span style={{fontWeight: "700"}}>GitHub : </span>{item.github_url}
+                                    </p>
+                                    <p className='project_element'>
+                                        <span style={{fontWeight: "700"}}>Technologies : </span>{item.technologies}
+                                    </p>
+                                    <p className='project_element'>
+                                        <span style={{fontWeight: "700"}}>Duration : </span>{item.duration}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     )
                 })}
