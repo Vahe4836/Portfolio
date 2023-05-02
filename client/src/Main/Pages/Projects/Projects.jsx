@@ -34,7 +34,7 @@ export default function Projects() {
                                 <h3 className='project_name'>{item.name}</h3>
                                 <div className='project_image_div'>
                                     <a href={item.project_url} target='_blank'>
-                                        <img src={img} alt={item.alt} className='project_image' />
+                                        <img src="../../../images/home_projects/autoelectric.png" alt={item.alt} className='project_image' />
                                         <div className='to_project_link_opacity'></div>
                                     </a>
                                 </div>

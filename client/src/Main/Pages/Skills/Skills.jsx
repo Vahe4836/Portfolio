@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import test from '../../../images/home_person_image.jpg';
 import './Skills.scss';
 
 
 
 export default function Skills() {
 
+    console.log(test);
     
     const [frontEndData, setFrontEndData] = useState([]);
     const [backEndData, setBackEndData] = useState([]);
@@ -22,7 +24,7 @@ export default function Skills() {
 
     return (
         <div className='skills_page'>
-            
+            <img src={test} alt="test_icon" width="100px" height="100px"/>
         </div>
     )
 }
