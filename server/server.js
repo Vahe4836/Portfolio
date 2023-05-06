@@ -12,47 +12,59 @@ const app = express();
 
 app.use(express.static("../client/build"));
 
+const filePath = path.resolve('./portfolio_json');
 
-app.get("/db/projects/", (req, res) => {
-    const filePath = path.resolve('./portfolio_json/projects.json');
-    fs.readFile(filePath, 'utf8', function (err, data) {
-        if (err) {
-            return console.log(err);
-        }
-        res.send(data);
+function SendData(res,err,data) {
+    if (err) {
+        return console.log(err);
+    }
+    res.send(data);
+}
+
+
+app.get("/db/projects/",(req,res) => {
+    fs.readFile(filePath + '/projects.json','utf8',function (err,data) {
+        SendData(res,err,data);
     });
 });
 
 
-app.get("/db/skills/frontEnd", (req, res) => {
-    const filePath = path.resolve('./portfolio_json/skills_front_end.json');
-    fs.readFile(filePath, 'utf8', function (err, data) {
-        if (err) {
-            return console.log(err);
-        }
-        res.send(data);
+app.get("/db/skills/frontEnd",(req,res) => {
+    fs.readFile(filePath + '/skills_front_end.json','utf8',function (err,data) {
+        SendData(res,err,data);
     });
 });
 
 
-app.get("db/skills/backEnd", (req, res) => {
-    const filePath = path.resolve('./portfolio_json/skills_back_end.json');
-    fs.readFile(filePath, 'utf8', function(err, data) {
-        if (err) {
-            return console.log(err);
-        }
-        res.send(data);
-    })
+app.get("/db/skills/backEnd",(req,res) => {
+    fs.readFile(filePath + '/skills_back_end.json','utf8',function (err,data) {
+        SendData(res,err,data);
+    });
 })
 
 
-app.get('*', function (request, response) {
+app.get("/db/skills/design",(req,res) => {
+    fs.readFile(filePath + '/skills_design.json','utf8',(err,data) => {
+        SendData(res,err,data);
+    });
+})
+
+
+app.get("/db/skills/other",(req,res) => {
+    fs.readFile(filePath + '/skills_other.json','utf8',(err,data) => {
+        SendData(res,err,data);
+    });
+})
+
+
+
+app.get('*',function (request,response) {
     const filePath = path.resolve("../client/build/index.html")
     response.sendFile(filePath);
 });
 
 
 
-app.listen(5000, () => {
+app.listen(5000,() => {
     console.log("Server started in 5000 port");
 });

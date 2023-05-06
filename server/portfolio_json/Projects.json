@@ -12,7 +12,7 @@
     {
         "id": 1,
         "name": "Spy game",
-        "img": "../../../images/home_projects/spyGameImage.png",
+        "img": "https://i.ibb.co/TcD3XJZ/spy-Game-Image.png",
         "github_url": "https://github.com/VaheHovakimyan/test",
         "project_url": "https://test-vahe4836.vercel.app/",
         "alt": "spy_game_image",
@@ -22,7 +22,7 @@
     {
         "id": 2,
         "name": "Card game",
-        "img": "../../../images/home_projects/autoelectric.png",
+        "img": "https://i.ibb.co/hC78s8N/Card-game-background.png",
         "github_url": "https://github.com/VaheHovakimyan/Card_game", 
         "project_url": "https://card-game-fruit.w3spaces.com/",
         "alt": "card_game_image",
@@ -32,7 +32,7 @@
     {
         "id": 3,
         "name": "Autoelectric website",
-        "img": "../../../images/home_projects/autoelectric.png",
+        "img": "https://i.ibb.co/bXLZw7Z/Autoelectric.png",
         "github_url": "https://github.com/VaheHovakimyan/Autoelectric",
         "project_url": "https://autoelectric.vercel.app/",
         "alt": "autoelectric_website_image",

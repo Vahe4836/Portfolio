@@ -13,7 +13,6 @@
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    // background: conic-gradient(rgb(230, 145, 67) 340deg, rgba(255, 255, 255, 0) 0deg);
 }
 
 %home_skill_percentage_animation {
@@ -64,7 +63,7 @@
     .home_my_skills_title {
         font-size: 28px;
         padding: 20px 0px 20px 0px;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', Times, serif;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', Times, serif;
         letter-spacing: 2px;
         text-align: center;
         color: whitesmoke;
@@ -86,7 +85,7 @@
             text-decoration: none;
 
 
-            .home_skills_html {
+            .home_skills {
                 @extend %home_skills_template;
 
                 .home_skill_percentage_animation {
@@ -98,7 +97,6 @@
 
                         .home_skills_text {
                             @extend %home_skills_text;
-
                         }
 
                         .home_percentage_text {
@@ -124,53 +122,6 @@
             //         transition: all 2s linear;
             //     }
             // }
-
-
-            .home_skills_css {
-                @extend %home_skills_template;
-                background: conic-gradient(rgb(39, 81, 232) 340deg, rgba(255, 255, 255, 0) 0deg);
-
-                .home_skill_percentage_animation {
-
-                    @extend %home_skill_percentage_animation;
-
-                    .home_skill_icon_text {
-                        @extend %home_skill_icon_text;
-
-                        .home_skills_text {
-                            @extend %home_skills_text;
-                        }
-
-                        .home_percentage_text {
-                            @extend %home_percentage_text;
-                        }
-                    }
-                }
-            }
-
-
-            .home_skills_sass {
-                @extend %home_skills_template;
-                background: conic-gradient(rgb(148, 71, 129) 340deg, rgba(255, 255, 255, 0) 0deg);
-
-                .home_skill_percentage_animation {
-
-                    @extend %home_skill_percentage_animation;
-
-                    .home_skill_icon_text {
-                        @extend %home_skill_icon_text;
-
-                        .home_skills_text {
-                            @extend %home_skills_text;
-                        }
-
-                        .home_percentage_text {
-                            @extend %home_percentage_text;
-                        }
-                    }
-                }
-            }
-
 
             .home_skill_percentage_animation {
 

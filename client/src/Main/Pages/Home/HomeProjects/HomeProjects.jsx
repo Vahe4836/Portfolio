@@ -18,7 +18,7 @@ export default function HomeProjects() {
                         <div className="home_project_opacity"><p className="home_project_text">Spy Game</p></div>
                     </div>
                     <div className="home_project_other">
-                        <div className="home_project_opacity"><p className="home_project_text">+2...</p></div>
+                        <div className="home_project_opacity"><p className="home_project_text">+2   ...</p></div>
                     </div>
                 </Link>
             </div>

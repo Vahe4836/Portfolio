@@ -35,16 +35,18 @@ export default function Projects() {
                                 <h3 className='project_name'>{item.name}</h3>
                                 <div className='project_image_div'>
                                     <a href={item.project_url} target='_blank'>
-                                        <img src={img} alt={item.alt} className='project_image' />
+                                        <img src={item.img} alt={item.alt} className='project_image' />
                                         <div className='to_project_link_opacity'></div>
                                     </a>
                                 </div>
                                 <div className='project_elements'>
                                     <p className='project_element'>
-                                        <span style={{fontWeight: "700"}}>Project : </span>{item.project_url}
+                                        <span style={{fontWeight: "700"}}>Project : </span> 
+                                        <a href={item.project_url} style={{color: "#eee"}}>{item.project_url}</a>
                                     </p>
                                     <p className='project_element'>
-                                        <span style={{fontWeight: "700"}}>GitHub : </span>{item.github_url}
+                                        <span style={{fontWeight: "700"}}>GitHub : </span>
+                                        <a href={item.github_url} style={{color: "#eee"}}>{item.github_url}</a>
                                     </p>
                                     <p className='project_element'>
                                         <span style={{fontWeight: "700"}}>Technologies : </span>{item.technologies}
