@@ -1,20 +1,26 @@
 [
     {
+        "id": 0,
         "name": "Problem solving",
-        "img": "",
+        "img": "https://i.ibb.co/VMPKVkX/problem-solving-icon.png",
         "alt": "problem_icon",
-        "percentage": 72
+        "percentage": 72,
+        "backgroundColor": "rgb(242,163,110)"
     },
     {
+        "id": 1,
         "name": "Communication",
-        "img": "",
+        "img": "https://i.ibb.co/cF41LFB/communication-icon.png",
         "alt": "communication_icon",
-        "percentage": 76
+        "percentage": 79,
+        "backgroundColor": "rgb(152,217,157)"
     },
     {
+        "id": 2,
         "name": "SEO optimization",
-        "img": "",
+        "img": "https://i.ibb.co/Krk3X2Z/seo-icon.png",
         "alt": "seo_icon",
-        "percentage": 67
+        "percentage": 67,
+        "backgroundColor": "rgb(48,178,157)"
     }
 ]

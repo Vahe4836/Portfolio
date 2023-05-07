@@ -24,7 +24,7 @@
         "name": "Card game",
         "img": "https://i.ibb.co/hC78s8N/Card-game-background.png",
         "github_url": "https://github.com/VaheHovakimyan/Card_game", 
-        "project_url": "https://card-game-fruit.w3spaces.com/",
+        "project_url": "https://fruit-card-game.vercel.app/",
         "alt": "card_game_image",
         "technologies": "HTML/HTML5, CSS/CSS3, Javascript",
         "duration": "15 day"

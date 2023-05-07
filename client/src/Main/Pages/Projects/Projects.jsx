@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import img from '../../../images/home_projects/autoelectric.png';
 import './Projects.scss';
 
 
@@ -9,7 +8,6 @@ export default function Projects() {
 
     const [data, setData] = useState([]);
 
-    // let img = "../../../images/home_projects/autoelectric.png"
 
     useEffect(() => {
 
@@ -34,8 +32,8 @@ export default function Projects() {
                             <div className='project_all_elements'>
                                 <h3 className='project_name'>{item.name}</h3>
                                 <div className='project_image_div'>
-                                    <a href={item.project_url} target='_blank'>
-                                        <img src={item.img} alt={item.alt} className='project_image' />
+                                    <a href={item.project_url} target='_blank' rel="noreferrer">
+                                        <img src={item.img} alt={item.alt} className='project_image' loading="lazy" />
                                         <div className='to_project_link_opacity'></div>
                                     </a>
                                 </div>

@@ -7,6 +7,7 @@ import Home from "./Pages/Home/Home";
 import Projects from "./Pages/Projects/Projects";
 import Skills from "./Pages/Skills/Skills";
 import NotFound from "./NotFound/NotFound";
+import WebsiteEnd from "./WebsiteEnd/WebsiteEnd";
 
 
 
@@ -35,6 +36,7 @@ export default function Main() {
                         }/>
                     </Routes>
                     <Footer />
+                    <WebsiteEnd />
                 </div>
             </div>
         </div>

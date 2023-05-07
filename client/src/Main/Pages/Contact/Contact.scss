@@ -1,3 +1,11 @@
 .contact_page{
     background-color: rgba(223, 124, 79, 0.274);
+    .form_div{
+        .input_style{
+            outline: none;
+        }
+        .textarea_style{
+            outline: none;
+        }
+    }
 }

@@ -9,7 +9,7 @@ let data_home_skills = [
         name: "HTML/HTML5",
         img: "https://i.ibb.co/QQpk6rs/home-html-icon.png",
         alt: "html_icon",
-        percentage: 93,
+        percentage: 94,
         backgroundColor: "rgb(230, 145, 67)"
     },
     {
@@ -17,7 +17,7 @@ let data_home_skills = [
         name: "CSS/CSS3",
         img: "https://i.ibb.co/TBnNzmW/home-css-icon.png",
         alt: "css_icon",
-        percentage: 90,
+        percentage: 88,
         backgroundColor: "rgb(30, 45, 255)"
     },
     {
@@ -25,7 +25,7 @@ let data_home_skills = [
         name: "SASS/SCSS",
         img: "https://i.ibb.co/KmG2qYS/home-sass-icon.png",
         alt: "sass_icon",
-        percentage: 80,
+        percentage: 83,
         backgroundColor: "rgb(230, 45, 157)"
     }
 ]

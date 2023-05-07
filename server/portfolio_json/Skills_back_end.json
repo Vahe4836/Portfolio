@@ -4,7 +4,7 @@
         "name": "Node.js",
         "img": "https://i.ibb.co/7YnmxvZ/nodejs-icon.png",
         "alt": "node_icon",
-        "percentage": 70,
+        "percentage": 62,
         "backgroundColor": "rgb(110,208,95)"
     },
     {
@@ -12,7 +12,7 @@
         "name": "Express.js",
         "img": "https://i.ibb.co/jzF9VHh/express-icon.png",
         "alt": "express_icon",
-        "percentage": 68,
+        "percentage": 60,
         "backgroundColor": "rgb(100,100,100)"
     },
     {
@@ -20,7 +20,7 @@
         "name": "MongoDB",
         "img": "https://i.ibb.co/3SWh8zq/mongodb-icon.png",
         "alt": "mongo_icon",
-        "percentage": 65,
+        "percentage": 61,
         "backgroundColor": "rgb(62,143,47)"
     }
 ]

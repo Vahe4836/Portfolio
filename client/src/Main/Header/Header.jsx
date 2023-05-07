@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import github_icon from '../../images/home_icons/github_icon_header.png';
-import github_icon_test from '../../images/home_icons/Frame 4.png';
 import "./Header.scss";
 
 
@@ -9,8 +8,12 @@ export default function Header() {
         <div className="header">
             <div className="header_block">
                 <div className="github_link_block">
-                    <img src={github_icon_test} alt="github_icon" className="github_icon"/><a href="https://github.com/vahehovakimyan" className="github_link" target="_blank">My GitHub</a>
+                    <img src={github_icon} alt="github_icon" className="github_icon" />
+                    <a href="https://github.com/vahehovakimyan" className="github_link" target="_blank" rel="noreferrer">
+                        My GitHub
+                    </a>
                 </div>
+
                 <nav>
 
                     <div className="router_div">
@@ -27,9 +30,9 @@ export default function Header() {
                             <p>Contact</p>
                         </Link>
 
-
                     </div>
                 </nav>
+
             </div>
         </div>
     )
