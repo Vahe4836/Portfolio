@@ -8,7 +8,6 @@ body {
   height: 100%;
   background: linear-gradient(-95deg, #0000ff, rgb(20, 255, 59), rgb(255, 194, 80));
   background-size: 600% 600%;
-  /* transition: all 5.5s linear; */
   animation: backgroundAnimation 5.5s infinite linear;
 }
 
@@ -17,7 +16,7 @@ body {
     background-position: 0% 50%;
   }
 
-  50% {
+  40% {
     background-position: 100% 50%;
   }
 
@@ -29,6 +28,6 @@ body {
 .hex {
   background: url("./images/background/Hexagon.svg") repeat;
   position: relative;
-  background-size: 230px;
+  background-size: 160px;
   z-index: 1;
 }

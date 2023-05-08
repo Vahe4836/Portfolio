@@ -1,11 +1,100 @@
-.contact_page{
-    background-color: rgba(223, 124, 79, 0.274);
-    .form_div{
-        .input_style{
-            outline: none;
-        }
-        .textarea_style{
-            outline: none;
+// Template
+
+
+
+
+// Style
+
+.contact_page {
+    background-color: rgba(70, 61, 61, 0.6);
+
+    .social_div_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .social_div {
+            width: 40vw;
+            height: 75px;
+            background-color: rgb(56, 40, 19);
+            border: 2px white solid;
         }
     }
+
+    .form_div_flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .form_div {
+            width: calc(50vw + 40px);
+
+            .contact_me_title {
+                text-align: center;
+                background: linear-gradient(135deg, white, rgb(142, 255, 255));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .contact_me_text {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 18px;
+                color: #999;
+            }
+
+            .name_Email_div {
+                width: calc(50vw + 40px);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+
+                .input_style {
+                    outline: none;
+                    background-color: #333;
+                    border: 1px gray solid;
+                    height: 50px;
+                    padding: 0px 20px 0px 20px;
+                }
+            }
+
+            .input_style_subject {
+                width: 50vw;
+                outline: none;
+                background-color: #333;
+                border: 1px gray solid;
+                height: 50px;
+                padding: 0px 20px 0px 20px;
+            }
+
+            .textarea_style {
+                width: 50vw;
+                outline: none;
+                background-color: #333;
+                resize: vertical;
+                min-height: 200px;
+                padding: 20px;
+            }
+
+            .send_button_div{
+                display: flex;
+                justify-content: center;
+                width: calc(50vw + 40px);
+                .send_button {
+                    width: calc(50vw + 40px);
+                    height: 70px;
+                    background-color: green;
+                    font-size: 25px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    border-radius: 8px;
+                    border: 0px;
+                    color: whitesmoke;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
 }
