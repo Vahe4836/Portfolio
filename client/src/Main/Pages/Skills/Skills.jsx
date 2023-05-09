@@ -122,7 +122,7 @@ export default function Skills() {
                         })}
                     </div>
                 </div>
-            </section>      
+            </section>
 
 
             <section className='skills_section'>
