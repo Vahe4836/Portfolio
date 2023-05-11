@@ -1,0 +1,136 @@
+// Template
+
+%social_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 75px;
+    border: 1px white solid;
+    margin: 10px 0px 10px 0px;
+}
+
+%social_div_elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35vw;
+}
+
+%social_div_text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+    font-size: 18px;
+    margin: 0;
+    color: white;
+}
+
+%social_link {
+    width: 40px;
+    height: 40px;
+    user-select: none;
+}
+
+// Style
+
+.social_div_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px 10px 0px;
+
+    .social_div_linkedin {
+        @extend %social_div;
+        background: linear-gradient(90deg, rgb(186, 212, 224), rgb(0, 119, 183));
+
+        .social_div_elements {
+            @extend %social_div_elements;
+
+            .social_div_icon {
+                border: 2px rgb(162, 162, 162) solid;
+                border-radius: 11px;
+                user-select: none;
+            }
+
+            .social_div_text {
+                @extend %social_div_text;
+            }
+
+            .social_div_link {
+                @extend %social_link;
+            }
+        }
+    }
+
+    .social_div_github {
+        @extend %social_div;
+        background: linear-gradient(90deg, rgb(195, 200, 200), #3b3b3b);
+
+        .social_div_elements {
+            @extend %social_div_elements;
+
+            .social_div_icon {
+                border: 2px rgb(162, 162, 162) solid;
+                border-radius: 11px;
+                user-select: none;
+            }
+
+            .social_div_text {
+                @extend %social_div_text;
+            }
+
+            .social_div_link {
+                @extend %social_link;
+            }
+        }
+    }
+
+
+    .social_div_facebook {
+        @extend %social_div;
+        background: linear-gradient(90deg, rgb(190, 190, 190), rgb(58, 85, 159));
+
+        .social_div_elements {
+            @extend %social_div_elements;
+
+            .social_div_icon {
+                border: 2px rgb(162, 162, 162) solid;
+                border-radius: 11px;
+                user-select: none;
+            }
+
+            .social_div_text {
+                @extend %social_div_text;
+            }
+
+            .social_div_link {
+                @extend %social_link;
+            }
+        }
+    }
+
+
+    .social_div_instagram {
+        @extend %social_div;
+        background: linear-gradient(90deg, rgb(254, 194, 93), rgb(225, 53, 105));
+
+        .social_div_elements {
+            @extend %social_div_elements;
+
+            .social_div_icon {
+                border: 2px rgb(162, 162, 162) solid;
+                border-radius: 11px;
+                user-select: none;
+            }
+
+            .social_div_text {
+                @extend %social_div_text;
+            }
+
+            .social_div_link {
+                @extend %social_link;
+            }
+        }
+    }
+
+}
