@@ -1,4 +1,4 @@
-import Message from './Message/Message';
+import Message from './Message/ContactForm';
 import Social from './Social/Social';
 import './Contact.scss';
 
