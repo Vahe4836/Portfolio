@@ -1,8 +1,8 @@
-import { useReducer,useState } from 'react';
+import { useState, useReducer } from 'react';
 import './ContactForm.scss';
 
 
-function reducer(state,action) {
+function reducer(state, action) {
     if (action.type === "name") {
         return {
             ...state,
@@ -48,7 +48,7 @@ export default function Message() {
     }
 
 
-    const [data,dispatch] = useReducer(reducer,initialData);
+    const [data, dispatch] = useReducer(reducer, initialData);
 
 
     function SendMessage(evt) {
@@ -80,70 +80,95 @@ export default function Message() {
 
                     <div className="name_Email_div">
 
+                        <div className='input_div'>
+
+                            <input
+                                type="text"
+                                placeholder='Name'
+                                className='input_style'
+                                value={data.name}
+                                onChange={(evt) => {
+                                    dispatch({
+                                        type: "name",
+                                        payload: {
+                                            name: evt.target.value
+                                        }
+                                    })
+                                }}
+                            />
+
+                            <span className='focus-border'></span>
+
+                        </div>
+
+                        <div className='input_div'>
+
+                            <input
+                                type="text"
+                                placeholder='E-mail'
+                                className='input_style'
+                                value={data.email}
+                                onChange={(evt) => {
+                                    dispatch({
+                                        type: "email",
+                                        payload: {
+                                            email: evt.target.value
+                                        }
+                                    })
+                                }}
+                            />
+
+                            <span className='focus-border'></span>
+
+                        </div>
+                        
+                    </div>
+
+
+
+                    <div className='input_div'>
+
                         <input
                             type="text"
-                            placeholder='Name'
-                            className='input_style'
-                            value={data.name}
+                            placeholder='Subject'
+                            className='input_style_subject'
+                            value={data.subject}
                             onChange={(evt) => {
                                 dispatch({
-                                    type: "name",
+                                    type: "subject",
                                     payload: {
-                                        name: evt.target.value
+                                        subject: evt.target.value
                                     }
                                 })
                             }}
                         />
 
-                        <input
-                            type="text"
-                            placeholder='E-mail'
-                            className='input_style'
-                            value={data.email}
-                            onChange={(evt) => {
-                                dispatch({
-                                    type: "email",
-                                    payload: {
-                                        email: evt.target.value
-                                    }
-                                })
-                            }}
-                        />
+                        <span className='focus-border'></span>
 
                     </div>
 
-                    <input
-                        type="text"
-                        placeholder='Subject'
-                        className='input_style_subject'
-                        value={data.subject}
-                        onChange={(evt) => {
-                            dispatch({
-                                type: "subject",
-                                payload: {
-                                    subject: evt.target.value
-                                }
-                            })
-                        }}
-                    />
+                    <div className='input_div'>
 
-                    <textarea
-                        name="message"
-                        cols="30"
-                        rows="10"
-                        placeholder='Message'
-                        className='textarea_style'
-                        value={data.message}
-                        onChange={(evt) => {
-                            dispatch({
-                                type: "message",
-                                payload: {
-                                    message: evt.target.value
-                                }
-                            })
-                        }}
-                    ></textarea>
+                        <textarea
+                            name="message"
+                            cols="30"
+                            rows="10"
+                            placeholder='Message'
+                            className='textarea_style'
+                            value={data.message}
+                            onChange={(evt) => {
+                                dispatch({
+                                    type: "message",
+                                    payload: {
+                                        message: evt.target.value
+                                    }
+                                })
+                            }}
+                        ></textarea>
 
+                        <span className='focus-border'></span>
+
+                    </div>
 
                     <div className='send_button_div'>
 
@@ -166,7 +191,7 @@ export default function Message() {
                             }}
                         >
                             Send message!
-                        </button> 
+                        </button>
 
                     </div>
 

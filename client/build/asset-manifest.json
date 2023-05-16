@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9c75d6b.css",
-    "main.js": "/static/js/main.e279b219.js",
+    "main.css": "/static/css/main.9192e82e.css",
+    "main.js": "/static/js/main.b4d0fb49.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
     "static/media/home_person_image.jpg": "/static/media/home_person_image.1cbca46341ea9dcf95bc.jpg",
     "static/media/autoelectric.png": "/static/media/autoelectric.696404b67bc294874594.png",
@@ -9,12 +9,12 @@
     "static/media/spyGameImage.png": "/static/media/spyGameImage.ce8f943fa38fe351bba2.png",
     "static/media/Hexagon.svg": "/static/media/Hexagon.3fcf186fe4ed2760f526.svg",
     "index.html": "/index.html",
-    "main.f9c75d6b.css.map": "/static/css/main.f9c75d6b.css.map",
-    "main.e279b219.js.map": "/static/js/main.e279b219.js.map",
+    "main.9192e82e.css.map": "/static/css/main.9192e82e.css.map",
+    "main.b4d0fb49.js.map": "/static/js/main.b4d0fb49.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9c75d6b.css",
-    "static/js/main.e279b219.js"
+    "static/css/main.9192e82e.css",
+    "static/js/main.b4d0fb49.js"
   ]
 }

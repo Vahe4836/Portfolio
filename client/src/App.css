@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* overflow-y: hidden; */
 }
 
 .container {
@@ -28,6 +29,6 @@ body {
 .hex {
   background: url("./images/background/Hexagon.svg") repeat;
   position: relative;
-  background-size: 160px;
+  background-size: 190px;
   z-index: 1;
 }
