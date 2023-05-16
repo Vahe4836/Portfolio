@@ -166,7 +166,7 @@ export default function Message() {
                             }}
                         >
                             Send message!
-                        </button>
+                        </button> 
 
                     </div>
 
