@@ -27,10 +27,9 @@ function reducer(state, action) {
             message: action.payload.message
         }
     }
-    else if (action.type === "send_info") {
+    else if (action.type === "empty_info") {
         return {
-            ...state,
-            send: action.payload.send
+
         }
     }
     return state;
@@ -38,6 +37,9 @@ function reducer(state, action) {
 
 
 export default function Message() {
+
+
+    const [validationBool, setValidationBool] = useState(false);
 
 
     const initialData = {
@@ -53,12 +55,41 @@ export default function Message() {
 
     function SendMessage(evt) {
         evt.preventDefault();
-        data = {
-            name: "",
-            email: "",
-            subject: "",
-            message: ""
-        };
+
+        let valid_name = /^[A-Za-z]+$/;
+        let valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+        console.log("Name " + data.name.match(valid_name));
+        console.log(data.email.match(valid_email));
+
+        if (
+            data.name.match(valid_name) &&
+            data.email.match(valid_email) &&
+            data.subject &&
+            data.message
+        ) {
+            console.log("All inputs valid, All inputs valid, All inputs valid");
+        }
+
+
+        dispatch({
+            type: "empty_info",
+            payload: {
+                empty: {
+                    name: "",
+                    email: "",
+                    subject: "",
+                    message: ""
+                }
+
+            }
+        })
+        // data = {
+        //     name: "",
+        //     email: "",
+        //     subject: "",
+        //     message: ""
+        // };
     }
 
     console.log(data);
@@ -121,7 +152,7 @@ export default function Message() {
                             <span className='focus-border'></span>
 
                         </div>
-                        
+
                     </div>
 
 
@@ -174,21 +205,7 @@ export default function Message() {
 
                         <button
                             className='send_button'
-                            onClick={(evt) => {
-                                let valid_bool;
-                                // console.log("NaN " + isNaN(data.name));
-                                // console.log("Finite " + isFinite(data.name));
-                                let valid_name = /^[A-Za-z]+$/;
-                                let valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-                                console.log("Name " + data.name.match(valid_name));
-                                console.log("Email " + data.email.match(valid_email));
-                                dispatch({
-                                    type: "send_info",
-                                    payload: {
-                                        send: valid_bool
-                                    }
-                                })
-                            }}
+                            onClick={(evt) => { SendMessage(evt) }}
                         >
                             Send message!
                         </button>
