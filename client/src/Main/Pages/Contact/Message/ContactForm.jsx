@@ -28,9 +28,7 @@ function reducer(state, action) {
         }
     }
     else if (action.type === "empty_info") {
-        return {
-
-        }
+        return action.payload.empty
     }
     return state;
 }
@@ -69,21 +67,43 @@ export default function Message() {
             data.message
         ) {
             console.log("All inputs valid, All inputs valid, All inputs valid");
+            console.log(data);
+
+            // fetch("db/contact/message", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "applicaton"
+            //     }
+            // })
+
+            dispatch({
+                type: "empty_info",
+                payload: {
+                    empty: {
+                        name: "",
+                        email: "",
+                        subject: "",
+                        message: ""
+                    }
+    
+                }
+            })
         }
 
 
-        dispatch({
-            type: "empty_info",
-            payload: {
-                empty: {
-                    name: "",
-                    email: "",
-                    subject: "",
-                    message: ""
-                }
+        // dispatch({
+        //     type: "empty_info",
+        //     payload: {
+        //         empty: {
+        //             name: "",
+        //             email: "",
+        //             subject: "",
+        //             message: ""
+        //         }
 
-            }
-        })
+        //     }
+        // })
+
         // data = {
         //     name: "",
         //     email: "",

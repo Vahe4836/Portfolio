@@ -57,6 +57,10 @@ app.get("/db/skills/other",(req,res) => {
 })
 
 
+// app.post("db/contact/message", (req,res) => {
+
+// })
+
 
 app.get('*',function (request,response) {
     const filePath = path.resolve("../client/build/index.html")
