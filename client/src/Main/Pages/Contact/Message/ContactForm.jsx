@@ -1,4 +1,4 @@
-import { useState, useReducer } from 'react';
+import { useReducer } from 'react';
 import './ContactForm.scss';
 
 
@@ -37,9 +37,6 @@ function reducer(state, action) {
 export default function Message() {
 
 
-    const [validationBool, setValidationBool] = useState(false);
-
-
     const initialData = {
         name: "",
         email: "",
@@ -51,7 +48,7 @@ export default function Message() {
     const [data, dispatch] = useReducer(reducer, initialData);
 
 
-    function SendMessage(evt) {
+    async function SendMessage(evt) {
         evt.preventDefault();
 
         let valid_name = /^[A-Za-z]+$/;
@@ -69,12 +66,13 @@ export default function Message() {
             console.log("All inputs valid, All inputs valid, All inputs valid");
             console.log(data);
 
-            // fetch("db/contact/message", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "applicaton"
-            //     }
-            // })
+            await fetch("/db/contact/message", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
 
             dispatch({
                 type: "empty_info",
@@ -90,26 +88,6 @@ export default function Message() {
             })
         }
 
-
-        // dispatch({
-        //     type: "empty_info",
-        //     payload: {
-        //         empty: {
-        //             name: "",
-        //             email: "",
-        //             subject: "",
-        //             message: ""
-        //         }
-
-        //     }
-        // })
-
-        // data = {
-        //     name: "",
-        //     email: "",
-        //     subject: "",
-        //     message: ""
-        // };
     }
 
     console.log(data);
