@@ -1,3 +1,41 @@
+// Templates
+
+%burger_line {
+    width: 35px;
+    height: 4px;
+    border-radius: 8px;
+    background-color: whitesmoke;
+}
+
+%burger_x_first {
+    width: 35px;
+    height: 4px;
+    margin-top: 5.64px;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    transform: rotate(45deg);
+    transition: all 0.5s linear;
+}
+
+%burger_x_second {
+    width: 35px;
+    background-color: whitesmoke;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+
+%burger_x_third {
+    width: 35px;
+    height: 4px;
+    margin-top: -2.82px;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    transform: rotate(-45deg);
+    transition: all 0.5s linear;
+}
+
+// Style
+
 .header {
     display: flex;
     justify-content: center;
@@ -18,6 +56,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
             .github_icon {
                 width: 18px;
                 height: 18px;
@@ -60,5 +99,98 @@
                 text-decoration: solid 2px white;
             }
         }
+
+
+        //////
+
+        .burger_div_block {
+            display: none;
+
+            .burger_div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 35px;
+                height: 25px;
+                cursor: pointer;
+
+                .burger_line {
+                    @extend %burger_line;
+                }
+
+                .burger_x_first {
+                    @extend %burger_x_first;
+                }
+
+                .burger_x_second {
+                    @extend %burger_x_second;
+                }
+
+                .burger_x_third {
+                    @extend %burger_x_third;
+                }
+            }
+
+            .burger_div_x {
+                width: 35px;
+                height: 20px;
+                cursor: pointer;
+
+                .burger_line {
+                    @extend %burger_line;
+                }
+
+                .burger_x_first {
+                    @extend %burger_x_first;
+                }
+
+                .burger_x_second {
+                    @extend %burger_x_second;
+                }
+
+                .burger_x_third {
+                    @extend %burger_x_third;
+                }
+            }
+        }
+
+
+
+        // .burger_line {
+        //     width: 35px;
+        //     height: 4px;
+        //     border-radius: 8px;
+        //     background-color: darkgreen;
+        // }
+
+        // .burger_x_first {
+        //     width: 35px;
+        //     height: 4px;
+        //     margin-top: 5.64px;
+        //     border-radius: 8px;
+        //     background-color: darkgreen;
+        //     transform: rotate(45deg);
+        //     transition: all 0.5s linear;
+        // }
+
+        // .burger_x_second {
+        //     width: 35px;
+        //     /* height: 4px; */
+        //     /* border-radius: 8px; */
+        //     background-color: darkgreen;
+        //     opacity: 0;
+        //     transition: all 0.5s linear;
+        // }
+
+        // .burger_x_third {
+        //     width: 35px;
+        //     height: 4px;
+        //     margin-top: -2.82px;
+        //     border-radius: 8px;
+        //     background-color: darkgreen;
+        //     transform: rotate(-45deg);
+        //     transition: all 0.5s linear;
+        // }
     }
 }

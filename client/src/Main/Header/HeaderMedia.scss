@@ -1,0 +1,103 @@
+//Imports
+
+@import '../MediaSCSS/Variables.scss';
+@import '../MediaSCSS/Breakpoints.scss';
+
+// Media
+
+// @media only screen and (max-width: 1100px) {
+//     .header_div{
+//         width: 85vw;
+//         height: 12vh;
+//     }
+
+//     .header{
+//         width: 75vw;
+//         height: 12vh;
+//     }
+
+//     .header_router_div{
+//         display: flex;
+//         width: 40vw;
+//         height: 12vh;
+//         font-size: 18px;
+//     }
+// }
+
+/* Laptop media on the Header component */
+
+@include Laptop {
+
+    .header {
+        .header_block {
+            .router_div{
+                display: none;
+            }
+            .burger_div_block {
+                display: block;
+            }
+        }
+    }
+
+
+}
+
+/* Big mobile media on the Header component */
+
+// @media only screen and (max-width: 600px) {
+//     .header_div{
+//         width: 100vw;
+//         height: 12vh;
+//     }
+
+//     .header{
+//         width: 85vw;
+//         height: 12vh;
+//     }
+
+//     .header_router_div{
+//         display: none;
+//         width: 40vw;
+//         height: 12vh;
+//         font-size: 18px;
+//     }
+
+// }
+
+// @include Fourk_and_more{
+
+// }
+
+// @include desktop {
+
+// }
+
+// ////////////////////////////
+
+// @include Ipad_pro {
+
+// }
+
+// ////////////////////////////
+
+// @include Laptop {
+
+// }
+
+// ////////////////////////////
+
+// @include Bg_mobile {
+
+// }
+
+// ////////////////////////////
+
+// @include St_mobile {
+
+// }
+
+// ////////////////////////////
+
+// @include Sm_mobile {
+
+// }
