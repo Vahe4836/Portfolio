@@ -1,0 +1,24 @@
+// Imports
+
+@import "../../../MediaSCSS/Variables.scss";
+@import "../../../MediaSCSS/Breakpoints.scss";
+
+// Media
+
+@include Ipad_pro {
+    .home_skills_border {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        // width: 80vw;
+        border-radius: 10px;
+
+    }
+}
+
+@include Bg_mobile {
+    .home_skills_div {
+        width: 100vw;
+    }
+}

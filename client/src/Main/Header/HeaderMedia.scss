@@ -1,4 +1,4 @@
-//Imports
+// Imports
 
 @import '../MediaSCSS/Variables.scss';
 @import '../MediaSCSS/Breakpoints.scss';
@@ -39,7 +39,16 @@
         }
     }
 
+}
 
+@include Bg_mobile {
+    .header{
+        width: 100vw;
+        height: 12vh;
+        .header_block{
+            width: 85vw;
+        }
+    }
 }
 
 /* Big mobile media on the Header component */
@@ -86,9 +95,7 @@
 
 // ////////////////////////////
 
-// @include Bg_mobile {
 
-// }
 
 // ////////////////////////////
 

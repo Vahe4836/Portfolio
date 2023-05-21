@@ -8,9 +8,10 @@
 }
 
 %burger_x_first {
+    // width: calc(35/1.41)px;
     width: 35px;
     height: 4px;
-    margin-top: 5.64px;
+    // margin-top: 5.64px;
     border-radius: 8px;
     background-color: whitesmoke;
     transform: rotate(45deg);
@@ -25,9 +26,10 @@
 }
 
 %burger_x_third {
+    // width: calc(35/1.41)px;
     width: 35px;
     height: 4px;
-    margin-top: -2.82px;
+    // margin-top: -2.82px;
     border-radius: 8px;
     background-color: whitesmoke;
     transform: rotate(-45deg);
@@ -42,7 +44,6 @@
     width: 85vw;
     height: 15vh;
     background-color: rgba($color: #000000, $alpha: 0.6);
-    color: green;
     font-size: 20px;
     user-select: none;
 
@@ -134,7 +135,8 @@
 
             .burger_div_x {
                 width: 35px;
-                height: 20px;
+                // width: calc(35/1.41)px;
+                // height: 20px;
                 cursor: pointer;
 
                 .burger_line {
@@ -142,55 +144,21 @@
                 }
 
                 .burger_x_first {
+                    // width: calc(35/1.41)px;
                     @extend %burger_x_first;
                 }
 
                 .burger_x_second {
+                    // width: calc(35/1.41)px;
                     @extend %burger_x_second;
                 }
 
                 .burger_x_third {
+                    // width: calc(35/1.41)px;
                     @extend %burger_x_third;
                 }
             }
         }
 
-
-
-        // .burger_line {
-        //     width: 35px;
-        //     height: 4px;
-        //     border-radius: 8px;
-        //     background-color: darkgreen;
-        // }
-
-        // .burger_x_first {
-        //     width: 35px;
-        //     height: 4px;
-        //     margin-top: 5.64px;
-        //     border-radius: 8px;
-        //     background-color: darkgreen;
-        //     transform: rotate(45deg);
-        //     transition: all 0.5s linear;
-        // }
-
-        // .burger_x_second {
-        //     width: 35px;
-        //     /* height: 4px; */
-        //     /* border-radius: 8px; */
-        //     background-color: darkgreen;
-        //     opacity: 0;
-        //     transition: all 0.5s linear;
-        // }
-
-        // .burger_x_third {
-        //     width: 35px;
-        //     height: 4px;
-        //     margin-top: -2.82px;
-        //     border-radius: 8px;
-        //     background-color: darkgreen;
-        //     transform: rotate(-45deg);
-        //     transition: all 0.5s linear;
-        // }
     }
 }

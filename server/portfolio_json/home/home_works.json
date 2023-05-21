@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "icon": "front_end_icon",
+        "alt": "UI_icon",
+        "name": "Front-End development",
+        "text": "UI development is a structure and animations of websites."
+    },
+    {
+        "id": 1,
+        "icon": "",
+        "alt": "Functional_icon",
+        "name": "Back-End development",
+        "text": "Functional development is a register and login forms, contact front-end with back-end etc."
+    },
+    {
+        "id": 2,
+        "icon": "",
+        "alt": "SEO_optimization_icon",
+        "name": "SEO optimization",
+        "text": "When we searching in a Google or Yandex websites sort by SEO rank, this service became your rank high."
+    }
+]

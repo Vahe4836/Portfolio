@@ -8,6 +8,7 @@ import phone_icon from '../../images/footer_icons/contact/phone_icon.png';
 import address_icon from '../../images/footer_icons/contact/address_icon.png';
 
 import "./Footer.scss";
+import "./FooterMedia.scss";
 
 
 
@@ -30,6 +31,7 @@ export default function Footer() {
                             <span className="footer_contacts_text">Address: Yerevan, Armenia</span>
                         </div>
                     </div>
+                    
                     <div className="footer_social_icons">
 
                         <a href="https://www.linkedin.com/in/vahe-hovakimyan-a0368a22a" target='_blank' rel="noreferrer">

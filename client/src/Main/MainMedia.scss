@@ -1,0 +1,15 @@
+// Imports
+
+@import './MediaSCSS/Variables.scss';
+@import './MediaSCSS/Breakpoints.scss';
+
+// Media
+
+@include Bg_mobile {
+    .main_flex{
+        padding: 0px;
+        .main{
+            width: 100vw;
+        }
+    }
+}

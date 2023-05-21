@@ -1,0 +1,12 @@
+// Imports
+
+@import "../../../MediaSCSS/Variables.scss";
+@import "../../../MediaSCSS/Breakpoints.scss";
+
+// Media
+
+@include Bg_mobile {
+    .home_div_flex{
+        width: 100vw;
+    }
+}

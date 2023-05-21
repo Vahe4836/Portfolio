@@ -1,0 +1,41 @@
+// Imports
+
+@import "../MediaSCSS/Variables.scss";
+@import "../MediaSCSS/Breakpoints.scss";
+
+// Media
+
+
+@include Ipad_pro {
+    .footer{
+        height: auto;
+        .footer_div{
+            display: block;
+            width: auto;
+            .footer_contacts{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                .footer_contact_icon_text{
+                    justify-content: center;
+                }
+            }
+            .footer_social_icons{
+                width: auto;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+@include Bg_mobile {
+    .footer{
+        width: 100vw;
+        .footer_div{
+            width: auto;
+        }
+    }
+    .dividing_line{
+        width: 100vw;
+    }
+}
