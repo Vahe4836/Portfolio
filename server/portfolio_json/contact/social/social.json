@@ -1,0 +1,38 @@
+[
+    {
+        "id": 0,
+        "image": "",
+        "text": "Contact with me on Linkedin.",
+        "href": "https://www.linkedin.com/in/vahe-hovakimyan-a0368a22a",
+        "background_from": "rgb(168, 190, 199)",
+        "background_to": "rgb(0, 119, 183)",
+        "alt": "linkedin_icon"
+    },
+    {
+        "id": 1,
+        "image": "",
+        "text": "Follow me on Github.",
+        "href": "https://github.com/VaheHovakimyan",
+        "background_from": "rgb(146, 150, 150)",
+        "background_to": "#3b3b3b",
+        "alt": "github_icon"
+    },
+    {
+        "id": 2,
+        "image": "",
+        "text": "Contact with me on Facebook.",
+        "href": "https://www.facebook.com/vahe.hovakimyan.963",
+        "background_from": "rgb(190, 190, 190)",
+        "background_to": "rgb(58, 85, 159)",
+        "alt": "facebook_icon"
+    },
+    {
+        "id": 3,
+        "image": "",
+        "text": "Contact with me on Instagram.",
+        "href": "https://www.instagram.com/vahe.h.789/",
+        "background_from": "rgb(254, 194, 93)",
+        "background_to": "rgb(225, 53, 105)",
+        "alt": "instagram_icon"
+    }
+]

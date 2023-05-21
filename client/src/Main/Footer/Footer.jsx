@@ -18,15 +18,15 @@ export default function Footer() {
                 <div className="footer_div">
                     <div className="footer_contacts">
                         <div className="footer_contact_icon_text">
-                            <img src={mail_icon} alt="mail_icon" width="20px" height="20px" />
+                            <img src={mail_icon} alt="mail_icon" width="20px" height="20px" className='footer_contact_icon' />
                             <span className="footer_contacts_text"> Email: vahe.hovakimyan.19@mail.ru</span>
                         </div>
                         <div className="footer_contact_icon_text">
-                            <img src={phone_icon} alt="phone_icon" width="20px" height="20px" />
+                            <img src={phone_icon} alt="phone_icon" width="20px" height="20px" className='footer_contact_icon' />
                             <span className="footer_contacts_text">Telephone: (+374) 94 177 419</span>
                         </div>
                         <div className="footer_contact_icon_text">
-                            <img src={address_icon} alt="address_icon" width="20px" height="20px" />
+                            <img src={address_icon} alt="address_icon" width="20px" height="20px" className='footer_contact_icon' />
                             <span className="footer_contacts_text">Address: Yerevan, Armenia</span>
                         </div>
                     </div>

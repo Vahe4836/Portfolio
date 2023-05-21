@@ -14,6 +14,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            user-select: none;
         }
 
         .contact_me_text {
@@ -177,6 +178,7 @@
                 -webkit-transition: ease-out 0.4s;
                 -moz-transition: ease-out 0.4s;
                 transition: ease-out 0.4s;
+                user-select: none;
                 cursor: pointer;
             }
 
