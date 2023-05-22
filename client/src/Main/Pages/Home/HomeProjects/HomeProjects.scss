@@ -1,11 +1,11 @@
 // Templates
 
 %home_project_template {
-    width: 20vw;
-    height: 30vh;
+    width: 290px;
+    height: 200px;
     color: white;
     border-radius: 20px;
-    margin: 8px;
+    margin: 14px;
     border: 2px #777777 solid;
     font-size: 24px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -62,6 +62,7 @@
 
         .link_to_pages_from_home {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             text-decoration: none;
