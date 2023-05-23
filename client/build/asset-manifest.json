@@ -1,20 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.6a9be4f7.css",
-    "main.js": "/static/js/main.187e075d.js",
+    "main.css": "/static/css/main.114afce7.css",
+    "main.js": "/static/js/main.7b1a7938.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
     "static/media/home_person_image.jpg": "/static/media/home_person_image.1cbca46341ea9dcf95bc.jpg",
-    "static/media/autoelectric.png": "/static/media/autoelectric.696404b67bc294874594.png",
-    "static/media/Card-game-background.png": "/static/media/Card-game-background.471bdb48d843c3b54c92.png",
-    "static/media/spyGameImage.png": "/static/media/spyGameImage.ce8f943fa38fe351bba2.png",
     "static/media/Hexagon.svg": "/static/media/Hexagon.3fcf186fe4ed2760f526.svg",
     "index.html": "/index.html",
-    "main.6a9be4f7.css.map": "/static/css/main.6a9be4f7.css.map",
-    "main.187e075d.js.map": "/static/js/main.187e075d.js.map",
+    "main.114afce7.css.map": "/static/css/main.114afce7.css.map",
+    "main.7b1a7938.js.map": "/static/js/main.7b1a7938.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a9be4f7.css",
-    "static/js/main.187e075d.js"
+    "static/css/main.114afce7.css",
+    "static/js/main.7b1a7938.js"
   ]
 }

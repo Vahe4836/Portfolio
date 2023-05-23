@@ -25,6 +25,17 @@ function SendData(res, err, data) {
 
 // Home Data
 
+app.get("/db/home/works", (req, res) => {
+    fs.readFile(join(currentDir, '/home/home_works.json'), 'utf8', function (err, data) {
+        SendData(res, err, data);
+    })
+})
+
+app.get("/db/home/projects", (req,res) => {
+    fs.readFile(join(currentDir, "/home/home_projects.json"),'utf8', function(err,data){
+        SendData(res,err, data);
+    })
+})
 
 app.get("/db/home/skills", (req, res) => {
     fs.readFile(join(currentDir, '/home/home_skills.json'), 'utf8', function (err, data) {
@@ -32,11 +43,6 @@ app.get("/db/home/skills", (req, res) => {
     })
 })
 
-app.get("/db/home/works", (req, res) => {
-    fs.readFile(join(currentDir, '/home/home_works.json'), 'utf8', function (err, data) {
-        SendData(res, err, data);
-    })
-})
 
 // Project Data
 

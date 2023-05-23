@@ -1,10 +1,25 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./HomeProjects.scss";
 import "./HomeProjectsMedia.scss";
 
 
 
+
 export default function HomeProjects() {
+
+    const [homeProjects, setHomeProjects] = useState([]);
+
+    useEffect(() => {
+        fetch("/db/home/projects")
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setHomeProjects(data);
+            })
+    }, [])
+
+    
     return (
 
         <div className="home_projects_div">
@@ -12,9 +27,19 @@ export default function HomeProjects() {
             <div className="home_projects_border">
                 <Link to="/projects" className="link_to_pages_from_home">
 
-                    <div className="home_project_auto_electric">
+                    {homeProjects.map((item) => {
+                        return (
+                            <div className="home_project" style={{ background: item.backgroundImage }}>
+                                <div className="home_project_opacity">
+                                    <p className="home_project_text">{item.text}</p>
+                                </div>
+                            </div>
+                        )
+                    })}
+
+                    {/* <div className="home_project_auto_electric">
                         <div className="home_project_opacity">
-                            <p className="home_project_text">Autoelectrickrd.ru</p>
+                            <p className="home_project_text">Auto electric</p>
                         </div>
                     </div>
 
@@ -28,7 +53,7 @@ export default function HomeProjects() {
                         <div className="home_project_opacity">
                             <p className="home_project_text">+2 ...</p>
                             </div>
-                    </div>
+                    </div> */}
 
                 </Link>
             </div>
