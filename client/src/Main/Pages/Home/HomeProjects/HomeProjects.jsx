@@ -19,7 +19,9 @@ export default function HomeProjects() {
             })
     }, [])
 
-    
+
+    // console.log("TEST", homeProjects[0].backgroundImage);
+
     return (
 
         <div className="home_projects_div">
@@ -29,7 +31,12 @@ export default function HomeProjects() {
 
                     {homeProjects.map((item) => {
                         return (
-                            <div className="home_project" style={{ background: item.backgroundImage }}>
+                            <div key={item.id} className="home_project" style={{
+                                background: `url(${item.backgroundImage})`,
+                                backgroundSize: "cover",
+                                backgroundRepeat: "no-repeat",
+                                backgroundPosition: "center"
+                            }}>
                                 <div className="home_project_opacity">
                                     <p className="home_project_text">{item.text}</p>
                                 </div>

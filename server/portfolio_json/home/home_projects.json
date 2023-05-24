@@ -1,17 +1,17 @@
 [
     {
         "id": 0,
-        "backgroundImage": "",
+        "backgroundImage": "https://i.ibb.co/qJT2bM8/Autoelectric.png",
         "text": "Auto electric"
     },
     {
         "id": 1,
-        "backgroundImage": "",
+        "backgroundImage": "https://i.ibb.co/SxGJ89g/Card-game-background.png",
         "text": "Spy Game"
     },
     {
         "id": 2,
-        "backgroundImage": "",
+        "backgroundImage": "https://i.ibb.co/541M3pb/spy-Game-Image.png",
         "text": "+2 ..."
     }
 ]
