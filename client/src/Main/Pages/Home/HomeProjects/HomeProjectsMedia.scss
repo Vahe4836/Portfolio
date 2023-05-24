@@ -5,6 +5,16 @@
 
 // Media
 
+@include desktop{
+    .home_projects_div{
+        .home_projects_border{
+            .link_to_pages_from_home{
+                justify-content: center;
+            }
+        }
+    }
+}
+
 // @include Sm_mobile {
 //     .home_projects_border{
         

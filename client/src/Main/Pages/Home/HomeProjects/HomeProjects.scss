@@ -7,7 +7,7 @@
     border-radius: 20px;
     margin: 14px;
     border: 2px #777777 solid;
-    font-size: 24px;
+    font-size: 22px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     // background-size: cover;
     // background-repeat: no-repeat;
@@ -33,6 +33,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
+    text-align: center;
 }
 
 // Style
@@ -63,8 +64,9 @@
         .link_to_pages_from_home {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            width: 65vw;
             text-decoration: none;
             cursor: pointer;
 

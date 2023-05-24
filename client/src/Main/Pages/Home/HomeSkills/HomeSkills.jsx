@@ -38,6 +38,7 @@ export default function HomeSkills() {
 
     const [homeSkill, setHomeSkill] = useState([]);
 
+    
     useEffect(() =>{
         fetch("/db/home/skills")
         .then((res) => res.json())
@@ -46,6 +47,7 @@ export default function HomeSkills() {
             setHomeSkill(data);
         })
     }, [])
+
 
     return (
         <div className="home_skills_div">

@@ -15,7 +15,9 @@
             padding: 2em;
             margin: 1em;
             color: rgb(158, 158, 158);
-            background-color: black;
+            background-image: linear-gradient(45deg, black, #27217c52);
+            border-radius: 10px;
+            // background-color: black;
 
             .work_info_card_icon {
                 user-select: none;

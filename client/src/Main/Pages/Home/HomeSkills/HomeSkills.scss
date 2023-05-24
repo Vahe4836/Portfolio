@@ -80,9 +80,10 @@
 
         .link_to_pages_from_home {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            width: 65vw;
             text-decoration: none;
 
 
