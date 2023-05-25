@@ -18,10 +18,10 @@
 }
 
 
-@include desktop{
-    .home_skills_div{
-        .home_skills_border{
-            .link_to_pages_from_home{
+@include desktop {
+    .home_skills_div {
+        .home_skills_border {
+            .link_to_pages_from_home {
                 justify-content: center;
             }
         }
@@ -31,5 +31,89 @@
 @include Bg_mobile {
     .home_skills_div {
         width: 100vw;
+    }
+}
+
+@include St_mobile {
+    .home_skills_div {
+        .home_skills_border {
+            .link_to_pages_from_home {
+                .home_skills {
+                    width: 170px;
+                    height: 170px;
+
+                    .home_skill_percentage_animation {
+
+                        .home_skill_icon_text {
+
+                            .home_skills_text {
+                                font-size: 12px;
+                            }
+
+                            .icon_img {
+                                width: 45px;
+                                height: 45px;
+                            }
+
+                            .home_percentage_text {
+                                margin: 8px;
+                                font-size: 20px;
+                            }
+
+                        }
+
+                        .other_div {
+                            width: 170px;
+                            height: 170px;
+                            .other_skills_text{
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include Sm_mobile {
+    .home_skills_div {
+        .home_skills_border {
+            .link_to_pages_from_home {
+                .home_skills {
+                    width: 145px;
+                    height: 145px;
+
+                    .home_skill_percentage_animation {
+
+                        .home_skill_icon_text {
+
+                            .home_skills_text {
+                                font-size: 11px;
+                            }
+
+                            .icon_img {
+                                width: 40px;
+                                height: 40px;
+                            }
+
+                            .home_percentage_text {
+                                margin: 6px;
+                                font-size: 18px;
+                            }
+
+                        }
+
+                        .other_div {
+                            width: 145px;
+                            height: 145px;
+                            .other_skills_text{
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

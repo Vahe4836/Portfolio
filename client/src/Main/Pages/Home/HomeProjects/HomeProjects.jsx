@@ -20,8 +20,6 @@ export default function HomeProjects() {
     }, [])
 
 
-    // console.log("TEST", homeProjects[0].backgroundImage);
-
     return (
 
         <div className="home_projects_div">
@@ -43,24 +41,6 @@ export default function HomeProjects() {
                             </div>
                         )
                     })}
-
-                    {/* <div className="home_project_auto_electric">
-                        <div className="home_project_opacity">
-                            <p className="home_project_text">Auto electric</p>
-                        </div>
-                    </div>
-
-                    <div className="home_project_spy_game">
-                        <div className="home_project_opacity">
-                            <p className="home_project_text">Spy Game</p>
-                        </div>
-                    </div>
-
-                    <div className="home_project_other">
-                        <div className="home_project_opacity">
-                            <p className="home_project_text">+2 ...</p>
-                            </div>
-                    </div> */}
 
                 </Link>
             </div>

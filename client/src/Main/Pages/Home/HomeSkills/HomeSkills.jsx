@@ -38,14 +38,14 @@ export default function HomeSkills() {
 
     const [homeSkill, setHomeSkill] = useState([]);
 
-    
-    useEffect(() =>{
+
+    useEffect(() => {
         fetch("/db/home/skills")
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            setHomeSkill(data);
-        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setHomeSkill(data);
+            })
     }, [])
 
 
@@ -67,7 +67,7 @@ export default function HomeSkills() {
                                 <div className="home_skill_percentage_animation">
                                     <div className="home_skill_icon_text">
                                         <p className="home_skills_text">{item.name}</p>
-                                        <img src={item.img} alt={item.alt} width="55px" height="55px" />
+                                        <img src={item.img} width="55px" height="55px" className="icon_img" alt={item.alt} />
                                         <p className="home_percentage_text">{item.percentage}%</p>
                                     </div>
                                 </div>

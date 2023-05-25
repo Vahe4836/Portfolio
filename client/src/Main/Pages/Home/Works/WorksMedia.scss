@@ -1,0 +1,16 @@
+// Imports
+
+@import "../../../MediaSCSS/Variables.scss";
+@import "../../../MediaSCSS/Breakpoints.scss";
+
+// Media
+
+@include desktop{
+    .work_info_cards_flex{
+        .work_info_cards{
+            // .link_to_pages_from_home{
+                justify-content: center;
+            // }
+        }
+    }
+}

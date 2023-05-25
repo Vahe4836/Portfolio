@@ -1,33 +1,7 @@
 import { useEffect, useState } from 'react';
-import front_end_icon from '../../../../images/home_icons/front_end_icon.png';
-import back_end_icon from '../../../../images/home_icons/Back_end_icon.png';
-import seo_icon from '../../../../images/home_icons/seo_optimization_icon.png';
 import "./Works.scss";
+import "./WorksMedia.scss";
 
-
-// const works_info = [
-//     {
-//         id: Math.random(),
-//         icon: front_end_icon,
-//         alt: "UI_icon",
-//         name: "Front-End development",
-//         text: "UI development is a structure and animations of websites."
-//     },
-//     {
-//         id: Math.random(),
-//         icon: back_end_icon,
-//         alt: "Functional_icon",
-//         name: "Back-End development",
-//         text: "Functional development is a register and login forms, contact front-end with back-end etc."
-//     },
-//     {
-//         id: Math.random(),
-//         icon: seo_icon,
-//         alt: "SEO_optimization_icon",
-//         name: "SEO optimization",
-//         text: "When we searching in a Google or Yandex websites sort by SEO rank, this service became your rank high."
-//     }
-// ];
 
 
 export default function Works() {
@@ -36,11 +10,11 @@ export default function Works() {
 
     useEffect(() => {
         fetch("/db/home/works")
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            setHomeWorks(data);
-        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setHomeWorks(data);
+            })
     }, [])
 
 
