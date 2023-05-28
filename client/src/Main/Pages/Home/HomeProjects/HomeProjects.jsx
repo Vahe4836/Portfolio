@@ -14,7 +14,6 @@ export default function HomeProjects() {
         fetch("/db/home/projects")
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 setHomeProjects(data);
             })
     }, [])

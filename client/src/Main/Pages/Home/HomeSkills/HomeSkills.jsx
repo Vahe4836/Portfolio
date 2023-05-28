@@ -43,7 +43,6 @@ export default function HomeSkills() {
         fetch("/db/home/skills")
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 setHomeSkill(data);
             })
     }, [])

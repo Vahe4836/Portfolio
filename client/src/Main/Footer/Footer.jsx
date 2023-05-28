@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import linkedin_icon from '../../images/footer_icons/social/footer_linkedin_icon.png';
 import facebook_icon from '../../images/footer_icons/social/footer_facebook_icon.png';
 import instagram_icon from '../../images/footer_icons/social/footer_instagram_icon.png';
@@ -13,6 +15,18 @@ import "./FooterMedia.scss";
 
 
 export default function Footer() {
+
+    const [footerIcons, setFooterIcons] = useState([]);
+
+    useEffect(() => {
+        fetch("/db/footer")
+            .then((res) => res.json())
+            .then((data) => {
+                setFooterIcons(data);
+            })
+    }, []);
+
+
     return (
         <>
             <footer className="footer">
@@ -20,7 +34,7 @@ export default function Footer() {
                     <div className="footer_contacts">
                         <div className="footer_contact_icon_text">
                             <img src={mail_icon} alt="mail_icon" width="20px" height="20px" className='footer_contact_icon' />
-                            <span className="footer_contacts_text"> Email: vahe.hovakimyan.19@mail.ru</span>
+                            <span className="footer_contacts_text">Email: vahe.hovakimyan.19@mail.ru</span>
                         </div>
                         <div className="footer_contact_icon_text">
                             <img src={phone_icon} alt="phone_icon" width="20px" height="20px" className='footer_contact_icon' />
@@ -31,24 +45,16 @@ export default function Footer() {
                             <span className="footer_contacts_text">Address: Yerevan, Armenia</span>
                         </div>
                     </div>
-                    
+
                     <div className="footer_social_icons">
 
-                        <a href="https://www.linkedin.com/in/vahe-hovakimyan-a0368a22a" target='_blank' rel="noreferrer">
-                            <img src={linkedin_icon} alt="linkedin_icon" width="40px" height="40px" className='footer_icon' />
-                        </a>
-
-                        <a href="https://github.com/VaheHovakimyan" target='_blank' rel="noreferrer">
-                            <img src={github_icon} alt="github_icon" width="40px" height="40px" className='footer_icon' />
-                        </a>
-
-                        <a href="https://www.facebook.com/vahe.hovakimyan.963" target='_blank' rel="noreferrer">
-                            <img src={facebook_icon} alt="facebook_icon" width="40px" height="40px" className='footer_icon' />
-                        </a>
-
-                        <a href="https://www.instagram.com/vahe.h.789/" target='_blank' rel="noreferrer">
-                            <img src={instagram_icon} alt="instagram_icon" width="40px" height="40px" className='footer_icon' />
-                        </a>
+                        {footerIcons.map((item) => {
+                            return (
+                                <a key={item.id} href={item.href} target='_blank' rel="noreferrer">
+                                    <img src={linkedin_icon} alt={item.alt} width="40px" height="40px" className='footer_icon' />
+                                </a>
+                            )
+                        })}
 
                     </div>
                 </div>

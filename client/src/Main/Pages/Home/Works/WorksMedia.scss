@@ -5,12 +5,23 @@
 
 // Media
 
-@include desktop{
-    .work_info_cards_flex{
-        .work_info_cards{
-            // .link_to_pages_from_home{
+@include notebook {
+    .works{
+        .work_info_cards_flex {
+            .work_info_cards {
                 justify-content: center;
-            // }
+            }
+        }
+    }
+}
+
+
+@include St_mobile {
+    .works{
+        .work_info_cards_flex{
+            .work_info_cards{
+                width: 100vw;
+            }
         }
     }
 }

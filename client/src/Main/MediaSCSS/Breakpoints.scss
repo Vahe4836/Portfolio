@@ -10,6 +10,12 @@
     }
 }
 
+@mixin notebook() {
+    @media only screen and (max-width: $breakpoint_notebook){
+        @content;
+    }
+}
+
 @mixin Ipad_pro() {
     @media (max-width: $breakpoint_Ipad_pro){
         @content;

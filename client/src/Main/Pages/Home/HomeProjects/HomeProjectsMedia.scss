@@ -5,7 +5,7 @@
 
 // Media
 
-@include desktop{
+@include notebook{
     .home_projects_div{
         .home_projects_border{
             .link_to_pages_from_home{
@@ -15,8 +15,16 @@
     }
 }
 
-// @include Sm_mobile {
-//     .home_projects_border{
-        
-//     }
-// }
+@include St_mobile {
+    .home_projects_div{
+        .home_projects_border{
+            .link_to_pages_from_home{
+                width: auto;
+                .home_project{
+                    width: 240px;
+                    height: 170px;
+                }
+            }
+        }
+    }
+}

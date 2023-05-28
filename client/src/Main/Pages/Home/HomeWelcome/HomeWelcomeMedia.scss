@@ -5,8 +5,70 @@
 
 // Media
 
+@include Ipad_pro {
+    .home_div_flex {
+        .home_div {
+            .download_hire_button_div {
+                width: 50vw;
+            }
+        }
+    }
+}
+
+
 @include Bg_mobile {
-    .home_div_flex{
+    .home_div_flex {
         width: 100vw;
+        .home_div {
+            
+            .image_div{
+                width: 90px;
+                height: 90px;
+                border: 1.4px rgb(0, 0, 0) solid;
+            }
+
+            .home_title{
+                .hi_text{
+                    font-size: 15px;
+                }
+                .create_text{
+                    width: 60vw;
+                    font-size: 23px;
+                }
+            }
+
+            .download_hire_button_div {
+                width: 79.5vw;
+            }
+        }
+    }
+}
+
+@include St_mobile{
+    .home_div_flex {
+        .home_div {
+            .image_div{
+                width: 80px;
+                height: 80px;
+                border: 1px rgb(0, 0, 0) solid;
+            }
+
+            .home_title{
+                .hi_text{
+                    font-size: 14px;
+                }
+                .create_text{
+                    width: 75vw;
+                    font-size: 19px;
+                }
+            }
+            .download_hire_button_div {
+                flex-direction: column;
+                width: 100vw;
+                .home_button{
+                    margin: 12px;
+                }
+            }
+        }
     }
 }

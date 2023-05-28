@@ -31,9 +31,9 @@ app.get("/db/home/works", (req, res) => {
     })
 })
 
-app.get("/db/home/projects", (req,res) => {
-    fs.readFile(join(currentDir, "/home/home_projects.json"),'utf8', function(err,data){
-        SendData(res,err, data);
+app.get("/db/home/projects", (req, res) => {
+    fs.readFile(join(currentDir, "/home/home_projects.json"), 'utf8', function (err, data) {
+        SendData(res, err, data);
     })
 })
 
@@ -102,6 +102,16 @@ app.post("/db/contact/message", (req, res) => {
     console.log(req.body);
     res.send("OK");
 });
+
+// Footer
+
+
+app.get("/db/footer", (req, res) => {
+    fs.readFile(join(currentDir, '/footer/footer.json'), 'utf8', (err, data) => {
+        SendData(res, err, data);
+    })
+})
+
 
 // // // // // // // // // // // // 
 

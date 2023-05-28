@@ -1,23 +1,16 @@
-import linkedin_icon from '../../../../images/footer_icons/social/footer_linkedin_icon.png';
-import github_icon from '../../../../images/footer_icons/social/footer_github_icon.png';
-import facebook_icon from '../../../../images/footer_icons/social/footer_facebook_icon.png';
-import instagram_icon from '../../../../images/footer_icons/social/footer_instagram_icon.png';
+import { useEffect,useState } from 'react';
 import arrow_icon from '../../../../images/contact_icons/arrow_icon.png';
 import './Social.scss';
-import { useEffect,useState } from 'react';
-
 
 
 export default function Social() {
 
     const [socialData,setSocialData] = useState([]);
 
-
     useEffect(() => {
         fetch("/db/contact/social")
             .then((data) => data.json())
             .then((result) => {
-                console.log(result);
                 setSocialData(result);
             })
     },[])

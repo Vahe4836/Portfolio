@@ -10,3 +10,9 @@
         width: 100vw;
     }
 }
+
+@include St_mobile{
+    .copyright_flex{
+        font-size: 12px;
+    }
+}

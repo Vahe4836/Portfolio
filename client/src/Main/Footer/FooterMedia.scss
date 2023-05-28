@@ -21,6 +21,7 @@
             }
             .footer_social_icons{
                 width: auto;
+                padding-top: 20px;
                 padding-bottom: 20px;
             }
         }
@@ -38,4 +39,32 @@
     .dividing_line{
         width: 100vw;
     }
+}
+
+
+@include St_mobile{
+    .footer{
+        .footer_div{
+            .footer_contacts{
+                .footer_contact_icon_text{
+                    .footer_contact_icon{
+                        width: 18px;
+                        height: 18px;
+                    }
+                    .footer_contacts_text{
+                        font-size: 13px;
+                    }
+                }
+            }
+            .footer_social_icons{
+                width: auto;
+                padding-bottom: 20px;
+                padding-top: 10px;
+                .footer_icon{
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+    }   
 }

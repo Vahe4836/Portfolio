@@ -7,7 +7,6 @@
     align-items: center;
     background-color: rgba(70, 61, 61, 0.6);
     padding-top: 50px;
-    padding-bottom: 50px;
 
     .home_div {
         display: flex;
@@ -53,12 +52,13 @@
             padding: 20px 0px 20px 0px;
             user-select: none;
             .home_button{
-                width: 10vw;
-                height: 6vh;
+                width: 175px;
+                height: 47px;
                 background-color: black;
                 color: white;
                 border-radius: 2px;
                 border: 2px white solid;
+                margin: 24px;
                 cursor: pointer;
                 .home_hire_me_link{
                     text-decoration: none;
