@@ -3,8 +3,8 @@
         "id": 0,
         "name": "This portfolio",
         "img": "../../../images/home_projects/autoelectric.png",
-        "github_url": "vahehovakimyan/portfolio",
-        "project_url": "https://portfolio.vercel.app",
+        "github_url": "https://github.com/VaheHovakimyan/portfolio",
+        "project_url": "https://vahe4836-portfolio.vercel.app",
         "alt": "portfolio_image",
         "technologies": "HTML/HTML5, SCSS, React.js, Express.js, MongoDB",
         "duration": "20 day"

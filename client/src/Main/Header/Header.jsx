@@ -25,7 +25,7 @@ export default function Header() {
                         <nav>
 
                             <div className="router_div">
-                                
+
                                 <Link to="/" className="router_text">
                                     <p>Home</p>
                                 </Link>
@@ -60,7 +60,10 @@ export default function Header() {
                 </div>
             </header>
 
-            <Burger burgerBool={burgerBool} />
+            <Burger
+                burgerBool={burgerBool}
+                setBurgerBool={setBurgerBool}
+            />
 
         </article>
     )

@@ -4,8 +4,8 @@
         "image": "https://i.ibb.co/mRCXrRM/footer-linkedin-icon.png",
         "text": "Contact with me on Linkedin.",
         "href": "https://www.linkedin.com/in/vahe-hovakimyan-a0368a22a",
-        "background_from": "rgb(168, 190, 199)",
-        "background_to": "rgb(0, 119, 183)",
+        "background_from": "rgba(168, 190, 199, 0.7)",
+        "background_to": "rgba(0, 119, 183, 0.8)",
         "alt": "linkedin_icon"
     },
     {
@@ -13,8 +13,8 @@
         "image": "https://i.ibb.co/kKFstgL/footer-github-icon.png",
         "text": "Follow me on Github.",
         "href": "https://github.com/VaheHovakimyan",
-        "background_from": "rgb(146, 150, 150)",
-        "background_to": "#3b3b3b",
+        "background_from": "rgba(146, 150, 150, 0.7)",
+        "background_to": "rgba(59, 59, 59, 0.8)",
         "alt": "github_icon"
     },
     {
@@ -22,8 +22,8 @@
         "image": "https://i.ibb.co/TkNkvg2/footer-facebook-icon.png",
         "text": "Contact with me on Facebook.",
         "href": "https://www.facebook.com/vahe.hovakimyan.963",
-        "background_from": "rgb(190, 190, 190)",
-        "background_to": "rgb(58, 85, 159)",
+        "background_from": "rgba(190, 190, 190, 0.7)",
+        "background_to": "rgba(58, 85, 159, 0.8)",
         "alt": "facebook_icon"
     },
     {
@@ -31,8 +31,8 @@
         "image": "https://i.ibb.co/yp9JT2D/footer-instagram-icon.png",
         "text": "Contact with me on Instagram.",
         "href": "https://www.instagram.com/vahe.h.789/",
-        "background_from": "rgb(254, 194, 93)",
-        "background_to": "rgb(225, 53, 105)",
+        "background_from": "rgba(254, 194, 93, 0.7)",
+        "background_to": "rgba(225, 53, 105, 0.8)",
         "alt": "instagram_icon"
     }
 ]

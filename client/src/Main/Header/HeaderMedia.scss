@@ -5,25 +5,6 @@
 
 // Media
 
-// @media only screen and (max-width: 1100px) {
-//     .header_div{
-//         width: 85vw;
-//         height: 12vh;
-//     }
-
-//     .header{
-//         width: 75vw;
-//         height: 12vh;
-//     }
-
-//     .header_router_div{
-//         display: flex;
-//         width: 40vw;
-//         height: 12vh;
-//         font-size: 18px;
-//     }
-// }
-
 /* Laptop media on the Header component */
 
 @include Laptop {

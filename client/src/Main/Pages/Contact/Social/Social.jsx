@@ -1,11 +1,13 @@
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import arrow_icon from '../../../../images/contact_icons/arrow_icon.png';
 import './Social.scss';
+import './SocialMedia.scss';
+
 
 
 export default function Social() {
 
-    const [socialData,setSocialData] = useState([]);
+    const [socialData, setSocialData] = useState([]);
 
     useEffect(() => {
         fetch("/db/contact/social")
@@ -13,7 +15,7 @@ export default function Social() {
             .then((result) => {
                 setSocialData(result);
             })
-    },[])
+    }, [])
 
 
     return (

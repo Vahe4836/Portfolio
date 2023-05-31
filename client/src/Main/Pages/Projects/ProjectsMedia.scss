@@ -5,38 +5,152 @@
 
 // Media
 
-@include Bg_mobile {
+@include Ipad_pro {
     .projects_page {
         .projects_page_flex {
             .projects_div {
-                width: 80vw;
-                font-size: 13px;
 
                 .project_all_elements {
-                    width: 75vw;
 
                     .project_elements {
                         .project_element {
                             .project_element_title {
-                                font-size: 13px;
+                                font-size: 14px;
                             }
 
                             .to_project_and_github {
-                                font-size: 12px;
+                                font-size: 13px;
                             }
 
                             .technologies_and_duration {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include Bg_mobile {
+    .projects_page {
+        .projects_page_flex {
+            .projects_div {
+                width: 85vw;
+                font-size: 13px;
+
+                .project_all_elements {
+                    width: 80vw;
+
+                    .project_elements {
+                        width: 80vw;
+
+                        .project_element {
+                            .project_element_title {
                                 font-size: 12px;
+                            }
+
+                            .to_project_and_github {
+                                font-size: 11px;
+                            }
+
+                            .technologies_and_duration {
+                                font-size: 11px;
                             }
                         }
                     }
 
                     .project_image_div {
                         .project_image {
-                            width: 75vw;
+                            width: 80vw;
                         }
 
                     }
+                }
+            }
+        }
+    }
+}
+
+@include St_mobile {
+    .projects_page {
+        .projects_page_flex {
+            .projects_div {
+
+                .project_all_elements {
+
+                    .project_name {
+                        font-size: 25px;
+                        padding-bottom: 10px;
+                    }
+
+                    .project_elements {
+                        padding-top: 30px;
+
+                        .project_element {
+                            .project_element_title {
+                                font-size: 10px;
+                            }
+
+                            .to_project_and_github {
+                                font-size: 9px;
+                            }
+
+                            .technologies_and_duration {
+                                font-size: 9px;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+@include Sm_mobile {
+    .projects_page {
+        .projects_page_flex {
+            .projects_div {
+                width: 80vw;
+
+                .project_all_elements {
+
+                    width: 77vw;
+
+                    .project_name {
+                        font-size: 22px;
+                    }
+
+                    .project_elements {
+
+                        width: 77vw;
+
+                        .project_element {
+                            .project_element_title {
+                                font-size: 9px;
+                            }
+
+                            .to_project_and_github {
+                                font-size: 7.2px;
+                            }
+
+                            .technologies_and_duration {
+                                font-size: 7.2px;
+                            }
+                        }
+                    }
+
+                    .project_image_div {
+                        .project_image {
+                            width: 77vw;
+                        }
+
+                    }
+
                 }
             }
         }
