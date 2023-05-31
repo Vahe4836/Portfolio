@@ -1,0 +1,44 @@
+// Imports
+
+@import "../../MediaSCSS/Variables.scss";
+@import "../../MediaSCSS/Breakpoints.scss";
+
+// Media
+
+@include Bg_mobile {
+    .projects_page {
+        .projects_page_flex {
+            .projects_div {
+                width: 80vw;
+                font-size: 13px;
+
+                .project_all_elements {
+                    width: 75vw;
+
+                    .project_elements {
+                        .project_element {
+                            .project_element_title {
+                                font-size: 13px;
+                            }
+
+                            .to_project_and_github {
+                                font-size: 12px;
+                            }
+
+                            .technologies_and_duration {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    .project_image_div {
+                        .project_image {
+                            width: 75vw;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -101,6 +101,11 @@
                             .percentage_text {
                                 @extend %percentage_text;
                             }
+
+                            .icon_img {
+                                width: 55px;
+                                height: 55px;
+                            }
                         }
 
                         .skill_opacity {

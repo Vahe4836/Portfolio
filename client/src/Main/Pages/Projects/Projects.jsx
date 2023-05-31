@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import './Projects.scss';
+import './ProjectsMedia.scss';
 
 
 
 export default function Projects() {
 
-
     const [data, setData] = useState([]);
-
 
     useEffect(() => {
 
@@ -26,37 +25,48 @@ export default function Projects() {
             <div className='projects_page_flex'>
 
                 {data.map((item) => {
-          
+
                     return (
                         <div className='projects_div'>
                             <div className='project_all_elements'>
                                 <h3 className='project_name'>{item.name}</h3>
+
                                 <div className='project_image_div'>
                                     <a href={item.project_url} target='_blank' rel="noreferrer">
                                         <img src={item.img} alt={item.alt} className='project_image' loading="lazy" />
                                         <div className='to_project_link_opacity'></div>
                                     </a>
                                 </div>
+
                                 <div className='project_elements'>
-                                    <p className='project_element'>
-                                        <span style={{fontWeight: "700"}}>Project : </span> 
-                                        <a href={item.project_url} style={{color: "#eee"}}>{item.project_url}</a>
-                                    </p>
-                                    <p className='project_element'>
-                                        <span style={{fontWeight: "700"}}>GitHub : </span>
-                                        <a href={item.github_url} style={{color: "#eee"}}>{item.github_url}</a>
-                                    </p>
-                                    <p className='project_element'>
-                                        <span style={{fontWeight: "700"}}>Technologies : </span>{item.technologies}
-                                    </p>
-                                    <p className='project_element'>
-                                        <span style={{fontWeight: "700"}}>Duration : </span>{item.duration}
-                                    </p>
+
+                                    <div className='project_element'>
+                                        <span className='project_element_title'>Project : </span>
+                                        <a href={item.project_url} className='to_project_and_github'>{item.project_url}</a>
+                                    </div>
+
+                                    <div className='project_element'>
+                                        <span className='project_element_title'>GitHub : </span>
+                                        <a href={item.github_url} className='to_project_and_github'>{item.github_url}</a>
+                                    </div>
+
+                                    <div className='project_element'>
+                                        <span className='project_element_title'>Technologies : </span>
+                                        <span className='technologies_and_duration'>{item.technologies}</span>
+                                    </div>
+
+                                    <div className='project_element'>
+                                        <span className='project_element_title'>Duration : </span>
+                                        <span className='technologies_and_duration'>{item.duration}</span>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     )
+
                 })}
+
             </div>
         </div >
     )

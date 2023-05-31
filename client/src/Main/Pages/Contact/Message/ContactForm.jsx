@@ -54,8 +54,8 @@ export default function Message() {
         let valid_name = /^[A-Za-z]+$/;
         let valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-        console.log("Name " + data.name.match(valid_name));
-        console.log(data.email.match(valid_email));
+        // console.log("Name " + data.name.match(valid_name));
+        // console.log(data.email.match(valid_email));
 
         if (
             data.name.match(valid_name) &&

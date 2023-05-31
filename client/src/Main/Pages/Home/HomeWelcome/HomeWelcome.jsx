@@ -1,3 +1,4 @@
+import test from '../../../../CV/CV_Front_End_React_Vahe_Hovakimyan.pdf';
 import { Link } from "react-router-dom";
 import "./HomeWelcome.scss";
 import "./HomeWelcomeMedia.scss";
@@ -15,8 +16,15 @@ export default function HomeWelcome() {
                     <h2 className="create_text">Creating creative and functional websites, UI development and SEO optimization for websites.</h2>
                 </div>
                 <div className="download_hire_button_div">
-                    <button className="home_button">Download my CV</button>
-                    <button className="home_button"><Link to="/contact" className="home_hire_me_link">Hire me</Link></button>
+
+                    <button className="home_button">
+                        <a href={test} download="CV_Front_End_Vahe_Hovakimyan_React" className='download_cv_home_hire_me_link'>Download my CV</a>
+                    </button>
+
+                    <button className="home_button">
+                        <Link to="/contact" className="download_cv_home_hire_me_link">Hire me</Link>
+                    </button>
+
                 </div>
             </div>
         </div>

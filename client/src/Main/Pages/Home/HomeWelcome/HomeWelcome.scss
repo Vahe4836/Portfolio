@@ -24,45 +24,70 @@
             background-position: center;
         }
 
-        .home_title{
+        .home_title {
             color: white;
             text-align: center;
-            .hi_text{
+
+            .hi_text {
                 font-size: 16px;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
-            .create_text{
+
+            .create_text {
                 width: 35vw;
                 padding: 10px 0px 10px 0px;
                 font-size: 26px;
-                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-weight: 600;
-                background: linear-gradient(135deg , white, rgb(116, 116, 116));
+                background: linear-gradient(135deg, white, rgb(116, 116, 116));
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
         }
 
-        .download_hire_button_div{
+        .download_hire_button_div {
             width: 32vw;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0px 20px 0px;
+            padding: 20px 0px 0px 0px;
             user-select: none;
-            .home_button{
+
+            .home_button {
                 width: 175px;
                 height: 47px;
-                background-color: black;
-                color: white;
-                border-radius: 2px;
-                border: 2px white solid;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                border: 2px rgb(88, 190, 190) solid;
+                color: whitesmoke;
+                display: inline-block;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
                 margin: 24px;
+                background: rgb(20, 20, 20);
+                box-shadow: inset 0 0 0 0 black;
+                -webkit-transition: ease-out 0.3s;
+                -moz-transition: ease-out 0.3s;
+                transition: ease-out 0.3s;
+                user-select: none;
                 cursor: pointer;
-                .home_hire_me_link{
+
+                .download_cv_home_hire_me_link {
                     text-decoration: none;
                     color: white;
+                }
+
+            }
+
+            .home_button:hover {
+                box-shadow: inset 175px 0 0 0 rgb(0, 214, 214);
+                border: 2px black solid;
+                color: black;
+
+                .download_cv_home_hire_me_link {
+                    color: black;
                 }
             }
         }

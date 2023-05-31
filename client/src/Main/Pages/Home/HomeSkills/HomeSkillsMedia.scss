@@ -5,6 +5,16 @@
 
 // Media
 
+@include notebook {
+    .home_skills_div {
+        .home_skills_border {
+            .link_to_pages_from_home {
+                justify-content: center;
+            }
+        }
+    }
+}
+
 @include Ipad_pro {
     .home_skills_border {
         display: flex;
@@ -18,21 +28,12 @@
 }
 
 
-@include notebook {
-    .home_skills_div {
-        .home_skills_border {
-            .link_to_pages_from_home {
-                justify-content: center;
-            }
-        }
-    }
-}
-
 @include Bg_mobile {
     .home_skills_div {
         width: 100vw;
     }
 }
+
 
 @include St_mobile {
     .home_skills_div {

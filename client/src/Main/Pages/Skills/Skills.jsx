@@ -1,14 +1,15 @@
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Skills.scss';
+import './SkillsMedia.scss';
 
 
 
 export default function Skills() {
 
-    const [frontEndData,setFrontEndData] = useState([]);
-    const [backEndData,setBackEndData] = useState([]);
-    const [designData,setDesignData] = useState([]);
-    const [otherData,setOtherData] = useState([]);
+    const [frontEndData, setFrontEndData] = useState([]);
+    const [backEndData, setBackEndData] = useState([]);
+    const [designData, setDesignData] = useState([]);
+    const [otherData, setOtherData] = useState([]);
 
     useEffect(() => {
 
@@ -21,7 +22,7 @@ export default function Skills() {
             return Promise.all(streams.map((stream) => stream.json()));
         }).then((data) => {
             console.log(data);
-            const [frontEndInfo,backEndInfo,designInfo,otherInfo] = data;
+            const [frontEndInfo, backEndInfo, designInfo, otherInfo] = data;
             setFrontEndData(frontEndInfo);
             setBackEndData(backEndInfo);
             setDesignData(designInfo);
@@ -30,7 +31,7 @@ export default function Skills() {
             console.log(err);
         })
 
-    },[]);
+    }, []);
 
 
 
@@ -54,7 +55,7 @@ export default function Skills() {
                                     <div className="skill_percentage_animation">
                                         <div className="skill_icon_text">
                                             <p className="skills_text">{item.name}</p>
-                                            <img src={item.img} alt={item.alt} width="55px" height="55px" />
+                                            <img src={item.img} alt={item.alt} className='icon_img' />
                                             <p className="percentage_text">{item.percentage}%</p>
                                         </div>
                                         <div className="skill_opacity"></div>

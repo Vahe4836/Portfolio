@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import linkedin_icon from '../../images/footer_icons/social/footer_linkedin_icon.png';
-import facebook_icon from '../../images/footer_icons/social/footer_facebook_icon.png';
-import instagram_icon from '../../images/footer_icons/social/footer_instagram_icon.png';
-import github_icon from '../../images/footer_icons/social/footer_github_icon.png';
-
 import mail_icon from '../../images/footer_icons/contact/mail_icon.png';
 import phone_icon from '../../images/footer_icons/contact/phone_icon.png';
 import address_icon from '../../images/footer_icons/contact/address_icon.png';
@@ -51,7 +46,7 @@ export default function Footer() {
                         {footerIcons.map((item) => {
                             return (
                                 <a key={item.id} href={item.href} target='_blank' rel="noreferrer">
-                                    <img src={linkedin_icon} alt={item.alt} width="40px" height="40px" className='footer_icon' />
+                                    <img src={item.src} alt={item.alt} width="40px" height="40px" className='footer_icon' />
                                 </a>
                             )
                         })}
