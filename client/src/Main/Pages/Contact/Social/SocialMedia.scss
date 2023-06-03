@@ -5,6 +5,207 @@
 
 // Media
 
-@include Ipad_pro{
-    
+@include Ipad_pro {
+    .social_div_section {
+        .to_social_pages {
+            .social_div {
+                width: 57vw;
+
+                .social_div_elements {
+                    width: 51vw;
+                }
+            }
+        }
+    }
+}
+
+@include Laptop {
+    .social_div_section {
+        .to_social_pages {
+            .social_div {
+                width: 65vw;
+
+                .social_div_elements {
+                    width: 60vw;
+
+                    .social_div_text {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@include Bg_mobile {
+    .social_div_section {
+        .to_social_pages {
+            .social_div {
+                width: 80vw;
+
+                .social_div_elements {
+                    width: 72vw;
+
+                    .social_div_icon {
+                        width: 30px;
+                        height: 30px;
+                        border: 1px rgb(162, 162, 162) solid;
+                        border-radius: 8px;
+                    }
+
+                    .social_div_text {
+                        font-size: 14px;
+                    }
+
+                    .social_div_link {
+                        width: 30px;
+                        height: 30px;
+
+                        .arrow_bounce {
+                            .arrow_image {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+
+
+                        @keyframes bounce {
+
+                            0%,
+                            20%,
+                            50%,
+                            80%,
+                            100% {
+                                transform: translateX(0);
+                            }
+
+                            40% {
+                                transform: translateX(-20px);
+                            }
+
+                            60% {
+                                transform: translateX(-10px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@include St_mobile {
+    .social_div_section {
+        .to_social_pages {
+            .social_div {
+                width: 85vw;
+                height: 60px;
+
+                .social_div_elements {
+                    width: 77vw;
+
+                    .social_div_icon {
+                        width: 25px;
+                        height: 25px;
+                        border: 1px rgb(162, 162, 162) solid;
+                        border-radius: 6px;
+                    }
+
+                    .social_div_text {
+                        font-size: 13px;
+                    }
+
+                    .social_div_link {
+                        width: 20px;
+                        height: 20px;
+
+                        .arrow_bounce {
+                            .arrow_image {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+
+                        @keyframes bounce {
+
+                            0%,
+                            20%,
+                            50%,
+                            80%,
+                            100% {
+                                transform: translateX(0);
+                            }
+
+                            40% {
+                                transform: translateX(-15px);
+                            }
+
+                            60% {
+                                transform: translateX(-7px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@include Sm_mobile{
+    .social_div_section {
+        .to_social_pages {
+            .social_div {
+                height: 52px;
+
+                .social_div_elements {
+
+                    .social_div_icon {
+                        width: 22px;
+                        height: 22px;
+                        border: 1px rgb(162, 162, 162) solid;
+                        border-radius: 6px;
+                    }
+
+                    .social_div_text {
+                        font-size: 12px;
+                    }
+
+                    .social_div_link {
+                        width: 18px;
+                        height: 18px;
+
+                        .arrow_bounce {
+                            .arrow_image {
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
+
+                        @keyframes bounce {
+
+                            0%,
+                            20%,
+                            50%,
+                            80%,
+                            100% {
+                                transform: translateX(0);
+                            }
+
+                            40% {
+                                transform: translateX(-9px);
+                            }
+
+                            60% {
+                                transform: translateX(-4px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
 }

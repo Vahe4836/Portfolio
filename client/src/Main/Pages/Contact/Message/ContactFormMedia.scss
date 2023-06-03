@@ -5,3 +5,193 @@
 
 // Media
 
+@include Laptop {
+    .form_div_flex {
+        .form_div {
+
+            .contact_me_title {
+                font-size: 30px;
+            }
+
+            .contact_me_text {
+                font-size: 16px;
+            }
+
+            .name_Email_div {
+                flex-direction: column;
+
+                .input_div {
+                    .input_style {
+                        width: 50vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include Bg_mobile {
+    .form_div_flex {
+        .form_div {
+            width: calc(70vw + 40px);
+
+            .contact_me_title {
+                font-size: 27px;
+            }
+
+            .contact_me_text {
+                font-size: 14px;
+            }
+
+            .name_Email_div {
+                width: calc(70vw + 42px);
+
+                .input_div {
+                    .input_style {
+                        width: 70vw;
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .input_div {
+                .input_style_subject {
+                    width: 70vw;
+                    font-size: 15px;
+                }
+
+            }
+
+            .input_div {
+                .textarea_style {
+                    width: 70vw;
+                }
+            }
+
+            .send_button_div {
+                width: calc(70vw + 40px);
+
+                .send_button {
+                    width: calc(70vw + 40px);
+                    font-size: 21px;
+                    height: 55px;
+                    padding: 0px;
+                }
+            }
+
+        }
+    }
+}
+
+
+@include St_mobile {
+    .form_div_flex {
+        .form_div {
+            width: calc(75vw + 40px);
+
+            .contact_me_title {
+                font-size: 25px;
+            }
+
+            .contact_me_text {
+                font-size: 13px;
+            }
+
+            .name_Email_div {
+                width: calc(75vw + 42px);
+
+                .input_div {
+                    .input_style {
+                        width: 75vw;
+                        font-size: 14px;
+                        // padding: 0px 14px 0px 14px;
+                    }
+                }
+            }
+
+            .input_div {
+                .input_style_subject {
+                    width: 75vw;
+                    font-size: 14px;
+                    // padding: 0px 14px 0px 14px;
+                }
+
+            }
+
+            .input_div {
+                .textarea_style {
+                    width: 75vw;
+                    min-height: 140px;
+                    font-size: 14px;
+                    // padding: 14px;
+                }
+            }
+
+            .send_button_div {
+                width: calc(75vw + 40px);
+
+                .send_button {
+                    width: calc(75vw + 40px);
+                    font-size: 17px;
+                    height: 50px;
+                }
+            }
+
+        }
+    }
+}
+
+@include Sm_mobile{
+    .form_div_flex {
+        .form_div {
+            // width: calc(75vw + 40px);
+
+            .contact_me_title {
+                font-size: 24px;
+            }
+
+            .contact_me_text {
+                font-size: 12px;
+            }
+
+            // .name_Email_div {
+            //     width: calc(75vw + 42px);
+
+            //     .input_div {
+            //         .input_style {
+            //             width: 75vw;
+            //             font-size: 14px;
+            //         }
+            //     }
+            // }
+
+            // .input_div {
+            //     .input_style_subject {
+            //         // width: 75vw;
+            //         // font-size: 14px;
+            //     }
+
+            // }
+
+            .input_div {
+                .textarea_style {
+                    // width: 75vw;
+                    // min-height: 140px;
+                    font-size: 14px;
+                }
+            }
+
+            .send_button_div {
+                // width: calc(75vw + 40px);
+
+                .send_button {
+                    // width: calc(75vw + 40px);
+                    font-size: 16px;
+                    // height: 50px;
+                }
+            }
+
+        }
+    }
+}

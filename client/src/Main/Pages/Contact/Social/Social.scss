@@ -8,6 +8,7 @@
     height: 75px;
     border: 2.5px white dashed;
     margin: 10px 0px 10px 0px;
+    cursor: pointer;
 }
 
 %social_div_elements {
@@ -15,6 +16,7 @@
     justify-content: space-between;
     align-items: center;
     width: 35vw;
+
     .social_div_icon {
         border: 2px rgb(162, 162, 162) solid;
         border-radius: 11px;
@@ -45,18 +47,45 @@
     align-items: center;
     padding: 50px 0px 10px 0px;
 
-    .social_div {
-        @extend %social_div;
+    .to_social_pages {
+        text-decoration: none;
+        .social_div {
+            @extend %social_div;
 
-        .social_div_elements {
-            @extend %social_div_elements;
+            .social_div_elements {
+                @extend %social_div_elements;
 
-            .social_div_text {
-                @extend %social_div_text;
-            }
+                .social_div_text {
+                    @extend %social_div_text;
+                }
 
-            .social_div_link {
-                @extend %social_link;
+                .social_div_link {
+                    @extend %social_link;
+
+                    .arrow_bounce {
+                        text-align: center;
+                        animation: bounce 2s infinite;
+                    }
+
+                    @keyframes bounce {
+
+                        0%,
+                        20%,
+                        50%,
+                        80%,
+                        100% {
+                            transform: translateX(0);
+                        }
+
+                        40% {
+                            transform: translateX(-30px);
+                        }
+
+                        60% {
+                            transform: translateX(-15px);
+                        }
+                    }
+                }
             }
         }
     }

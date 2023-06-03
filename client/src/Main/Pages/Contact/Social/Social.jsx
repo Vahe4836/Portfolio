@@ -23,20 +23,27 @@ export default function Social() {
 
             {socialData.map((item) => {
                 return (
-                    <div
-                        className='social_div'
-                        id={item.id}
-                        style={{ background: `linear-gradient(90deg, ${item.background_from}, ${item.background_to})` }}
-                    >
+                    <a href={item.href} className='to_social_pages'>
+                        <div
+                            className='social_div'
+                            id={item.id}
+                            style={{ background: `linear-gradient(90deg, ${item.background_from}, ${item.background_to})` }}
+                        >
 
-                        <div className='social_div_elements'>
-                            <img src={item.image} alt={item.alt} width="40px" height="40px" className='social_div_icon' />
-                            <p className='social_div_text'>{item.text}</p>
-                            <a href={item.href} target='_blank' rel="noreferrer" className='social_div_link'>
-                                <img src={arrow_icon} alt="arrow_icon" width="40px" height="40px" />
-                            </a>
+                            <div className='social_div_elements'>
+                                <img src={item.image} alt={item.alt} width="40px" height="40px" className='social_div_icon' />
+                                <p className='social_div_text'>{item.text}</p>
+                                <a href={item.href} target='_blank' rel="noreferrer" className='social_div_link'>
+
+                                    <div class="arrow_bounce">
+                                        <img src={arrow_icon} alt="arrow_icon" className='arrow_image' width="40px" height="40px" />
+                                    </div>
+
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+
                 )
             })}
 
