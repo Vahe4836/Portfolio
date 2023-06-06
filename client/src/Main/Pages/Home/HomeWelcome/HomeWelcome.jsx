@@ -18,7 +18,11 @@ export default function HomeWelcome() {
                 <div className="download_hire_button_div">
 
                     <button className="home_button">
-                        <a href={test} download="CV_Front_End_Vahe_Hovakimyan_React" className='download_cv_home_hire_me_link'>Download my CV</a>
+                        <a href={test} download="CV_Front_End_Vahe_Hovakimyan_React" className='download_cv_home_hire_me_link'>
+                            <p className='par'>
+                                Download my CV
+                            </p>
+                        </a>
                     </button>
 
                     <button className="home_button">
