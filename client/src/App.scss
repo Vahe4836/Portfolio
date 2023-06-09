@@ -1,8 +1,15 @@
+// Imports
+
+@import './Main/MediaSCSS/Variables.scss';
+@import './Main/MediaSCSS/Breakpoints.scss';
+
+// Style
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow-y: hidden; */
+  overflow-x: hidden;
 }
 
 .container {
@@ -31,4 +38,32 @@ body {
   position: relative;
   background-size: 190px;
   z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-image: linear-gradient(180deg, #999, #333);
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 153, 153);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 118, 131);
+}
+
+
+// Media 
+
+@include Ipad_pro {
+  body{
+    overflow-y: hidden;
+  }
 }
