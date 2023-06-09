@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import './ContactForm.scss';
 import './ContactFormMedia.scss';
 
@@ -37,6 +37,11 @@ function reducer(state, action) {
 
 export default function Message() {
 
+    const [nameValid, setNameValid] = useState(false);
+    const [emailValid, setEmailValid] = useState(false);
+
+    let valid_name = /^[A-Za-z]+$/;
+    let valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     const initialData = {
         name: "",
@@ -52,8 +57,8 @@ export default function Message() {
     async function SendMessage(evt) {
         evt.preventDefault();
 
-        let valid_name = /^[A-Za-z]+$/;
-        let valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        setNameValid(!(data.name.match(valid_name) && data.name !== "" ));
+        setEmailValid(!(data.email.match(valid_email) && data.email !== ""));
 
         if (
             data.name.match(valid_name) &&
@@ -81,13 +86,13 @@ export default function Message() {
                         subject: "",
                         message: ""
                     }
-    
+
                 }
             })
         }
 
     }
- 
+
     console.log(data);
 
 
@@ -107,50 +112,65 @@ export default function Message() {
 
                     <div className="name_Email_div">
 
-                        <div className='input_div'>
+                        <div className='input_div_and_invalid'>
 
-                            <input
-                                type="text"
-                                placeholder='Name'
-                                className='input_style'
-                                value={data.name}
-                                onChange={(evt) => {
-                                    dispatch({
-                                        type: "name",
-                                        payload: {
-                                            name: evt.target.value
-                                        }
-                                    })
-                                }}
-                            />
+                            <div className='input_div'>
 
-                            <span className='focus-border'></span>
+                                <input
+                                    type="text"
+                                    placeholder='Name'
+                                    className='input_style'
+                                    value={data.name}
+                                    onChange={(evt) => {
+                                        dispatch({
+                                            type: "name",
+                                            payload: {
+                                                name: evt.target.value
+                                            }
+                                        })
+                                    }}
+                                />
+
+                                <span className='focus-border'></span>
+
+                            </div>
+
+
+                            {/* {(!(data.name.match(valid_name)) && data.name !== "") && <p className='invalid_text'>Name is invalid.</p>} */}
+                            <p className={nameValid ? 'invalid_text' : 'valid_text'}>Name is invalid.</p>
+
 
                         </div>
 
-                        <div className='input_div'>
+                        <div className='input_div_and_invalid'>
+                            <div className='input_div'>
 
-                            <input
-                                type="text"
-                                placeholder='E-mail'
-                                className='input_style'
-                                value={data.email}
-                                onChange={(evt) => {
-                                    dispatch({
-                                        type: "email",
-                                        payload: {
-                                            email: evt.target.value
-                                        }
-                                    })
-                                }}
-                            />
+                                <input
+                                    type="text"
+                                    placeholder='E-mail'
+                                    className='input_style'
+                                    value={data.email}
+                                    onChange={(evt) => {
+                                        dispatch({
+                                            type: "email",
+                                            payload: {
+                                                email: evt.target.value
+                                            }
+                                        })
+                                    }}
+                                />
 
-                            <span className='focus-border'></span>
+                                <span className='focus-border'></span>
+
+                            </div>
+
+
+                            {/* {(!(data.email.match(valid_email)) && data.email !== "") ? <p className='invalid_text'>E-mail is invalid.</p> : null} */}
+                            <p className={emailValid ? 'invalid_text' : 'valid_text'}>E-mail is invalid.</p>
 
                         </div>
 
                     </div>
-
 
 
                     <div className='input_div'>
