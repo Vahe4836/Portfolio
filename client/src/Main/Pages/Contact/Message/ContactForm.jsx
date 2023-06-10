@@ -39,6 +39,9 @@ export default function Message() {
 
     const [nameValid, setNameValid] = useState(false);
     const [emailValid, setEmailValid] = useState(false);
+    const [subjectValid, setSubjectValid] = useState(false);
+    const [messageValid, setMessageValid] = useState(false);
+
 
     let valid_name = /^[A-Za-z]+$/;
     let valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -57,8 +60,11 @@ export default function Message() {
     async function SendMessage(evt) {
         evt.preventDefault();
 
-        setNameValid(!(data.name.match(valid_name) && data.name !== "" ));
+        setNameValid(!(data.name.match(valid_name) && data.name !== ""));
         setEmailValid(!(data.email.match(valid_email) && data.email !== ""));
+        setSubjectValid(data.subject === "");
+        setMessageValid(data.message === "");
+
 
         if (
             data.name.match(valid_name) &&
@@ -172,48 +178,58 @@ export default function Message() {
 
                     </div>
 
+                    <div className='input_div_and_invalid'>
+                        <div className='input_div'>
 
-                    <div className='input_div'>
+                            <input
+                                type="text"
+                                placeholder='Subject'
+                                className='input_style_subject'
+                                value={data.subject}
+                                onChange={(evt) => {
+                                    dispatch({
+                                        type: "subject",
+                                        payload: {
+                                            subject: evt.target.value
+                                        }
+                                    })
+                                }}
+                            />
 
-                        <input
-                            type="text"
-                            placeholder='Subject'
-                            className='input_style_subject'
-                            value={data.subject}
-                            onChange={(evt) => {
-                                dispatch({
-                                    type: "subject",
-                                    payload: {
-                                        subject: evt.target.value
-                                    }
-                                })
-                            }}
-                        />
+                            <span className='focus-border'></span>
 
-                        <span className='focus-border'></span>
+                        </div>
+
+                        <p className={subjectValid ? 'invalid_text' : 'valid_text'}><span className='invalid_valid_text'>Subject input is empty.</span></p>
 
                     </div>
 
-                    <div className='input_div'>
 
-                        <textarea
-                            name="message"
-                            cols="30"
-                            rows="10"
-                            placeholder='Message'
-                            className='textarea_style'
-                            value={data.message}
-                            onChange={(evt) => {
-                                dispatch({
-                                    type: "message",
-                                    payload: {
-                                        message: evt.target.value
-                                    }
-                                })
-                            }}
-                        ></textarea>
+                    <div className='input_div_and_invalid'>
+                        <div className='input_div'>
 
-                        <span className='focus-border'></span>
+                            <textarea
+                                name="message"
+                                cols="30"
+                                rows="10"
+                                placeholder='Message'
+                                className='textarea_style'
+                                value={data.message}
+                                onChange={(evt) => {
+                                    dispatch({
+                                        type: "message",
+                                        payload: {
+                                            message: evt.target.value
+                                        }
+                                    })
+                                }}
+                            ></textarea>
+
+                            <span className='focus-border'></span>
+
+                        </div>
+
+                        <p className={messageValid ? 'invalid_text' : 'valid_text'}>Message input is empty.</p>
 
                     </div>
 

@@ -5,6 +5,28 @@
     position: relative;
 }
 
+%valid_and_invalid_style{
+    .invalid_text {
+        color: red;
+        font-size: 12px;
+        margin: 0px;
+        font-weight: 500;
+        .invalid_valid_text{
+            margin-left: 4px;
+        }
+    }
+
+    .valid_text {
+        visibility: hidden;
+        font-size: 12px;
+        margin: 0px;
+        .invalid_valid_text{
+            margin-left: 4px;
+        }
+    }
+}
+
+
 
 // Style
 
@@ -82,15 +104,15 @@
                     color: red;
                     font-size: 12px;
                     margin: 0px;
-                    margin-left: 2px;
+                    margin-left: 4px;
                     font-weight: 500;
                 }
 
-                .valid_text{
+                .valid_text {
                     visibility: hidden;
                     font-size: 12px;
                     margin: 0px;
-                    margin-left: 2px;
+                    margin-left: 4px;
                 }
 
             }
@@ -100,87 +122,130 @@
 
         // Subject input style
 
+        .input_div_and_invalid {
+            .input_div {
+                @extend %input_div;
+                margin: 4px 0px 4px 0px;
 
-        .input_div {
-            @extend %input_div;
-            margin: 12px 0px 12px 0px;
+                .input_style_subject {
+                    width: 50vw;
+                    outline: none;
+                    background-color: rgb(29, 32, 32);
+                    color: rgb(172, 178, 179);
+                    border-top: 0;
+                    border-left: 0;
+                    border-right: 0;
+                    border-bottom: 1px solid #999999;
+                    height: 50px;
+                    padding: 0px 20px 0px 20px;
+                    font-size: 17px;
+                }
 
-            .input_style_subject {
-                width: 50vw;
-                outline: none;
-                background-color: rgb(29, 32, 32);
-                color: rgb(172, 178, 179);
-                border-top: 0;
-                border-left: 0;
-                border-right: 0;
-                border-bottom: 1px solid #999999;
-                height: 50px;
-                padding: 0px 20px 0px 20px;
-                font-size: 17px;
+                .input_style_subject~.focus-border {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: rgb(0, 213, 255);
+                    transition: 0.4s;
+                }
+
+                .input_style_subject:focus~.focus-border {
+                    width: 100%;
+                    height: 2px;
+                    transition: 0.4s;
+                }
+
             }
 
-            .input_style_subject~.focus-border {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background-color: rgb(0, 213, 255);
-                transition: 0.4s;
-            }
+            @extend %valid_and_invalid_style;
 
-            .input_style_subject:focus~.focus-border {
-                width: 100%;
-                height: 2px;
-                transition: 0.4s;
-            }
+            // .invalid_text {
+            //     color: red;
+            //     font-size: 12px;
+            //     margin: 0px;
+            //     // margin-left: 4px;
+            //     font-weight: 500;
+            //     .invalid_valid_text{
+            //         margin-left: 4px;
+            //     }
+            // }
+
+            // .valid_text {
+            //     visibility: hidden;
+            //     font-size: 12px;
+            //     margin: 0px;
+            //     // margin-left: 4px;
+            //     .invalid_valid_text{
+            //         margin-left: 4px;
+            //     }
+            // }
 
         }
 
         // Textarea input style
 
-        .input_div {
-            @extend %input_div;
-            margin: 12px 0px 12px 0px;
+        .input_div_and_invalid {
+            .input_div {
+                @extend %input_div;
+                margin: 4px 0px 4px 0px;
 
-            .textarea_style {
-                width: 50vw;
-                outline: none;
-                background-color: rgb(29, 32, 32);
-                border-top: none;
-                border-left: none;
-                border-right: none;
-                border-bottom: 1px solid #999999;
-                color: rgb(172, 178, 179);
-                resize: vertical;
-                min-height: 170px;
-                padding: 20px;
-                font-family: sans-serif;
-                font-size: 100%;
-                line-height: 1.15;
-                font-size: 17px;
-                overflow: auto;
-                outline: none;
-                -webkit-box-shadow: none;
-                -moz-box-shadow: none;
-                box-shadow: none;
+                .textarea_style {
+                    width: 50vw;
+                    outline: none;
+                    background-color: rgb(29, 32, 32);
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: 1px solid #999999;
+                    color: rgb(172, 178, 179);
+                    resize: vertical;
+                    min-height: 170px;
+                    padding: 20px;
+                    font-family: sans-serif;
+                    font-size: 100%;
+                    line-height: 1.15;
+                    font-size: 17px;
+                    overflow: auto;
+                    outline: none;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    box-shadow: none;
+
+                }
+
+                .textarea_style~.focus-border {
+                    position: absolute;
+                    bottom: 4px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: rgb(0, 213, 255);
+                    transition: 0.4s;
+                }
+
+                .textarea_style:focus~.focus-border {
+                    width: 100%;
+                    height: 2px;
+                    transition: 0.4s;
+                }
 
             }
 
-            .textarea_style~.focus-border {
-                position: absolute;
-                bottom: 4px;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background-color: rgb(0, 213, 255);
-                transition: 0.4s;
+            .invalid_text {
+                color: red;
+                font-size: 12px;
+                margin: 0px;
+                margin-left: 4px;
+                font-weight: 500;
             }
 
-            .textarea_style:focus~.focus-border {
-                width: 100%;
-                height: 2px;
-                transition: 0.4s;
+            .valid_text {
+                visibility: hidden;
+                font-size: 12px;
+                margin: 0px;
+                margin-left: 4px;
             }
 
         }
