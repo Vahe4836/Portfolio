@@ -72,8 +72,6 @@ export default function Message() {
             data.subject &&
             data.message
         ) {
-            console.log("All inputs valid, All inputs valid, All inputs valid");
-            console.log(data);
 
             await fetch("/db/contact/message", {
                 method: "post",
@@ -98,8 +96,6 @@ export default function Message() {
         }
 
     }
-
-    console.log(data);
 
 
     return (
@@ -141,9 +137,11 @@ export default function Message() {
 
                             </div>
 
-
-                            {/* {(!(data.name.match(valid_name)) && data.name !== "") && <p className='invalid_text'>Name is invalid.</p>} */}
-                            <p className={nameValid ? 'invalid_text' : 'valid_text'}>Name is invalid.</p>
+                            <p className={nameValid ? 'invalid_text' : 'valid_text'}>
+                                <span className='invalid_valid_text'>
+                                    Name is invalid.
+                                </span>
+                            </p>
 
 
                         </div>
@@ -170,9 +168,11 @@ export default function Message() {
 
                             </div>
 
-
-                            {/* {(!(data.email.match(valid_email)) && data.email !== "") ? <p className='invalid_text'>E-mail is invalid.</p> : null} */}
-                            <p className={emailValid ? 'invalid_text' : 'valid_text'}>E-mail is invalid.</p>
+                            <p className={emailValid ? 'invalid_text' : 'valid_text'}>
+                                <span className='invalid_valid_text'>
+                                    E-mail is invalid.
+                                </span>
+                            </p>
 
                         </div>
 
@@ -200,7 +200,11 @@ export default function Message() {
 
                         </div>
 
-                        <p className={subjectValid ? 'invalid_text' : 'valid_text'}><span className='invalid_valid_text'>Subject input is empty.</span></p>
+                        <p className={subjectValid ? 'invalid_text' : 'valid_text'}>
+                            <span className='invalid_valid_text'>
+                                Subject input is empty.
+                            </span>
+                        </p>
 
                     </div>
 
@@ -229,9 +233,14 @@ export default function Message() {
 
                         </div>
 
-                        <p className={messageValid ? 'invalid_text' : 'valid_text'}>Message input is empty.</p>
+                        <p className={messageValid ? 'invalid_text' : 'valid_text'}>
+                            <span className='invalid_valid_text'>
+                                Message input is empty.
+                            </span>
+                        </p>
 
                     </div>
+
 
                     <div className='send_button_div'>
 

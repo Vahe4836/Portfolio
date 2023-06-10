@@ -20,10 +20,21 @@
             .name_Email_div {
                 flex-direction: column;
 
-                .input_div {
-                    .input_style {
-                        width: 50vw;
+                .input_div_and_invalid {
+                    .input_div {
+                        .input_style {
+                            width: 50vw;
+                        }
                     }
+
+                    // .invalid_text {
+                    //     font-size: 10px;
+                    // }
+
+                    // .valid_text {
+                    //     font-size: 10px;
+                    // }
+
                 }
             }
         }
@@ -47,25 +58,54 @@
             .name_Email_div {
                 width: calc(70vw + 42px);
 
-                .input_div {
-                    .input_style {
-                        width: 70vw;
-                        font-size: 15px;
+                .input_div_and_invalid {
+                    .input_div {
+                        .input_style {
+                            width: 70vw;
+                            font-size: 15px;
+                        }
+                    }
+
+                    .invalid_text {
+                        font-size: 10px;
+                    }
+
+                    .valid_text {
+                        font-size: 10px;
                     }
                 }
             }
 
-            .input_div {
-                .input_style_subject {
-                    width: 70vw;
-                    font-size: 15px;
+            .input_div_and_invalid {
+                .input_div {
+                    .input_style_subject {
+                        width: 70vw;
+                        font-size: 15px;
+                    }
                 }
 
+                .invalid_text {
+                    font-size: 10px;
+                }
+
+                .valid_text {
+                    font-size: 10px;
+                }
             }
 
-            .input_div {
-                .textarea_style {
-                    width: 70vw;
+            .input_div_and_invalid {
+                .input_div {
+                    .textarea_style {
+                        width: 70vw;
+                    }
+                }
+
+                .invalid_text {
+                    font-size: 10px;
+                }
+
+                .valid_text {
+                    font-size: 10px;
                 }
             }
 
@@ -78,6 +118,7 @@
                     height: 55px;
                     padding: 0px;
                 }
+
                 .send_button:hover {
                     box-shadow: inset calc(70vw + 40px) 0 0 0 rgb(0, 214, 214);
                 }
@@ -104,27 +145,32 @@
             .name_Email_div {
                 width: calc(75vw + 42px);
 
+                .input_div_and_invalid {
+                    .input_div {
+                        .input_style {
+                            width: 75vw;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .input_div_and_invalid {
                 .input_div {
-                    .input_style {
+                    .input_style_subject {
                         width: 75vw;
                         font-size: 14px;
                     }
                 }
             }
 
-            .input_div {
-                .input_style_subject {
-                    width: 75vw;
-                    font-size: 14px;
-                }
-
-            }
-
-            .input_div {
-                .textarea_style {
-                    width: 75vw;
-                    min-height: 140px;
-                    font-size: 14px;
+            .input_div_and_invalid {
+                .input_div {
+                    .textarea_style {
+                        width: 75vw;
+                        min-height: 140px;
+                        font-size: 14px;
+                    }
                 }
             }
 
@@ -158,9 +204,11 @@
                 font-size: 12px;
             }
 
-            .input_div {
-                .textarea_style {
-                    font-size: 14px;
+            .input_div_and_invalid {
+                .input_div {
+                    .textarea_style {
+                        font-size: 14px;
+                    }
                 }
             }
 

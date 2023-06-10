@@ -7,10 +7,10 @@
 
 %valid_and_invalid_style{
     .invalid_text {
-        color: red;
+        color: rgb(240, 0, 0);
         font-size: 12px;
         margin: 0px;
-        font-weight: 500;
+        font-weight: 600;
         .invalid_valid_text{
             margin-left: 4px;
         }
@@ -25,7 +25,6 @@
         }
     }
 }
-
 
 
 // Style
@@ -56,7 +55,6 @@
         }
 
         // Name and email input style
-
 
         .name_Email_div {
             width: calc(50vw + 42px);
@@ -100,20 +98,7 @@
 
                 }
 
-                .invalid_text {
-                    color: red;
-                    font-size: 12px;
-                    margin: 0px;
-                    margin-left: 4px;
-                    font-weight: 500;
-                }
-
-                .valid_text {
-                    visibility: hidden;
-                    font-size: 12px;
-                    margin: 0px;
-                    margin-left: 4px;
-                }
+                @extend %valid_and_invalid_style;
 
             }
 
@@ -160,27 +145,6 @@
             }
 
             @extend %valid_and_invalid_style;
-
-            // .invalid_text {
-            //     color: red;
-            //     font-size: 12px;
-            //     margin: 0px;
-            //     // margin-left: 4px;
-            //     font-weight: 500;
-            //     .invalid_valid_text{
-            //         margin-left: 4px;
-            //     }
-            // }
-
-            // .valid_text {
-            //     visibility: hidden;
-            //     font-size: 12px;
-            //     margin: 0px;
-            //     // margin-left: 4px;
-            //     .invalid_valid_text{
-            //         margin-left: 4px;
-            //     }
-            // }
 
         }
 
@@ -233,20 +197,7 @@
 
             }
 
-            .invalid_text {
-                color: red;
-                font-size: 12px;
-                margin: 0px;
-                margin-left: 4px;
-                font-weight: 500;
-            }
-
-            .valid_text {
-                visibility: hidden;
-                font-size: 12px;
-                margin: 0px;
-                margin-left: 4px;
-            }
+            @extend %valid_and_invalid_style;
 
         }
 
@@ -261,6 +212,7 @@
                 width: calc(50vw + 40px);
                 height: 70px;
                 font-size: 25px;
+                margin: 12px 0px 12px 0px;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 border-radius: 8px;
                 border: 1px rgb(0, 214, 214) solid;
