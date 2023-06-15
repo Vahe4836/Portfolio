@@ -4,7 +4,7 @@
     height: 220px;
     position: absolute;
     border-radius: 50%;
-    background-color:aqua;
+    /* background-color:aqua; */
 }
 
 .circle-wrap .circle .mask {
@@ -16,18 +16,18 @@
     background-color: #ec0c0c;
 }
 
-/* .mask.full,
+.mask.full,
 .circle .fill {
     animation: fill ease-in-out 3s;
-    transform: rotate(10deg);
-} */
-
+    /* transform: rotate(110deg); */
+} 
+ 
 /* @keyframes fill {
     0% {
         transform: rotate(0deg);
     }
 
     100% {
-        transform: rotate(10deg);
+        transform: rotate(110deg);
     }
 } */

@@ -1,27 +1,29 @@
 import AnimationComp from "./little/Animation";
 import { keyframes, styled } from "styled-components";
-import '../Skills.scss';
+import './CircleAnimationEffect.css';
+// import '../Skills.scss';
 
 
 export default function CircleAnimationEffect({ percentage, backgroundColor }) {
 
-    const rotate = keyframes`
-      from {
-        transform: rotate(0deg);
-      }
+    // const rotate = keyframes`
+    //   from {
+    //     transform: rotate(0deg);
+    //   }
 
-      to {
-        transform: rotate(${percentage * 3.6}deg);
-      }
-    `;
+    //   to {
+    //     transform: rotate(110deg);
+    //   }
+    // `;
 
     console.log("percentage", percentage);
     console.log("backgroundColor", backgroundColor);
 
     // const AnimationComp = styled.div`
-    //         animation: ${rotate} 3s ease-in-out;
-    //         transform: rotate(${percentage * 3.6}deg);
-    //     `;
+    //     animation: ${rotate} 2s ease-in-out,
+    //     backgroundColor: ${backgroundColor},
+    //     transform: rotate(110deg),
+    // `;
 
     //     const Rotate = styled.div`
     //   display: inline-block;
@@ -30,35 +32,42 @@ export default function CircleAnimationEffect({ percentage, backgroundColor }) {
     //   font-size: 1.2rem;
     // `;
 
-    console.log(rotate);
+    // console.log((percentage / 2) * 3.6);
+
 
     return (
         <>
             <div className="circle-wrap">
                 <div className="circle">
+
                     <div className="mask full" style={{
-                        transform: `rotate(${percentage * 3.6}deg)`
+                        // backgroundColor: `${backgroundColor}`
+                        transform: `rotate(${(percentage / 2) * 3.6}deg)`
                     }}>
+                        {/* <AnimationComp
+                            percentage={percentage}
+                            backgroundColor={backgroundColor}
+                        /> */}
                         <div className="fill" style={{
                             background: `${backgroundColor}`,
-                            transform: `rotate(${percentage * 3.6}deg)`,
-                            // keyframes
-                            // `@keyframes fill {
-                            //     0% {
-                            //         transform: rotate(0deg);
-                            //     }
-
-                            //     100% {
-                            //         transform: rotate(${item.percentage * 3.6}deg);
-                            //     }
-                            // }`
+                            transform: `rotate(${(percentage / 2) * 3.6}deg)`
                         }}></div>
                     </div>
+
                     <div className="mask half">
-                        <div className="fill" style={{ background: `${backgroundColor}` }}></div>
+                        {/* <AnimationComp
+                            percentage={percentage}
+                            backgroundColor={backgroundColor}
+                        /> */}
+                        <div className="fill" style={{
+                            background: `${backgroundColor}`,
+                            transform: `rotate(${(percentage / 2) * 3.6}deg)`
+                        }}></div>
                     </div>
+
                 </div>
             </div>
+
         </>
     )
 }

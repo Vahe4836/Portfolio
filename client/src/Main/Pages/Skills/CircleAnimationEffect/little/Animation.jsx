@@ -1,8 +1,8 @@
-import "../../Skills.scss";
+import "../CircleAnimationEffect.css";
 
 
 
-export default function AnimationComp({backgroundColor, percentage}) {
+export default function AnimationComp({ backgroundColor, percentage }) {
 
     // const fill = keyframes`
     //         0% {
@@ -24,34 +24,26 @@ export default function AnimationComp({backgroundColor, percentage}) {
     // `;
 
     return (
-        <div className="circle-wrap">
-                <div className="circle">
+        // <div className="circle-wrap">
+        //     <div className="circle">
 
-                    <div className="mask full" style={{
-                        transform: `rotate(${percentage * 3.6}deg)`
-                    }}>
+        //         <div className="mask full" style={{
+        //             transform: `rotate(${percentage * 3.6}deg)`
+        //         }}>
 
-                        <div className="fill" style={{
-                            background: `${backgroundColor}`,
-                            transform: `rotate(${percentage * 3.6}deg)`
-                            // keyframes
-                            // `@keyframes fill {
-                            //     0% {
-                            //         transform: rotate(0deg);
-                            //     }
+                    <div className="fill" style={{
+                        background: `${backgroundColor}`,
+                        transform: `rotate(110deg)`
+                        // keyframes
+                    }}></div>
 
-                            //     100% {
-                            //         transform: rotate(${item.percentage * 3.6}deg);
-                            //     }
-                            // }`
-                        }}></div>
-                    </div>
+        //         </div>
 
-                    <div className="mask half">
-                        <div className="fill" style={{ background: `${backgroundColor}` }}></div>
-                    </div>
+        //         <div className="mask half">
+        //             <div className="fill" style={{ background: `${backgroundColor}` }}></div>
+        //         </div>
 
-                </div>
-            </div>
+        //     </div>
+        // </div>
     )
 }
