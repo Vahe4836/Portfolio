@@ -187,7 +187,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         } catch (err) {
             throw new Error(err);
         }
-        
+
     })
 
 
@@ -206,6 +206,4 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     });
 
 
-})().catch((err) => {
-    throw new Error(err);
-});
+})()

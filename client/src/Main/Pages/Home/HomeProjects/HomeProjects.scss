@@ -70,11 +70,13 @@
             text-decoration: none;
             cursor: pointer;
 
-            .home_project{
+            .home_project {
                 @extend %home_project_template;
-                .home_project_opacity{
+
+                .home_project_opacity {
                     @extend %home_project_opacity;
-                    .home_project_text{
+
+                    .home_project_text {
                         @extend %home_project_text;
                     }
                 }
