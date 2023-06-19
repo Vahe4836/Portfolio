@@ -9,6 +9,7 @@ import NotFound from "./NotFound/NotFound";
 import WebsiteEnd from "./WebsiteEnd/WebsiteEnd";
 import "./Main.scss";
 import "./MainMedia.scss";
+import Admin from "./Admin/Admin";
 
 
 export default function Main() {
@@ -30,6 +31,9 @@ export default function Main() {
                         } />
                         <Route path="/contact" element={
                             <Contact />
+                        } />
+                        <Route path="/admin" element={
+                            <Admin/>
                         } />
                         <Route path="*" element={
                             <NotFound />

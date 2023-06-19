@@ -175,6 +175,16 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         // res.send("OK");
     });
 
+    app.get("/db/contact/message", async (req, res) => {
+        const ContactMessagesCollection = Contactdb.collection('Messages');
+        try {
+            const ContactSocialCollectionInfo = await ContactMessagesCollection.find({}).toArray();
+            res.send(ContactSocialCollectionInfo);
+        } catch (err) {
+            throw new Error(err);
+        }
+    })
+
     // Footer data
 
     const Footerdb = client.db('Footer');
