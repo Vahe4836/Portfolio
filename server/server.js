@@ -1,7 +1,7 @@
 import express from "express";
 import path, { join } from "path";
 import fs, { writeFile } from "fs";
-import { MongoClient } from "mongodb";
+import { MongoClient, ObjectId } from "mongodb";
 
 // const app = express();
 
@@ -156,6 +156,9 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         }
     })
 
+
+
+
     ////////////////////////////////////////////////////////////////////////////////////
 
     app.post("/db/contact/message/import", async (req, res) => {
@@ -171,22 +174,43 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     app.post("/db/contact/message/export", async (req, res) => {
         let deletingItemID = req.body.id;
         const ContactMessagesCollection = Contactdb.collection('Messages');
-        // const filtredData = ContactMessagesCollection.filter((item) => item._id !== deletingItemID);
-        // const ContactSocialCollectionInfo = await ContactMessagesCollection.findById("6490770171744295aab2a5f2")
-        // console.log(ContactSocialCollectionInfo);
-        // console.log(ContactSocialCollectionInfo);
+        const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({"_id" : new ObjectId(`${deletingItemID}`)}).toArray();
+        // ContactMessagesCollection.remove({"_id" : new ObjectId(`${deletingItemID}`)}, 1);
+        // const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray()
+        // console.log(await ContactMessagesCollection.find({}).toArray());
+        console.log(ContactMessagesCollection);
+        // console.log(filtredData);
         res.send(deletingItemID);
     })
+
+    // app.delete('/db/contact/message/:id', (req, res) => {
+    //     const deletingItemID = req.body.id;
+    //     const ContactMessagesCollection = Contactdb.collection('Messages');
+    //     ContactMessagesCollection.remove({ _id: client.ObjectId(deletingItemID) }, (err, result) => {
+    //         if (err) return console.log(err)
+    //         console.log(req.body)
+    //         res.send("OKOKOKOK");
+    //     })
+    // })
+
 
     app.get("/db/contact/message/export", async (req, res) => {
         const ContactMessagesCollection = Contactdb.collection('Messages');
         try {
-            const ContactSocialCollectionInfo = await ContactMessagesCollection.find({}).toArray();
-            res.send(ContactSocialCollectionInfo);
+            const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
+            res.send(ContactMessagesCollectionInfo);
         } catch (err) {
             console.log(err);
         }
     })
+
+
+
+    /////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
     // Footer data
 
