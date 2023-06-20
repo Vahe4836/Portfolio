@@ -48,7 +48,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const HomeWorksCollectionInfo = await HomeWorksCollection.find({}).toArray();
             res.send(HomeWorksCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
         // const HomeWorksCollectionInfo = await HomeWorksCollection.find({}).toArray();
 
@@ -60,7 +60,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const HomeProjectsCollectionInfo = await HomeProjectsCollection.find({}).toArray();
             res.send(HomeProjectsCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
 
     })
@@ -73,7 +73,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const HomeSkillsCollectionInfo = await HomeSkillsCollection.find({}).toArray();
             res.send(HomeSkillsCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
 
     })
@@ -89,7 +89,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const ProjectsCollectionInfo = await ProjectsCollection.find({}).toArray();
             res.send(ProjectsCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
 
     });
@@ -105,7 +105,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const SkillsFrontEndCollectionInfo = await SkillsFrontEndCollection.find({}).toArray();
             res.send(SkillsFrontEndCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
 
     });
@@ -116,7 +116,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const SkillsBackEndCollectionInfo = await SkillsBackEndCollection.find({}).toArray();
             res.send(SkillsBackEndCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
     })
 
@@ -126,7 +126,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const SkillsDesignCollectionInfo = await SkillsDesignCollection.find({}).toArray();
             res.send(SkillsDesignCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
 
     })
@@ -137,7 +137,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const SkillsOtherCollectionInfo = await SkillsOtherCollection.find({}).toArray();
             res.send(SkillsOtherCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
 
     })
@@ -152,36 +152,39 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const ContactSocialCollectionInfo = await ContactSocialCollection.find({}).toArray();
             res.send(ContactSocialCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
     })
 
+    ////////////////////////////////////////////////////////////////////////////////////
 
-    app.post("/db/contact/message", async (req, res) => {
+    app.post("/db/contact/message/import", async (req, res) => {
         const ContactMessagesCollection = Contactdb.collection('Messages');
         try {
             await ContactMessagesCollection.insertOne(req.body);
             res.send("OK");
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
-        // fs.writeFile(join(currentDir, '/contact/messages/messages.json'), JSON.stringify(req.body), (err) => {
-        //     if (err) {
-        //         throw new Error("Error message section");
-        //     }
-        //     console.log("Message is saved!");
-        // })
-        // console.log(req.body);
-        // res.send("OK");
     });
 
-    app.get("/db/contact/message", async (req, res) => {
+    app.post("/db/contact/message/export", async (req, res) => {
+        let deletingItemID = req.body.id;
+        const ContactMessagesCollection = Contactdb.collection('Messages');
+        // const filtredData = ContactMessagesCollection.filter((item) => item._id !== deletingItemID);
+        // const ContactSocialCollectionInfo = await ContactMessagesCollection.findById("6490770171744295aab2a5f2")
+        // console.log(ContactSocialCollectionInfo);
+        // console.log(ContactSocialCollectionInfo);
+        res.send(deletingItemID);
+    })
+
+    app.get("/db/contact/message/export", async (req, res) => {
         const ContactMessagesCollection = Contactdb.collection('Messages');
         try {
             const ContactSocialCollectionInfo = await ContactMessagesCollection.find({}).toArray();
             res.send(ContactSocialCollectionInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
     })
 
@@ -195,7 +198,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             const collectionFooterInfo = await collectionFooter.find({}).toArray();
             res.send(collectionFooterInfo);
         } catch (err) {
-            throw new Error(err);
+            console.log(err);
         }
 
     })

@@ -43,7 +43,7 @@ export default function Message() {
     const [messageValid, setMessageValid] = useState(false);
 
 
-    let valid_name = /^[A-Za-z]+$/;
+    // let valid_name = /^[A-Za-z]+$/;
     let valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     const initialData = {
@@ -60,20 +60,20 @@ export default function Message() {
     async function SendMessage(evt) {
         evt.preventDefault();
 
-        setNameValid(!(data.name.match(valid_name) && data.name !== ""));
+        setNameValid(data.name === "");
         setEmailValid(!(data.email.match(valid_email) && data.email !== ""));
         setSubjectValid(data.subject === "");
         setMessageValid(data.message === "");
 
 
         if (
-            data.name.match(valid_name) &&
+            data.name &&
             data.email.match(valid_email) &&
             data.subject &&
             data.message
         ) {
 
-            await fetch("/db/contact/message", {
+            await fetch("/db/contact/message/import", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"

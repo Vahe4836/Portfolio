@@ -2,7 +2,7 @@ import "./MessageItem.scss";
 
 
 
-export default function MessageItem({ messageData }) {
+export default function MessageItem({ messageData, onDelete }) {
 
 
 
@@ -10,7 +10,7 @@ export default function MessageItem({ messageData }) {
         <>
             {messageData.map((item) => {
                 return (
-                    <div className="message_item">
+                    <div className="message_item" key={item._id}>
                         <div className="message_item_elements">
                             <div className="div_info">
                                 <p>Name: {item.name}</p>
@@ -20,7 +20,10 @@ export default function MessageItem({ messageData }) {
                             </div>
                             <div className="buttons_div">
                                 <button className="button">Favorite</button>
-                                <button className="button">Delete</button>
+                                <button className="button" onClick={(evt) => {
+                                    evt.preventDefault();
+                                    onDelete(messageData, item._id);
+                                }}>Delete</button>
                             </div>
                         </div>
                     </div>
