@@ -151,7 +151,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         try {
             const ContactSocialCollectionInfo = await ContactSocialCollection.find({}).toArray();
             res.send(ContactSocialCollectionInfo);
-        } catch (err) {
+        } catch (err) { 
             console.log(err);
         }
     })
@@ -163,22 +163,25 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
     app.post("/db/contact/message/import", async (req, res) => {
         const ContactMessagesCollection = Contactdb.collection('Messages');
+        console.log(req.body);
         try {
             await ContactMessagesCollection.insertOne(req.body);
             res.send("OK");
         } catch (err) {
             console.log(err);
-        }
+        } 
     });
 
-    app.post("/db/contact/message/export", async (req, res) => {
+    app.post("/db/contact/message/export", async (req, res) => { 
         let deletingItemID = req.body.id;
         const ContactMessagesCollection = Contactdb.collection('Messages');
         const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({"_id" : new ObjectId(`${deletingItemID}`)}).toArray();
+        await ContactMessagesCollection.deleteOne({"_id" : new ObjectId(`${deletingItemID}`)});
         // ContactMessagesCollection.remove({"_id" : new ObjectId(`${deletingItemID}`)}, 1);
-        // const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray()
+        // const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
         // console.log(await ContactMessagesCollection.find({}).toArray());
-        console.log(ContactMessagesCollection);
+        console.log("22222222222222222222222222222222222222", ContactMessagesCollectionInfo);
+        console.log("3333333333333333333333333333333333333", await ContactMessagesCollection.find({}).toArray());
         // console.log(filtredData);
         res.send(deletingItemID);
     })
