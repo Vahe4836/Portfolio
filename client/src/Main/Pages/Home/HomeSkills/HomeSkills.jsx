@@ -1,9 +1,8 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import js_icon from '../../../../images/home_skills/home_js_icon.png';
 import "./HomeSkills.scss";
 import "./HomeSkillsMedia.scss";
-import { useEffect, useState } from "react";
-
 
 
 // let data_home_skills = [

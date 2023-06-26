@@ -151,7 +151,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         try {
             const ContactSocialCollectionInfo = await ContactSocialCollection.find({}).toArray();
             res.send(ContactSocialCollectionInfo);
-        } catch (err) { 
+        } catch (err) {
             console.log(err);
         }
     })
@@ -169,32 +169,23 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             res.send("OK");
         } catch (err) {
             console.log(err);
-        } 
+        }
     });
 
-    app.post("/db/contact/message/export", async (req, res) => { 
+
+    app.post("/db/contact/message/export", async (req, res) => {
         let deletingItemID = req.body.id;
         const ContactMessagesCollection = Contactdb.collection('Messages');
-        const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({"_id" : new ObjectId(`${deletingItemID}`)}).toArray();
-        await ContactMessagesCollection.deleteOne({"_id" : new ObjectId(`${deletingItemID}`)});
+        const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
+        await ContactMessagesCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
         // ContactMessagesCollection.remove({"_id" : new ObjectId(`${deletingItemID}`)}, 1);
         // const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
         // console.log(await ContactMessagesCollection.find({}).toArray());
-        console.log("22222222222222222222222222222222222222", ContactMessagesCollectionInfo);
-        console.log("3333333333333333333333333333333333333", await ContactMessagesCollection.find({}).toArray());
+        // console.log("22222222222222222222222222222222222222", ContactMessagesCollectionInfo);
+        // console.log("3333333333333333333333333333333333333", await ContactMessagesCollection.find({}).toArray());
         // console.log(filtredData);
-        res.send(deletingItemID);
+        res.send("Item is deleted.");
     })
-
-    // app.delete('/db/contact/message/:id', (req, res) => {
-    //     const deletingItemID = req.body.id;
-    //     const ContactMessagesCollection = Contactdb.collection('Messages');
-    //     ContactMessagesCollection.remove({ _id: client.ObjectId(deletingItemID) }, (err, result) => {
-    //         if (err) return console.log(err)
-    //         console.log(req.body)
-    //         res.send("OKOKOKOK");
-    //     })
-    // })
 
 
     app.get("/db/contact/message/export", async (req, res) => {
@@ -213,8 +204,6 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
 
 
-
-
     // Footer data
 
     const Footerdb = client.db('Footer');
@@ -230,8 +219,23 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
     })
 
+    // Admin data
+ 
+    const Logindb = client.db('Login');
 
-    ///////////
+    app.get("/db/admin/data", async (req,res) => {
+        const collectionLogin = Logindb.collection('Login');
+        try {
+            const collectionLoginInfo = await collectionLogin.find({}).toArray();
+            console.log(collectionLoginInfo);
+            res.send(collectionLoginInfo); 
+        } catch (err) {
+            console.log(err);
+        }
+    })
+
+
+    //////////////////
 
     app.get('*', function (request, response) {
         const filePath = path.resolve("../client/build/index.html")

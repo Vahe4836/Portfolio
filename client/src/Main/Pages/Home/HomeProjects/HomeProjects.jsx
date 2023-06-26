@@ -5,7 +5,6 @@ import "./HomeProjectsMedia.scss";
 
 
 
-
 export default function HomeProjects() {
 
     const [homeProjects, setHomeProjects] = useState([]);
@@ -28,12 +27,15 @@ export default function HomeProjects() {
 
                     {homeProjects.map((item) => {
                         return (
-                            <div key={item.id} className="home_project" style={{
-                                background: `url(${item.backgroundImage})`,
-                                backgroundSize: "cover",
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center"
-                            }}>
+                            <div
+                                key={item.id}
+                                className="home_project"
+                                style={{
+                                    background: `url(${item.backgroundImage})`,
+                                    backgroundSize: "cover",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center"
+                                }}>
                                 <div className="home_project_opacity">
                                     <p className="home_project_text">{item.text}</p>
                                 </div>

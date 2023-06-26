@@ -9,6 +9,7 @@
     margin: 16px;
     border-radius: 50%;
     font-size: 22px;
+    transition: all 0.25s linear;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -110,20 +111,13 @@
 
             }
 
-            // @keyframes html {
-            //     0%{
-            //         background: conic-gradient(rgb(230, 145, 67) 0deg, rgba(255, 255, 255, 0) 0deg);
-            //         transition: all 2s linear;
-            //     }
-            //     50%{
-            //         background: conic-gradient(rgb(230, 145, 67) 120deg, rgba(255, 255, 255, 0) 0deg);
-            //         transition: all 2s linear;
-            //     }
-            //     100%{
-            //         background: conic-gradient(rgb(230, 145, 67) 340deg, rgba(255, 255, 255, 0) 0deg);
-            //         transition: all 2s linear;
-            //     }
-            // }
+
+            .home_skills:hover {
+                scale: 1.05;
+                transition: all 0.25s linear;
+                box-shadow: 0 0 15px #79a2db;
+            }
+
 
             .home_skill_percentage_animation {
 

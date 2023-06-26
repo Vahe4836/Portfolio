@@ -7,9 +7,9 @@ import Projects from "./Pages/Projects/Projects";
 import Skills from "./Pages/Skills/Skills";
 import NotFound from "./NotFound/NotFound";
 import WebsiteEnd from "./WebsiteEnd/WebsiteEnd";
+import Admin from "./Admin/Admin";
 import "./Main.scss";
 import "./MainMedia.scss";
-import Admin from "./Admin/Admin";
 
 
 export default function Main() {
@@ -33,11 +33,11 @@ export default function Main() {
                             <Contact />
                         } />
                         <Route path="/admin" element={
-                            <Admin/>
+                            <Admin />
                         } />
                         <Route path="*" element={
                             <NotFound />
-                        }/>
+                        } />
                     </Routes>
                     <Footer />
                     <WebsiteEnd />

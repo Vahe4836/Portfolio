@@ -8,6 +8,7 @@
     margin: 14px;
     border: 2px #777777 solid;
     font-size: 22px;
+    transition: all 0.15s linear;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     // background-size: cover;
     // background-repeat: no-repeat;
@@ -80,6 +81,12 @@
                         @extend %home_project_text;
                     }
                 }
+            }
+
+            .home_project:hover {
+                scale: 1.05;
+                transition: all 0.15s linear;
+                box-shadow: 0 0 10px #79a2db;
             }
 
         }
