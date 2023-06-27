@@ -44,6 +44,7 @@ export default function Skills() {
                     <div className='skills_div'>
                         {frontEndData.map((item) => {
                             return (
+                                
                                 <div
                                     className="skill_animation" style={{
                                         background: `conic-gradient(${item.backgroundColor} ${item.percentage * 3.6}deg, rgba(255, 255, 255, 0) 0deg)`

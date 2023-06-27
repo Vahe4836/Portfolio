@@ -9,7 +9,7 @@ import LoginComp from "./Login/LoginComp";
 export default function Admin() {
 
     const [messageData, setMessageData] = useState([]);
-    const [regBool, setRegBool] = useState(false);
+    // const [regBool, setRegBool] = useState(false);
 
 
     // const [msgDataBool, setMsgDataBool] = useState(true);
@@ -50,43 +50,38 @@ export default function Admin() {
     }, []);
 
 
+
     return (
         <article className="message_article">
 
 
-            {regBool ?
-                <>
-                    {
-                        <>
-                            <h1 className="message_title">Messages</h1>
-                            <div className="messages_div">
-                                !(messageData.length === 0) ?
-                                <MessageItem
-                                    messageData={messageData}
-                                    onDelete={onDelete}
-                                />
-                            </div>
+            {
+                !(messageData.length === 0) ?
 
-                            : <MessageEmptyComp />
-                        </>
-                    }
-                </>
-                :
-                <LoginComp
-                    regBool={regBool}
-                    setRegBool={setRegBool}
-                />
+                    <>
+                        <h1 className="message_title">Messages</h1>
+                        <div className="messages_div">
+
+                            <MessageItem
+                                messageData={messageData}
+                                onDelete={onDelete}
+                            />
+
+                        </div>
+                    </>
+
+                    : <MessageEmptyComp />
             }
 
-            {/* {!(messageData.length === 0) ?
-                    <MessageItem
-                        messageData={messageData}
-                        onDelete={onDelete}
-                    />
-                    : <MessageEmptyComp />
-                } */}
 
-            {/* </div> */}
+
+
+            {/* // :
+            // <LoginComp
+            //     regBool={regBool}
+            //     setRegBool={setRegBool}
+            // /> */}
+
         </article>
     )
 }

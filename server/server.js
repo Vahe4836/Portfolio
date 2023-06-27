@@ -1,7 +1,9 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import path, { join } from "path";
 import fs, { writeFile } from "fs";
 import { MongoClient, ObjectId } from "mongodb";
+
+// require('dotenv').config();
 
 // const app = express();
 
@@ -21,6 +23,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     app.use(express.static("../client/build"));
 
     app.use(express.json());
+    app.use(urlencoded({extended: true}));
 
     const cleanup = (event) => {
         client.close();
@@ -246,7 +249,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     // Listen port
 
     app.listen(process.env.APP_PORT, () => {
-        console.log(`Server started in 5000 port`);
+        console.log(`Server started in ${process.env.APP_PORT} port`);
     });
 
 

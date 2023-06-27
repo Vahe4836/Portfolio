@@ -9,10 +9,12 @@
     margin: 16px;
     border-radius: 50%;
     font-size: 22px;
+    transition: all 0.25s linear;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
+    cursor: pointer;
 }
 
 %skill_percentage_animation {
@@ -63,7 +65,10 @@
             padding: 20px 0px 20px 0px;
             margin: 0;
             font-size: 28px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', Times, serif;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+                'Lucida Grande', 'Lucida Sans',
+                Arial, sans-serif, 'Times New Roman',
+                Times, serif;
             letter-spacing: 2px;
             text-align: center;
             color: rgb(230, 230, 230);
@@ -82,6 +87,7 @@
                 flex-wrap: wrap;
                 width: 72vw;
                 padding: 20px 0px 20px 0px;
+
 
                 .skill_animation {
                     @extend %skills_template;
@@ -152,6 +158,13 @@
                         }
                     }
                 }
+
+                .skill_animation:hover {
+                    scale: 1.05;
+                    transition: all 0.25s linear;
+                    box-shadow: 0 0 15px #79a2db;
+                }
+
             }
         }
 

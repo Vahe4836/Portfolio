@@ -1,38 +1,7 @@
-import { useReducer, useState } from 'react';
+import { useState } from 'react';
 import './ContactForm.scss';
 import './ContactFormMedia.scss';
 
-
-function reducer(state, action) {
-    if (action.type === "name") {
-        return {
-            ...state,
-            name: action.payload.name
-        }
-    }
-    else if (action.type === "email") {
-        return {
-            ...state,
-            email: action.payload.email
-        }
-    }
-    else if (action.type === "subject") {
-        return {
-            ...state,
-            subject: action.payload.subject
-        }
-    }
-    else if (action.type === "message") {
-        return {
-            ...state,
-            message: action.payload.message
-        }
-    }
-    else if (action.type === "empty_info") {
-        return action.payload.empty
-    }
-    return state;
-}
 
 
 export default function Message() {
@@ -42,35 +11,41 @@ export default function Message() {
     const [subjectValid, setSubjectValid] = useState(false);
     const [messageValid, setMessageValid] = useState(false);
 
+    const [nameValue, setNameValue] = useState("");
+    const [emailValue, setEmailValue] = useState("");
+    const [subjectValue, setSubjectValue] = useState("");
+    const [messageValue, setMessageValue] = useState("");
+
 
     // let valid_name = /^[A-Za-z]+$/;
-    let valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const valid_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    const initialData = {
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
+
+    const handleChange = (setState) => (event) => {
+        setState(event.target.value)
     }
-
-
-    const [data, dispatch] = useReducer(reducer, initialData);
 
 
     async function SendMessage(evt) {
         evt.preventDefault();
 
-        setNameValid(data.name === "");
-        setEmailValid(!(data.email.match(valid_email) && data.email !== ""));
-        setSubjectValid(data.subject === "");
-        setMessageValid(data.message === "");
+        setNameValid(nameValue === "");
+        setEmailValid(!(emailValue.match(valid_email) && emailValue !== ""));
+        setSubjectValid(subjectValue === "");
+        setMessageValid(messageValue === "");
 
+        const data = {
+            name: nameValue,
+            email: emailValue,
+            subject: subjectValue,
+            message: messageValue
+        }
 
         if (
-            data.name &&
-            data.email.match(valid_email) &&
-            data.subject &&
-            data.message
+            nameValue &&
+            emailValue.match(valid_email) &&
+            subjectValue &&
+            messageValue
         ) {
 
             await fetch("/db/contact/message/import", {
@@ -81,21 +56,15 @@ export default function Message() {
                 body: JSON.stringify(data)
             })
 
-            dispatch({
-                type: "empty_info",
-                payload: {
-                    empty: {
-                        name: "",
-                        email: "",
-                        subject: "",
-                        message: ""
-                    }
+            setNameValue("");
+            setEmailValue("");
+            setSubjectValue("");
+            setMessageValue("");
 
-                }
-            })
         }
 
     }
+
 
 
     return (
@@ -122,15 +91,8 @@ export default function Message() {
                                     type="text"
                                     placeholder='Name'
                                     className='input_style'
-                                    value={data.name}
-                                    onChange={(evt) => {
-                                        dispatch({
-                                            type: "name",
-                                            payload: {
-                                                name: evt.target.value
-                                            }
-                                        })
-                                    }}
+                                    value={nameValue}
+                                    onChange={handleChange(setNameValue)}
                                 />
 
                                 <span className='focus-border'></span>
@@ -153,15 +115,8 @@ export default function Message() {
                                     type="text"
                                     placeholder='E-mail'
                                     className='input_style'
-                                    value={data.email}
-                                    onChange={(evt) => {
-                                        dispatch({
-                                            type: "email",
-                                            payload: {
-                                                email: evt.target.value
-                                            }
-                                        })
-                                    }}
+                                    value={emailValue}
+                                    onChange={handleChange(setEmailValue)}
                                 />
 
                                 <span className='focus-border'></span>
@@ -185,15 +140,8 @@ export default function Message() {
                                 type="text"
                                 placeholder='Subject'
                                 className='input_style_subject'
-                                value={data.subject}
-                                onChange={(evt) => {
-                                    dispatch({
-                                        type: "subject",
-                                        payload: {
-                                            subject: evt.target.value
-                                        }
-                                    })
-                                }}
+                                value={subjectValue}
+                                onChange={handleChange(setSubjectValue)}
                             />
 
                             <span className='focus-border'></span>
@@ -218,15 +166,8 @@ export default function Message() {
                                 rows="10"
                                 placeholder='Message'
                                 className='textarea_style'
-                                value={data.message}
-                                onChange={(evt) => {
-                                    dispatch({
-                                        type: "message",
-                                        payload: {
-                                            message: evt.target.value
-                                        }
-                                    })
-                                }}
+                                value={messageValue}
+                                onChange={handleChange(setMessageValue)}
                             ></textarea>
 
                             <span className='focus-border'></span>
