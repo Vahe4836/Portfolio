@@ -3,7 +3,7 @@ import './LoginComp.scss';
 
 
 
-export default function LoginComp() {
+export default function Login() {
 
 
     const [userData, setUserData] = useState("");
@@ -49,9 +49,9 @@ export default function LoginComp() {
 
             <h3 className="login_title">Login</h3>
             <form action='/login' method='POST'>
-                <div className='login_elements'>
+                {/* <div className='login_elements'> */}
 
-                    <div className='input_div'>
+                    {/* <div className='input_div'> */}
                         <label className='label'> Username </label>
                         <input
                             type="text"
@@ -62,9 +62,9 @@ export default function LoginComp() {
                             onChange={handleChange(setUserValue)}
                         />
                         <span className='focus-border'></span>
-                    </div>
+                    {/* </div> */}
 
-                    <div className='input_div'>
+                    {/* <div className='input_div'> */}
                         <label className='label'> Password </label>
                         <input
                             type="password"
@@ -75,15 +75,16 @@ export default function LoginComp() {
                             onChange={handleChange(setPasswordValue)}
                         />
                         <span className='focus-border'></span>
-                    </div>
+                    {/* </div> */}
 
                     <div className='button_div'>
                         <button
+                            type='submit'
                             className='button'
                             onClick={checkLogin}
                         >Login</button>
                     </div>
-                </div>
+                {/* </div> */}
 
             </form>
 

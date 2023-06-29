@@ -8,6 +8,7 @@ import Skills from "./Pages/Skills/Skills";
 import NotFound from "./NotFound/NotFound";
 import WebsiteEnd from "./WebsiteEnd/WebsiteEnd";
 import Admin from "./Admin/Admin";
+import Login from "./Login/LoginComp";
 import "./Main.scss";
 import "./MainMedia.scss";
 
@@ -31,6 +32,9 @@ export default function Main() {
                         } />
                         <Route path="/contact" element={
                             <Contact />
+                        } />
+                        <Route path="/login" element={
+                            <Login />
                         } />
                         <Route path="/admin" element={
                             <Admin />

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import MessageItem from "./MessageItem/MessageItem";
 import MessageEmptyComp from "./MessageEmptyComp/MessageEmptyComp";
 import "./Admin.scss";
-import LoginComp from "./Login/LoginComp";
+// import LoginComp from "./Login/LoginComp";
 
 
 

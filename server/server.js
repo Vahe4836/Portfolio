@@ -2,6 +2,8 @@ import express, { urlencoded } from "express";
 import path, { join } from "path";
 import fs, { writeFile } from "fs";
 import { MongoClient, ObjectId } from "mongodb";
+import session from "express-session";
+import bcrypt from "bcrypt";
 
 // require('dotenv').config();
 
@@ -23,7 +25,13 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     app.use(express.static("../client/build"));
 
     app.use(express.json());
-    app.use(urlencoded({extended: true}));
+    app.use(urlencoded({ extended: true }));
+
+    app.use(session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false
+    }))
 
     const cleanup = (event) => {
         client.close();
@@ -222,16 +230,32 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
     })
 
-    // Admin data
- 
+    // Login data
+
     const Logindb = client.db('Login');
 
-    app.get("/db/admin/data", async (req,res) => {
+    app.post("/login", async (req, res) => {
+        // const password = "webdevelopment089";
+        const collectionLogin = Logindb.collection('Login');
+        const collectionLoginInfo = await collectionLogin.find({}).toArray();
+
+        // console.log(collectionLoginInfo);
+        console.log(req.body);
+        res.send("Login Page");
+
+        // res.redirect("/admin");
+    })
+
+    // Admin data
+
+    // const Logindb = client.db('Login');
+
+    app.get("/db/admin/data", async (req, res) => {
         const collectionLogin = Logindb.collection('Login');
         try {
             const collectionLoginInfo = await collectionLogin.find({}).toArray();
-            console.log(collectionLoginInfo);
-            res.send(collectionLoginInfo); 
+            // console.log(collectionLoginInfo);
+            res.send(collectionLoginInfo);
         } catch (err) {
             console.log(err);
         }
