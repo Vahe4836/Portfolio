@@ -1,6 +1,9 @@
 .message_empty_div{
     height: 80vh;
+    margin: 0;
+    padding: 30px;
     .message_empty {
+        text-align: center;
         font-size: 30px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: white;

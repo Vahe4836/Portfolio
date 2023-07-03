@@ -4,6 +4,9 @@ import fs, { writeFile } from "fs";
 import { MongoClient, ObjectId } from "mongodb";
 import session from "express-session";
 import bcrypt from "bcrypt";
+import passport from "passport";
+import passportLocal from "passport-local";
+// import path from "path";
 
 // require('dotenv').config();
 
@@ -32,6 +35,41 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         resave: false,
         saveUninitialized: false
     }))
+
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+    const Logindb = client.db('Login');
+
+    passport.use(new passportLocal.Strategy(
+        {},
+        async (username, password, done) => {
+            const collectionLogin = Logindb.collection('Login');
+            const collectionLoginInfo = await collectionLogin.find({}).toArray();
+            console.log(collectionLoginInfo[0].username === username);
+            const user = collectionLoginInfo[0].username;
+
+            if (user === undefined) {
+
+                return done(null, null, { message: "Incorrect username" });
+            }
+
+            if (await bcrypt.compare(password, user.password)) {
+                return done(null, user);
+            }
+
+            done(null, null, { message: "Incorrect password" });
+
+        }));
+
+    passport.serializeUser((user, done) => {
+        done(null, user._id);
+    })
+
+    passport.deserializeUser((id, done) => {
+        done(null,  user._id);
+        // MongoDB query for _id
+    })
 
     const cleanup = (event) => {
         client.close();
@@ -232,23 +270,73 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
     // Login data
 
-    const Logindb = client.db('Login');
+    // const Logindb = client.db('Login');
+    // fdgfsjnvlkncd3242lj4nwekj
+
+    const bool = true;
+
 
     app.post("/login", async (req, res) => {
         // const password = "webdevelopment089";
-        const collectionLogin = Logindb.collection('Login');
-        const collectionLoginInfo = await collectionLogin.find({}).toArray();
 
-        // console.log(collectionLoginInfo);
-        console.log(req.body);
-        res.send("Login Page");
+        try {
+            const collectionLogin = Logindb.collection('Login');
+            const collectionLoginInfo = await collectionLogin.find({}).toArray();
+
+            // console.log(collectionLoginInfo);
+
+            // console.log(req.body.password);
+            // console.log(collectionLoginInfo[0].password);
+            // console.log(await bcrypt.compare(req.body.password,collectionLoginInfo[0].password));
+
+            if (await bcrypt.compare(req.body.password, collectionLoginInfo[0].password)) {
+                res.redirect("/admin");
+            } else {
+                res.redirect("/")
+
+                // res.send("Wrong Password");
+            }
+
+            // console.log(collectionLoginInfo);
+            // const hashedPWD = await bcrypt.hash(password, 10);
+            // console.log(hashedPWD);
+            // console.log(req.body);
+            // res.redirect("/admin");
+            // res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
+        } catch (err) {
+            console.log(err);
+        }
+
 
         // res.redirect("/admin");
     })
 
+    // app.get("/login/data", async (req, res) => {
+
+    //     try {
+    //         res.send({
+    //             bool: bool
+    //         });
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // })
+
     // Admin data
 
     // const Logindb = client.db('Login');
+
+    // app.get("/admin", async (req, res) => {
+    //     const collectionLogin = Logindb.collection('Login');
+    //     try {
+    //         const collectionLoginInfo = await collectionLogin.find({}).toArray();
+    //         // console.log(collectionLoginInfo);
+    //         res.send(collectionLoginInfo);
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // })
+
 
     app.get("/db/admin/data", async (req, res) => {
         const collectionLogin = Logindb.collection('Login');
