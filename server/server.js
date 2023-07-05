@@ -1,5 +1,5 @@
 import express, { urlencoded } from "express";
-import path, { join } from "path";
+import path, { join, dirname } from "path";
 import fs, { writeFile } from "fs";
 import { MongoClient, ObjectId } from "mongodb";
 import session from "express-session";
@@ -216,6 +216,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
     ////////////////////////////////////////////////////////////////////////////////////
 
+
     app.post("/db/contact/message/import", async (req, res) => {
         const ContactMessagesCollection = Contactdb.collection('Messages');
         console.log(req.body);
@@ -280,16 +281,12 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     // const Logindb = client.db('Login');
     // fdgfsjnvlkncd3242lj4nwekj
 
-    // const bool = true;
-
 
     app.post("/login", passport.authenticate("local", {
         successRedirect: "/admin",
         failureRedirect: "/login"
     }));
 
-
-    // const password = "webdevelopment089";
 
     // try {
     //     const collectionLogin = Logindb.collection('Login');
@@ -333,24 +330,46 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     // const Logindb = client.db('Login');
 
 
+    app.get("/admin/data", (req, res) => {
+
+        let boolObj = {
+            isAdmin: false
+        }
+        
+        // if (req.isAuthenticated() === true) {
+        //     // boolObj = {
+        //     //     isAdmin: true
+        //     // }
+         
+        //     return res.redirect("/login");
+        //     // return res.send(boolObj);
+        // }
+
+       res.send(boolObj);
+
+    })
+
 
     app.get("/admin", (req, res) => {
 
-        const boolObj = {
+        let boolObj = {
             isAdmin: true
         }
 
         if (req.isAuthenticated() === false) {
-            boolObj = {
-                isAdmin: false 
-            }
+            // boolObj = {
+            //     isAdmin: false
+            // }
+            // res.send(boolObj);
+            // console.log("ewljefhdbwrje.sdnf",req.originalUrl === "/admin");
             return res.redirect("/login");
+            // res.send(boolObj)
         }
 
-        res.send(boolObj);
+        res.send(boolObj)
 
-        //    res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
-        //    return res.redirect("/admin");
+    //     //    res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
+    //     //    return res.redirect("/admin");
 
     })
 

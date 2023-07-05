@@ -6,22 +6,22 @@ import './LoginComp.scss';
 
 export default function Login() {
 
-    const [loginData, setLoginData] = useState("");
-    const [isAdmin, setAdminData] = useState(false);
+    // const [loginData, setLoginData] = useState("");
+    const [isAdmin, setAdminData] = useState();
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        fetch("/login/data")
-            .then((stream) => stream.json())
-            .then((data) => {
-                console.log(data);
-                setLoginData(data);
-            })
-    }, [])
+    // useEffect(() => {
+    //     fetch("/login/data")
+    //         .then((stream) => stream.json())
+    //         .then((data) => {
+    //             console.log(data);
+    //             setLoginData(data);
+    //         })
+    // }, [])
 
     useEffect(() => {
-        fetch("/admin")
+        fetch("/admin/data")
             .then((stream) => stream.json())
             .then((data) => {
                 // console.log(data);
@@ -30,11 +30,14 @@ export default function Login() {
             console.log(isAdmin);
         if (isAdmin) {
             navigate("/admin");
+        }else{
+            navigate("/login");
         }
-    }, [isAdmin])
+    }, [isAdmin]);
+
 
     // console.log("SKHBSDS", isAdmin);
-
+    
     // console.log(loginData);
 
 
@@ -48,13 +51,6 @@ export default function Login() {
     // const handleChange = (setState) => (event) => {
     //     setState(event.target.value)
     // }
-
-
-    // const checkLogin = (evt) => {
-    //     evt.preventDefault();
-    //     console.log("Clicked in button Login");
-    // }
-
 
 
     // useEffect(() => {
