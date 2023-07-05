@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import './LoginComp.scss';
 
 
@@ -6,6 +7,9 @@ import './LoginComp.scss';
 export default function Login() {
 
     const [loginData, setLoginData] = useState("");
+    const [isAdmin, setAdminData] = useState(false);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("/login/data")
@@ -16,7 +20,22 @@ export default function Login() {
             })
     }, [])
 
-    console.log(loginData);
+    useEffect(() => {
+        fetch("/admin")
+            .then((stream) => stream.json())
+            .then((data) => {
+                // console.log(data);
+                setAdminData(data.isAdmin);
+            })
+            console.log(isAdmin);
+        if (isAdmin) {
+            navigate("/admin");
+        }
+    }, [isAdmin])
+
+    // console.log("SKHBSDS", isAdmin);
+
+    // console.log(loginData);
 
 
     // const [userData, setUserData] = useState("");

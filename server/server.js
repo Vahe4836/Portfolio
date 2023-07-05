@@ -6,6 +6,7 @@ import session from "express-session";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import passportLocal from "passport-local";
+
 // import path from "path";
 
 // require('dotenv').config();
@@ -28,6 +29,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     app.use(express.static("../client/build"));
 
     app.use(express.json());
+
     app.use(urlencoded({ extended: true }));
 
     app.use(session({
@@ -40,14 +42,16 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     app.use(passport.session());
 
     const Logindb = client.db('Login');
+    const collectionLogin = Logindb.collection('Login');
+    const collectionLoginInfo = await collectionLogin.find({}).toArray();
 
     passport.use(new passportLocal.Strategy(
         {},
         async (username, password, done) => {
-            const collectionLogin = Logindb.collection('Login');
-            const collectionLoginInfo = await collectionLogin.find({}).toArray();
+            // const collectionLogin = Logindb.collection('Login');
+            // const collectionLoginInfo = await collectionLogin.find({}).toArray();
             console.log(collectionLoginInfo[0].username === username);
-            const user = collectionLoginInfo[0].username;
+            const user = collectionLoginInfo[0];
 
             if (user === undefined) {
 
@@ -66,8 +70,10 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         done(null, user._id);
     })
 
-    passport.deserializeUser((id, done) => {
-        done(null,  user._id);
+    passport.deserializeUser((_id, done) => {
+        const user = collectionLoginInfo[0];
+        console.log("USER", user);
+        done(null, user._id);
         // MongoDB query for _id
     })
 
@@ -234,6 +240,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         // console.log("3333333333333333333333333333333333333", await ContactMessagesCollection.find({}).toArray());
         // console.log(filtredData);
         res.send("Item is deleted.");
+
     })
 
 
@@ -273,61 +280,86 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     // const Logindb = client.db('Login');
     // fdgfsjnvlkncd3242lj4nwekj
 
-    const bool = true;
+    // const bool = true;
 
 
-    app.post("/login", async (req, res) => {
-        // const password = "webdevelopment089";
-
-        try {
-            const collectionLogin = Logindb.collection('Login');
-            const collectionLoginInfo = await collectionLogin.find({}).toArray();
-
-            // console.log(collectionLoginInfo);
-
-            // console.log(req.body.password);
-            // console.log(collectionLoginInfo[0].password);
-            // console.log(await bcrypt.compare(req.body.password,collectionLoginInfo[0].password));
-
-            if (await bcrypt.compare(req.body.password, collectionLoginInfo[0].password)) {
-                res.redirect("/admin");
-            } else {
-                res.redirect("/")
-
-                // res.send("Wrong Password");
-            }
-
-            // console.log(collectionLoginInfo);
-            // const hashedPWD = await bcrypt.hash(password, 10);
-            // console.log(hashedPWD);
-            // console.log(req.body);
-            // res.redirect("/admin");
-            // res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
-        } catch (err) {
-            console.log(err);
-        }
+    app.post("/login", passport.authenticate("local", {
+        successRedirect: "/admin",
+        failureRedirect: "/login"
+    }));
 
 
-        // res.redirect("/admin");
-    })
+    // const password = "webdevelopment089";
 
-    // app.get("/login/data", async (req, res) => {
+    // try {
+    //     const collectionLogin = Logindb.collection('Login');
+    //     const collectionLoginInfo = await collectionLogin.find({}).toArray();
 
-    //     try {
-    //         res.send({
-    //             bool: bool
-    //         });
-    //     } catch (err) {
-    //         console.log(err);
+    //     // console.log(collectionLoginInfo);
+
+    //     // console.log(req.body.password);
+    //     // console.log(collectionLoginInfo[0].password);
+    //     // console.log(await bcrypt.compare(req.body.password,collectionLoginInfo[0].password));
+
+    //     if (await bcrypt.compare(req.body.password, collectionLoginInfo[0].password)) {
+    //         res.redirect("/admin");
+    //     } else {
+    //         res.redirect("/")
+
+    //         // res.send("Wrong Password");
     //     }
-    // })
+
+    // console.log(collectionLoginInfo);
+    // const hashedPWD = await bcrypt.hash(password, 10);
+    // console.log(hashedPWD);
+    // console.log(req.body);
+    // res.redirect("/admin");
+    // res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
+    // } catch (err) {
+    //     console.log(err);
+    // }
+
+
+    // res.redirect("/admin");
+
+
+
+
+
+
 
     // Admin data
 
     // const Logindb = client.db('Login');
 
-    // app.get("/admin", async (req, res) => {
+
+
+    app.get("/admin", (req, res) => {
+
+        const boolObj = {
+            isAdmin: true
+        }
+
+        if (req.isAuthenticated() === false) {
+            boolObj = {
+                isAdmin: false 
+            }
+            return res.redirect("/login");
+        }
+
+        res.send(boolObj);
+
+        //    res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
+        //    return res.redirect("/admin");
+
+    })
+
+
+
+
+    // app.get("/db/admin/data", async (req, res) => {
     //     const collectionLogin = Logindb.collection('Login');
+
     //     try {
     //         const collectionLoginInfo = await collectionLogin.find({}).toArray();
     //         // console.log(collectionLoginInfo);
@@ -336,18 +368,6 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     //         console.log(err);
     //     }
     // })
-
-
-    app.get("/db/admin/data", async (req, res) => {
-        const collectionLogin = Logindb.collection('Login');
-        try {
-            const collectionLoginInfo = await collectionLogin.find({}).toArray();
-            // console.log(collectionLoginInfo);
-            res.send(collectionLoginInfo);
-        } catch (err) {
-            console.log(err);
-        }
-    })
 
 
     //////////////////

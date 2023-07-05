@@ -9,6 +9,7 @@ import "./Admin.scss";
 export default function Admin() {
 
     const [messageData, setMessageData] = useState([]);
+    const [projectsData, setProjectsData] = useState([]);
     // const [regBool, setRegBool] = useState(false);
 
 
@@ -47,7 +48,10 @@ export default function Admin() {
             .then((data) => {
                 setMessageData(data);
             })
+
     }, []);
+
+   
 
 
 
