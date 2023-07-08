@@ -335,26 +335,33 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         let boolObj = {
             isAdmin: false
         }
-        
-        // if (req.isAuthenticated() === true) {
-        //     // boolObj = {
-        //     //     isAdmin: true
-        //     // }
-         
-        //     return res.redirect("/login");
-        //     // return res.send(boolObj);
-        // }
 
-       res.send(boolObj);
+        if (req.isAuthenticated() === true) {
+            boolObj = {
+                isAdmin: true
+            }
+
+            //     return res.redirect("/login");
+            // res.send(boolObj);
+        } else {
+            boolObj = {
+                isAdmin: false
+            }
+        }
+
+        res.send(boolObj);
 
     })
 
 
-    app.get("/admin", (req, res) => {
 
-        let boolObj = {
-            isAdmin: true
-        }
+    app.get("/admin/data", (req, res) => {
+
+        // let boolObj = {
+        //     isAdmin: true
+        // }
+
+        console.log("That is a isAdmin", req.body.isAdmin);
 
         if (req.isAuthenticated() === false) {
             // boolObj = {
@@ -366,10 +373,10 @@ const client = new MongoClient(`${process.env.MONGODB}`);
             // res.send(boolObj)
         }
 
-        res.send(boolObj)
+        res.send("OKOKOKOKOKOK");
 
-    //     //    res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
-    //     //    return res.redirect("/admin");
+        //     //    res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
+        //     //    return res.redirect("/admin");
 
     })
 

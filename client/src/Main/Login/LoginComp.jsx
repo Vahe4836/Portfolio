@@ -11,33 +11,50 @@ export default function Login() {
 
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     fetch("/login/data")
-    //         .then((stream) => stream.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             setLoginData(data);
-    //         })
-    // }, [])
 
     useEffect(() => {
+
         fetch("/admin/data")
             .then((stream) => stream.json())
             .then((data) => {
                 // console.log(data);
                 setAdminData(data.isAdmin);
             })
-            console.log(isAdmin);
+
+        console.log(isAdmin);
+
+
+
         if (isAdmin) {
             navigate("/admin");
-        }else{
+        } else {
             navigate("/login");
         }
+
+        // fetch("/admin", {
+        //     method: 'post',
+        //     headers: {
+        //         'Content-Type': 'application/json; charset=UTF-8'
+        //     },
+        //     body: JSON.stringify({
+        //         isAdmin: isAdmin
+        //     })
+        // });
+
+        fetch("/admin")
+            .then((stream) => stream.json())
+            .then((data) => {
+                // console.log(data);
+                setAdminData(data.isAdmin);
+            })
+
+
+
     }, [isAdmin]);
 
 
     // console.log("SKHBSDS", isAdmin);
-    
+
     // console.log(loginData);
 
 
