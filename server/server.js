@@ -330,55 +330,51 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     // const Logindb = client.db('Login');
 
 
-    app.get("/admin/data", (req, res) => {
-
-        let boolObj = {
-            isAdmin: false
-        }
-
-        if (req.isAuthenticated() === true) {
-            boolObj = {
-                isAdmin: true
-            }
-
-            //     return res.redirect("/login");
-            // res.send(boolObj);
-        } else {
-            boolObj = {
-                isAdmin: false
-            }
-        }
-
-        res.send(boolObj);
-
-    })
-
-
-
-    app.get("/admin/data", (req, res) => {
+    app.get("/admin", (req, res) => {
 
         // let boolObj = {
-        //     isAdmin: true
+        //     isAdmin: false
         // }
-
-        console.log("That is a isAdmin", req.body.isAdmin);
 
         if (req.isAuthenticated() === false) {
             // boolObj = {
-            //     isAdmin: false
+            //     isAdmin: true
             // }
-            // res.send(boolObj);
-            // console.log("ewljefhdbwrje.sdnf",req.originalUrl === "/admin");
+
             return res.redirect("/login");
-            // res.send(boolObj)
+            // res.send(boolObj);
         }
 
-        res.send("OKOKOKOKOKOK");
-
-        //     //    res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
-        //     //    return res.redirect("/admin");
+        // res.send("Hello");
 
     })
+
+
+
+    // app.get("/admin/data", (req, res) => {
+
+    //     // let boolObj = {
+    //     //     isAdmin: true
+    //     // }
+
+    //     console.log("That is a isAdmin", req.body.isAdmin);
+
+    //     if (req.isAuthenticated() === false) {
+    //         // boolObj = {
+    //         //     isAdmin: false
+    //         // }
+    //         // res.send(boolObj);
+    //         // console.log("ewljefhdbwrje.sdnf",req.originalUrl === "/admin");
+    //         return res.redirect("/login");
+    //         // res.send(boolObj)
+    //     }
+
+    //     res.send("OKOKOKOKOKOK");
+
+    //     //     //    res.sendFile(path.resolve("../client/src/Main/Admin/Admin.jsx"));
+    //     //     //    return res.redirect("/admin");
+
+    // })
 
 
 

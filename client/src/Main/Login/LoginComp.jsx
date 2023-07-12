@@ -9,27 +9,27 @@ export default function Login() {
     // const [loginData, setLoginData] = useState("");
     const [isAdmin, setAdminData] = useState();
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        fetch("/admin/data")
-            .then((stream) => stream.json())
-            .then((data) => {
-                // console.log(data);
-                setAdminData(data.isAdmin);
-            })
+    //     fetch("/admin/data")
+    //         .then((stream) => stream.json())
+    //         .then((data) => {
+    //             // console.log(data);
+    //             setAdminData(data.isAdmin);
+    //         })
 
-        console.log(isAdmin);
+    //     console.log(isAdmin);
 
 
 
-        if (isAdmin) {
-            navigate("/admin");
-        } else {
-            navigate("/login");
-        }
+    //     if (isAdmin) {
+    //         navigate("/admin");
+    //     } else {
+    //         navigate("/login");
+    //     }
 
         // fetch("/admin", {
         //     method: 'post',
@@ -41,16 +41,16 @@ export default function Login() {
         //     })
         // });
 
-        fetch("/admin")
-            .then((stream) => stream.json())
-            .then((data) => {
-                // console.log(data);
-                setAdminData(data.isAdmin);
-            })
+    //     fetch("/admin")
+    //         .then((stream) => stream.json())
+    //         .then((data) => {
+    //             // console.log(data);
+    //             setAdminData(data.isAdmin);
+    //         })
 
 
 
-    }, [isAdmin]);
+    // }, [isAdmin]);
 
 
     // console.log("SKHBSDS", isAdmin);
