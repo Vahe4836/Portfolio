@@ -322,32 +322,31 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
 
 
-
-
-
     // Admin data
 
     // const Logindb = client.db('Login');
 
 
-    app.get("/admin", (req, res) => {
+    // app.get("/admin", (req, res) => {
 
-        // let boolObj = {
-        //     isAdmin: false
-        // }
+    //     let boolObj = {
+    //         isAdmin: false
+    //     }
 
-        if (req.isAuthenticated() === false) {
-            // boolObj = {
-            //     isAdmin: true
-            // }
+    //     if (req.isAuthenticated() === false) {
+    //         boolObj = {
+    //             isAdmin: true
+    //         }
 
-            return res.redirect("/login");
-            // res.send(boolObj);
-        }
+    //         return res.redirect("/login");
+    //         // res.send(boolObj);
+    //     }
 
-        // res.send("Hello");
+    //     // res.send(boolObj);
 
-    })
+    //     // return res.redirect("/admin");
+
+    // })
 
 
 
