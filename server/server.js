@@ -6,6 +6,7 @@ import session from "express-session";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import passportLocal from "passport-local";
+import { parse } from "querystring";
 
 // import path from "path";
 
@@ -389,6 +390,50 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     //         console.log(err);
     //     }
     // })
+
+
+
+    // Admin data
+
+    app.post("/db/admin/front/data/import", async (req, res) => {
+        const SkillsFrontEndCollection = Skillsdb.collection('SkillsFrontEnd');
+        console.log(req.body);
+        parse(req.body.percentage);
+        try {
+            await SkillsFrontEndCollection.insertOne(req.body);
+            // res.send("OK");
+        } catch (err) {
+            console.log(err);
+        }
+
+    })
+
+
+    app.post("/db/admin/front/data/export", async (req, res) => {
+        let deletingItemID = req.body.id;
+        const SkillsFrontEndCollection = Skillsdb.collection('SkillsFrontEnd');
+        const SkillsCollectionInfo = await SkillsFrontEndCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
+        await SkillsFrontEndCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
+        // ContactMessagesCollection.remove({"_id" : new ObjectId(`${deletingItemID}`)}, 1);
+        // const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
+        // console.log(await ContactMessagesCollection.find({}).toArray());
+        // console.log("22222222222222222222222222222222222222", ContactMessagesCollectionInfo);
+        // console.log("3333333333333333333333333333333333333", await ContactMessagesCollection.find({}).toArray());
+        // console.log(filtredData);
+        res.send("Item is deleted.");
+
+    })
+
+
+    app.get("/db/admin/front/data/export", async (req, res) => {
+        const SkillsFrontEndCollection = Skillsdb.collection('SkillsFrontEnd');
+        try {
+            const SkillsCollectionInfo = await SkillsFrontEndCollection.find({}).toArray();
+            res.send(SkillsCollectionInfo);
+        } catch (err) {
+            console.log(err);
+        }
+    })
 
 
     //////////////////

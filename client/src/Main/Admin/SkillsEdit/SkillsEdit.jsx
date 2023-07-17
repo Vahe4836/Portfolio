@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SkillsEditFrontEnd from "./SkillsEditFrontEnd/SkillsEditFrontEnd/SkillsEditFrontEnd";
+import SkillsEditFrontEnd from "./SkillsEditFrontEnd/SkillsEditFrontEnd";
 
 
 export default function SkillsEditMain() {
@@ -35,6 +35,7 @@ export default function SkillsEditMain() {
     return (
         <section className='skills_section'>
             <SkillsEditFrontEnd
+                setFrontEndData={setFrontEndData}
                 frontEndData={frontEndData}
             />
         </section>

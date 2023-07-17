@@ -47,24 +47,6 @@ export default function Admin() {
 
     useEffect(() => {
 
-        // Promise.all([
-        //     fetch("/db/skills/frontEnd"),
-        //     fetch("/db/skills/backEnd"),
-        //     fetch("/db/skills/design"),
-        //     fetch("/db/skills/other")
-        // ]).then((streams) => {
-        //     return Promise.all(streams.map((stream) => stream.json()));
-        // }).then((data) => {
-        //     const [frontEndInfo, backEndInfo, designInfo, otherInfo] = data;
-        //     setFrontEndData(frontEndInfo);
-        //     setBackEndData(backEndInfo);
-        //     setDesignData(designInfo);
-        //     setOtherData(otherInfo);
-        // }).catch((err) => {
-        //     console.log(err);
-        // })
-
-
         fetch("/db/contact/message/export")
             .then((stream) => stream.json())
             .then((data) => {
