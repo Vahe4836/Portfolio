@@ -3,6 +3,7 @@
         .skills_div_flex {
             .skills_div {
                 .skill_animation {
+                    
                     .skill_percentage_animation {
                         .delete_skill_button {
                             width: 40px;
@@ -13,10 +14,23 @@
                             color: white;
                             left: 100%;
                             top: 0%;
+                            cursor: pointer;
                         }
                     }
                 }
+                .skill_animation:hover {
+                    scale: 1;
+                }
             }
         }
+    }
+
+    .create_front_skill_form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30vw;
+        padding: 20px;
+        background-color: brown;
     }
 }
