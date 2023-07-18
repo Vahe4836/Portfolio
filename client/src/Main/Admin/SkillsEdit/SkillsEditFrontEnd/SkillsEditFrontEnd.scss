@@ -1,6 +1,41 @@
-.skills_page {
-    .skills_section {
+// Templates
 
+%button {
+    height: 70px;
+    font-size: 25px;
+    margin: 12px 0px 12px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    border: 1px rgb(0, 214, 214) solid;
+    color: whitesmoke;
+    padding: 18px 36px;
+    display: inline-block;
+    letter-spacing: 1.5px;
+    background: rgb(20, 20, 20);
+    box-shadow: inset 0 0 0 0 black;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+// Style
+
+.skills_page {
+
+    .display_front_skill_button_div {
+        display: flex;
+        justify-content: center;
+
+        .display_front_skill_button {
+            @extend %button;
+        }
+    }
+
+    .skills_section {
+        
         .skills_div_flex {
             .skills_div {
                 .skill_animation {
@@ -30,11 +65,23 @@
 
     }
 
+    .display_form_button_div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .display_form_button {
+            height: 60px;
+            font-size: 16px;
+            padding: 12px 24px;
+            @extend %button;
+        }
+    }
+
     .create_front_skill_form {
         display: flex;
         justify-content: center;
         align-items: center;
-        // width: 0vw;
         padding: 20px;
 
         .front_edit_form {
@@ -56,25 +103,9 @@
                 border-bottom: 1px solid #999999;
             }
 
-            .form_edit_button{
+            .form_edit_button {
                 width: calc(50vw + 40px);
-                height: 70px;
-                font-size: 25px;
-                margin: 12px 0px 12px 0px;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                border-radius: 8px;
-                border: 1px rgb(0, 214, 214) solid;
-                color: whitesmoke;
-                padding: 18px 36px;
-                display: inline-block;
-                letter-spacing: 1.5px;
-                background: rgb(20, 20, 20);
-                box-shadow: inset 0 0 0 0 black;
-                -webkit-transition: ease-out 0.4s;
-                -moz-transition: ease-out 0.4s;
-                transition: ease-out 0.4s;
-                user-select: none;
-                cursor: pointer;
+                @extend %button;
             }
         }
     }

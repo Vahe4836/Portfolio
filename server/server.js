@@ -401,7 +401,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         parse(req.body.percentage);
         try {
             await SkillsFrontEndCollection.insertOne(req.body);
-            // res.send("OK");
+            res.send("OKOKOKoKOK");
         } catch (err) {
             console.log(err);
         }

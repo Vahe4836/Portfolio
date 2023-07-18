@@ -63,6 +63,7 @@ body {
 // Media 
 
 @include Ipad_pro {
+
   ::-webkit-scrollbar {
     width: 0px;
   }
