@@ -25,18 +25,41 @@
 
 .skills_page {
 
-    .display_front_skill_button_div {
-        display: flex;
-        justify-content: center;
+    // .display_front_skill_button_div {
+    //     display: flex;
+    //     justify-content: center;
 
-        .display_front_skill_button {
-            @extend %button;
-        }
-    }
+    //     .display_front_skill_button {
+    //         @extend %button;
+    //     }
+    // }
 
     .skills_section {
-        
+
+        .display_front_skill_button_div {
+            display: flex;
+            justify-content: center;
+
+            .display_front_skill_button {
+                @extend %button;
+            }
+        }
+
+        .check_button_div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+
         .skills_div_flex {
+
+            .check_button_div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             .skills_div {
                 .skill_animation {
 
