@@ -1,18 +1,20 @@
-import SkillsEditFrontForm from './SkillsEditFrontForm/SkillsEditFrontForm';
-import SkillEditFrontItems from './SkillsEditFrontItems/SkillsEditFrontItems';
+import SkillsEditBackEndForm from "./SkillsEditBackEndForm/SkillsEditBackEndForm";
+import SkillEditBackItems from "./SkillsEditBackEndItems/SkillsEditBackItems";
 import '../../../Pages/Skills/Skills.scss';
 import '../../../Pages/Skills/SkillsMedia.scss';
 import '../SkillsEdit.scss';
+// import '../../../Pages/Skills/Skills.scss';
 
 
-export default function SkillsEditFrontEnd({ frontEndData, setFrontEndData }) {
 
+
+export default function SkillsEditBackEnd({ backEndData, setBackEndData }) {
 
     const onDelete = function (id) {
 
         (async function () {
 
-            await fetch("/db/admin/front/data/export", {
+            await fetch("/db/admin/back/data/export", {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json; charset=UTF-8'
@@ -23,29 +25,26 @@ export default function SkillsEditFrontEnd({ frontEndData, setFrontEndData }) {
             })
                 .then((stream) => stream.json())
                 .then((data) => {
-                    setFrontEndData(data);
+                    setBackEndData(data);
                 })
 
         })()
 
     }
 
-
     return (
-
         <div className='skills_page'>
 
-            <SkillEditFrontItems
-                setFrontEndData={setFrontEndData}
-                frontEndData={frontEndData}
+            <SkillEditBackItems
+                setBackEndData={setBackEndData}
+                backEndData={backEndData}
                 onDelete={onDelete}
             />
 
-            <SkillsEditFrontForm
-                setFrontEndData={setFrontEndData}
+            <SkillsEditBackEndForm
+                setBackEndData={setBackEndData}
             />
 
         </div>
-
     )
 }

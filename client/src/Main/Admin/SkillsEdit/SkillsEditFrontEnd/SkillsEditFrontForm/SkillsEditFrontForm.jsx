@@ -2,16 +2,16 @@ import { useState } from "react";
 
 
 
-
 export default function SkillsEditFrontForm({ setFrontEndData }) {
 
     const [displayFormBool, setDisplayFormBool] = useState(false);
 
-    const [name, setName] = useState("");
+    const [backgroundColor, setBackgroundColor] = useState("");
     const [percentage, setPercentage] = useState("");
-    const [bgcolor, setBgColor] = useState("");
-    const [image, setImage] = useState("");
+    const [name, setName] = useState("");
+    const [img, setImg] = useState("");
     const [alt, setAlt] = useState("");
+
 
     const handleChange = (setState) => (event) => {
         setState(event.target.value)
@@ -23,18 +23,18 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
         evt.preventDefault();
 
         const data = {
-            name: name,
-            percentage: percentage,
-            backgroundColor: bgcolor,
-            img: image,
-            alt: alt
+            backgroundColor,
+            percentage,
+            name,
+            img,
+            alt
         }
 
         if (
-            name &&
+            backgroundColor &&
             percentage &&
-            bgcolor &&
-            image &&
+            name &&
+            img &&
             alt
         ) {
 
@@ -45,17 +45,16 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
                 },
                 body: JSON.stringify(data)
             })
-
-            await fetch("/db/admin/front/data/export")
                 .then((stream) => stream.json())
                 .then((data) => {
                     setFrontEndData(data);
                 })
 
-            setName("");
+
+            setBackgroundColor("");
             setPercentage("")
-            setBgColor("");
-            setImage("");
+            setName("");
+            setImg("");
             setAlt("");
 
         }
@@ -77,8 +76,8 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
             </div>
 
 
-            <div className='create_front_skill_form' style={{ display: `${displayFormBool ? "block" : "none"}` }}>
-                <form className="front_edit_form">
+            <div className='create_skill_form' style={{ display: `${displayFormBool ? "block" : "none"}` }}>
+                <form className="edit_form">
 
                     <input
                         type="text"
@@ -103,8 +102,8 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
                         name='backgroundColor'
                         placeholder='Background color'
                         className="form_edit_input"
-                        value={bgcolor}
-                        onChange={handleChange(setBgColor)}
+                        value={backgroundColor}
+                        onChange={handleChange(setBackgroundColor)}
                     />
 
                     <input
@@ -112,8 +111,8 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
                         name='image'
                         placeholder='Image url'
                         className="form_edit_input"
-                        value={image}
-                        onChange={handleChange(setImage)}
+                        value={img}
+                        onChange={handleChange(setImg)}
                     />
 
                     <input

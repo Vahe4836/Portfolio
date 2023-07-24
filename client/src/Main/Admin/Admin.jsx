@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import MessageItem from "./MessageItem/MessageItem";
-import MessageEmptyComp from "./MessageEmptyComp/MessageEmptyComp";
-import "./Admin.scss";
-import Skills from "../Pages/Skills/Skills";
 import SkillsEditMain from "./SkillsEdit/SkillsEdit";
+import MessageMain from "./Messages/MessagesMain";
 // import LoginComp from "./Login/LoginComp";
+import "./Admin.scss";
 
 
 
@@ -14,7 +12,6 @@ export default function Admin() {
 
     const [projectsData, setProjectsData] = useState([]);
     // const [regBool, setRegBool] = useState(false);
-
 
     // const [msgDataBool, setMsgDataBool] = useState(true);
 
@@ -57,48 +54,16 @@ export default function Admin() {
 
 
 
-
-
     return (
         <>
-            {/* <article className="admin_skills"> */}
-                
-
-            {/* </article> */}
 
             <SkillsEditMain />
 
-            <article className="message_article">
+            <MessageMain
+                messageData={messageData}
+                onDelete={onDelete}
+            />
 
-
-                {
-                    !(messageData.length === 0) ?
-
-                        <>
-                            <h1 className="message_title">Messages</h1>
-                            <div className="messages_div">
-
-                                <MessageItem
-                                    messageData={messageData}
-                                    onDelete={onDelete}
-                                />
-
-                            </div>
-                        </>
-
-                        : <MessageEmptyComp />
-                }
-
-
-
-
-                {/* // :
-            // <LoginComp
-            //     regBool={regBool}
-            //     setRegBool={setRegBool}
-            // /> */}
-
-            </article>
         </>
     )
 }

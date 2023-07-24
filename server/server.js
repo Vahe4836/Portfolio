@@ -401,7 +401,8 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         parse(req.body.percentage);
         try {
             await SkillsFrontEndCollection.insertOne(req.body);
-            res.send("OKOKOKoKOK");
+            const ReadySkillsFrontEndCollectionInfo = await SkillsFrontEndCollection.find({}).toArray();
+            res.send(ReadySkillsFrontEndCollectionInfo);
         } catch (err) {
             console.log(err);
         }
@@ -414,25 +415,14 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         const SkillsFrontEndCollection = Skillsdb.collection('SkillsFrontEnd');
         const SkillsCollectionInfo = await SkillsFrontEndCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
         await SkillsFrontEndCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
+        const ReadySkillsFrontEndCollectionInfo = await SkillsFrontEndCollection.find({}).toArray();
         // ContactMessagesCollection.remove({"_id" : new ObjectId(`${deletingItemID}`)}, 1);
         // const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
         // console.log(await ContactMessagesCollection.find({}).toArray());
         // console.log("22222222222222222222222222222222222222", ContactMessagesCollectionInfo);
         // console.log("3333333333333333333333333333333333333", await ContactMessagesCollection.find({}).toArray());
         // console.log(filtredData);
-        res.send("Item is deleted.");
-
-    })
-
-
-    app.get("/db/admin/front/data/export", async (req, res) => {
-        const SkillsFrontEndCollection = Skillsdb.collection('SkillsFrontEnd');
-        try {
-            const SkillsCollectionInfo = await SkillsFrontEndCollection.find({}).toArray();
-            res.send(SkillsCollectionInfo);
-        } catch (err) {
-            console.log(err);
-        }
+        res.send(ReadySkillsFrontEndCollectionInfo);
     })
 
 
