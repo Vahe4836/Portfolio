@@ -215,34 +215,32 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
 
 
-    ////////////////////////////////////////////////////////////////////////////////////
+    // Messages
 
 
     app.post("/db/contact/message/import", async (req, res) => {
         const ContactMessagesCollection = Contactdb.collection('Messages');
         console.log(req.body);
+
         try {
             await ContactMessagesCollection.insertOne(req.body);
-            res.send("OK");
+            const ReadyMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
+            res.send(ReadyMessagesCollectionInfo);
         } catch (err) {
             console.log(err);
         }
+
     });
 
 
     app.post("/db/contact/message/export", async (req, res) => {
         let deletingItemID = req.body.id;
         const ContactMessagesCollection = Contactdb.collection('Messages');
-        const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
+        await ContactMessagesCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
         await ContactMessagesCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
-        // ContactMessagesCollection.remove({"_id" : new ObjectId(`${deletingItemID}`)}, 1);
-        // const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
-        // console.log(await ContactMessagesCollection.find({}).toArray());
-        // console.log("22222222222222222222222222222222222222", ContactMessagesCollectionInfo);
-        // console.log("3333333333333333333333333333333333333", await ContactMessagesCollection.find({}).toArray());
-        // console.log(filtredData);
-        res.send("Item is deleted.");
-
+        //
+        const ReadyMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
+        res.send(ReadyMessagesCollectionInfo);
     })
 
 
@@ -258,7 +256,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
 
 
-    /////////////////////////////////////////////////////////////////////////////
+    //////
 
 
 
@@ -393,12 +391,17 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
 
 
-    // Admin data
+    ///////////////////////////////////////// Admin data /////////////////////////////////////////
+
+    ///////// Skills /////////
+
+    // Front end
 
     app.post("/db/admin/front/data/import", async (req, res) => {
         const SkillsFrontEndCollection = Skillsdb.collection('SkillsFrontEnd');
         console.log(req.body);
         parse(req.body.percentage);
+
         try {
             await SkillsFrontEndCollection.insertOne(req.body);
             const ReadySkillsFrontEndCollectionInfo = await SkillsFrontEndCollection.find({}).toArray();
@@ -409,29 +412,50 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
     })
 
-
     app.post("/db/admin/front/data/export", async (req, res) => {
         let deletingItemID = req.body.id;
         const SkillsFrontEndCollection = Skillsdb.collection('SkillsFrontEnd');
-        const SkillsCollectionInfo = await SkillsFrontEndCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
+        await SkillsFrontEndCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
         await SkillsFrontEndCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
         const ReadySkillsFrontEndCollectionInfo = await SkillsFrontEndCollection.find({}).toArray();
-        // ContactMessagesCollection.remove({"_id" : new ObjectId(`${deletingItemID}`)}, 1);
-        // const ContactMessagesCollectionInfo = await ContactMessagesCollection.find({}).toArray();
-        // console.log(await ContactMessagesCollection.find({}).toArray());
-        // console.log("22222222222222222222222222222222222222", ContactMessagesCollectionInfo);
-        // console.log("3333333333333333333333333333333333333", await ContactMessagesCollection.find({}).toArray());
-        // console.log(filtredData);
         res.send(ReadySkillsFrontEndCollectionInfo);
     })
 
 
-    //////////////////
+    // Back end
+
+    app.post("/db/admin/back/data/import", async (req, res) => {
+        const SkillsBackEndCollection = Skillsdb.collection('SkillsBackEnd');
+        console.log(req.body);
+        parse(req.body.percentage);
+
+        try {
+            await SkillsBackEndCollection.insertOne(req.body);
+            const ReadySkillsBackEndCollectionInfo = await SkillsBackEndCollection.find({}).toArray();
+            res.send(ReadySkillsBackEndCollectionInfo);
+        } catch (err) {
+            console.log(err);
+        }
+    })
+
+    app.post("/db/admin/back/data/export", async (req, res) => {
+        let deletingItemID = req.body.id;
+        const SkillsBackEndCollection = Skillsdb.collection('SkillsBackEnd');
+        await SkillsBackEndCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
+        await SkillsBackEndCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
+        const ReadySkillsBackEndCollectionInfo = await SkillsBackEndCollection.find({}).toArray();
+        res.send(ReadySkillsBackEndCollectionInfo);
+    })
+
+
+
+    // *
 
     app.get('*', function (request, response) {
         const filePath = path.resolve("../client/build/index.html")
         response.sendFile(filePath);
     });
+
 
 
     // Listen port

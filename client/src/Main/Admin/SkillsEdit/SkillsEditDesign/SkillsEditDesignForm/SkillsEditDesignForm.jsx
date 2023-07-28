@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-export default function SkillsEditBackEndForm({ setBackEndData }) {
+export default function SkillsEditDesignForm({ setFrontEndData }) {
 
     const [displayFormBool, setDisplayFormBool] = useState(false);
 
@@ -38,7 +38,7 @@ export default function SkillsEditBackEndForm({ setBackEndData }) {
             alt
         ) {
 
-            await fetch("/db/admin/back/data/import", {
+            await fetch("/db/admin/front/data/import", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"
@@ -47,7 +47,7 @@ export default function SkillsEditBackEndForm({ setBackEndData }) {
             })
                 .then((stream) => stream.json())
                 .then((data) => {
-                    setBackEndData(data);
+                    setFrontEndData(data);
                 })
 
 
@@ -64,15 +64,15 @@ export default function SkillsEditBackEndForm({ setBackEndData }) {
 
 
     return (
-
         <>
+
             <div className="display_form_button_div">
                 <button onClick={(evt) => {
                     evt.preventDefault();
                     setDisplayFormBool(!displayFormBool);
                 }}
                     className="display_form_button"
-                >{displayFormBool ? "Close Back-End skill form" : "Open Back-End skill form"}</button>
+                >{displayFormBool ? "Close Front-End skill form" : "Open Front-End skill form"}</button>
             </div>
 
 
@@ -131,7 +131,5 @@ export default function SkillsEditBackEndForm({ setBackEndData }) {
                 </form>
             </div>
         </>
-
     )
-
 }

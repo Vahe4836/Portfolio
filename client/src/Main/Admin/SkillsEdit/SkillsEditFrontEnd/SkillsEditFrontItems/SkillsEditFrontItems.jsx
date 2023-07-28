@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function SkillEditFrontItems({ frontEndData, onDelete }) {
 
-    const [displayFrontSkill, setDisplayFrontSkill] = useState(true);
+    const [displayFrontSkill, setDisplayFrontSkill] = useState(false);
     const [allowEdit, setAllowEdit] = useState(false);
 
 

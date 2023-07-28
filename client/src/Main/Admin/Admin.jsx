@@ -8,7 +8,7 @@ import "./Admin.scss";
 
 export default function Admin() {
 
-    const [messageData, setMessageData] = useState([]);
+    // const [messageData, setMessageData] = useState([]);
 
     const [projectsData, setProjectsData] = useState([]);
     // const [regBool, setRegBool] = useState(false);
@@ -16,41 +16,41 @@ export default function Admin() {
     // const [msgDataBool, setMsgDataBool] = useState(true);
 
 
-    const onDelete = function (id) {
+    // const onDelete = function (id) {
 
-        (async function () {
+    //     (async function () {
 
-            await fetch("/db/contact/message/export", {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json; charset=UTF-8'
-                },
-                body: JSON.stringify({
-                    id: id
-                })
-            });
-
-
-            await fetch("/db/contact/message/export")
-                .then((stream) => stream.json())
-                .then((data) => {
-                    setMessageData(data);
-                })
-
-        })()
-
-    }
+    //         await fetch("/db/contact/message/export", {
+    //             method: 'post',
+    //             headers: {
+    //                 'Content-Type': 'application/json; charset=UTF-8'
+    //             },
+    //             body: JSON.stringify({
+    //                 id: id
+    //             })
+    //         });
 
 
-    useEffect(() => {
+    //         await fetch("/db/contact/message/export")
+    //             .then((stream) => stream.json())
+    //             .then((data) => {
+    //                 setMessageData(data);
+    //             })
 
-        fetch("/db/contact/message/export")
-            .then((stream) => stream.json())
-            .then((data) => {
-                setMessageData(data);
-            })
+    //     })()
 
-    }, []);
+    // }
+
+
+    // useEffect(() => {
+
+    //     fetch("/db/contact/message/export")
+    //         .then((stream) => stream.json())
+    //         .then((data) => {
+    //             setMessageData(data);
+    //         })
+
+    // }, []);
 
 
 
@@ -59,10 +59,7 @@ export default function Admin() {
 
             <SkillsEditMain />
 
-            <MessageMain
-                messageData={messageData}
-                onDelete={onDelete}
-            />
+            <MessageMain />
 
         </>
     )

@@ -34,6 +34,7 @@ export default function SkillsEditMain() {
 
     }, [])
 
+
     return (
         <section className='skills_section'>
             <SkillsEditFrontEnd
