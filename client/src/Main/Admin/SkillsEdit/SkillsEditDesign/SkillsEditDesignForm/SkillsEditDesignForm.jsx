@@ -72,7 +72,7 @@ export default function SkillsEditDesignForm({ setDesignData }) {
                     setDisplayFormBool(!displayFormBool);
                 }}
                     className="display_form_button"
-                >{displayFormBool ? "Close Front-End skill form" : "Open Front-End skill form"}</button>
+                >{displayFormBool ? "Close Design skill form" : "Open Design skill form"}</button>
             </div>
 
 

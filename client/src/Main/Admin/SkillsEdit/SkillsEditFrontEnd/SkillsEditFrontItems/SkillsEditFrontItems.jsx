@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function SkillEditFrontItems({ frontEndData, onDelete }) {
 
-    const [displayFrontSkill, setDisplayFrontSkill] = useState(false);
+    const [displaySkill, setdisplaySkill] = useState(false);
     const [allowEdit, setAllowEdit] = useState(false);
 
 
@@ -20,8 +20,8 @@ export default function SkillEditFrontItems({ frontEndData, onDelete }) {
                     className="display_skill_button"
                     onClick={(evt) => {
                         evt.preventDefault();
-                        setDisplayFrontSkill(!displayFrontSkill);
-                    }}>{displayFrontSkill ? "Close Front-End skills" : "Open Front-End skills"}</button>
+                        setdisplaySkill(!displaySkill);
+                    }}>{displaySkill ? "Close Front-End skills" : "Open Front-End skills"}</button>
 
             </div>
 
@@ -37,7 +37,7 @@ export default function SkillEditFrontItems({ frontEndData, onDelete }) {
             </div>
 
             <div className='skills_div_flex'
-                style={{ display: `${displayFrontSkill ? "flex" : "none"}` }}
+                style={{ display: `${displaySkill ? "flex" : "none"}` }}
             >
 
 

@@ -62,7 +62,6 @@ export default function SkillsEditOtherForm({ setOtherData }) {
     }
 
 
-
     return (
         <>
 
@@ -72,7 +71,7 @@ export default function SkillsEditOtherForm({ setOtherData }) {
                     setDisplayFormBool(!displayFormBool);
                 }}
                     className="display_form_button"
-                >{displayFormBool ? "Close Front-End skill form" : "Open Front-End skill form"}</button>
+                >{displayFormBool ? "Close Other skill form" : "Open Other skill form"}</button>
             </div>
 
 
