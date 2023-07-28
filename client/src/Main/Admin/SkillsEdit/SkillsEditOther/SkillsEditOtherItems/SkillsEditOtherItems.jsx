@@ -3,9 +3,9 @@ import { useState } from "react";
 
 
 
-export default function SkillEditBackItems({ backEndData, onDelete }) {
+export default function SkillsEditOtherItems({ frontEndData, onDelete }) {
 
-    const [displaySkill, setDisplaySkill] = useState(false);
+    const [displayFrontSkill, setDisplayFrontSkill] = useState(false);
     const [allowEdit, setAllowEdit] = useState(false);
 
 
@@ -13,15 +13,15 @@ export default function SkillEditBackItems({ backEndData, onDelete }) {
 
         <section className='skills_section'>
 
-            <h2 className='skills_page_title'>Back End skills</h2>
+            <h2 className='skills_page_title'>Front End skills</h2>
 
             <div className="display_skill_button_div">
                 <button
                     className="display_skill_button"
                     onClick={(evt) => {
                         evt.preventDefault();
-                        setDisplaySkill(!displaySkill);
-                    }}>{displaySkill ? "Close Back-End skills" : "Open Back-End skills"}</button>
+                        setDisplayFrontSkill(!displayFrontSkill);
+                    }}>{displayFrontSkill ? "Close Front-End skills" : "Open Front-End skills"}</button>
 
             </div>
 
@@ -37,12 +37,12 @@ export default function SkillEditBackItems({ backEndData, onDelete }) {
             </div>
 
             <div className='skills_div_flex'
-                style={{ display: `${displaySkill ? "flex" : "none"}` }}
+                style={{ display: `${displayFrontSkill ? "flex" : "none"}` }}
             >
 
 
                 <div className='skills_div'>
-                    {backEndData.map((item) => {
+                    {frontEndData.map((item) => {
                         return (
                             <div
                                 className="skill_animation" style={{

@@ -36,7 +36,6 @@ export default function SkillsEditBackEnd({ backEndData, setBackEndData }) {
         <div className='skills_page'>
 
             <SkillEditBackItems
-                setBackEndData={setBackEndData}
                 backEndData={backEndData}
                 onDelete={onDelete}
             />

@@ -36,7 +36,6 @@ export default function SkillsEditFrontEnd({ frontEndData, setFrontEndData }) {
         <div className='skills_page'>
 
             <SkillEditFrontItems
-                setFrontEndData={setFrontEndData}
                 frontEndData={frontEndData}
                 onDelete={onDelete}
             />

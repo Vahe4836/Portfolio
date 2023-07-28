@@ -447,6 +447,55 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         res.send(ReadySkillsBackEndCollectionInfo);
     })
 
+    // Design 
+
+    app.post("/db/admin/design/data/import", async (req, res) => {
+        const SkillsDesignCollection = Skillsdb.collection('SkillsDesign');
+        console.log(req.body);
+        parse(req.body.percentage);
+
+        try {
+            await SkillsDesignCollection.insertOne(req.body);
+            const ReadySkillsDesignCollectionInfo = await SkillsDesignCollection.find({}).toArray();
+            res.send(ReadySkillsDesignCollectionInfo);
+        } catch (err) {
+            console.log(err);
+        }
+    });
+
+    app.post("/db/admin/design/data/export", async (req, res) => {
+        let deletingItemID = req.body.id;
+        const SkillsDesignCollection = Skillsdb.collection('SkillsDesign');
+        await SkillsDesignCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
+        await SkillsDesignCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
+        const ReadySkillsDesignCollectionInfo = await SkillsDesignCollection.find({}).toArray();
+        res.send(ReadySkillsDesignCollectionInfo);
+    });
+
+    // Other 
+
+    app.post("/db/admin/other/data/import", async (req, res) => {
+        const SkillsOtherCollection = Skillsdb.collection('SkillsOther');
+        console.log(req.body);
+        parse(req.body.percentage);
+
+        try {
+            await SkillsOtherCollection.insertOne(req.body);
+            const ReadySkillsOtherCollectionInfo = await SkillsOtherCollection.find({}).toArray();
+            res.send(ReadySkillsOtherCollectionInfo);
+        } catch (err) {
+            console.log(err);
+        }
+    });
+
+    app.post("/db/admin/other/data/export", async (req, res) => {
+        let deletingItemID = req.body.id;
+        const SkillsOtherCollection = Skillsdb.collection('SkillsOther');
+        await SkillsOtherCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
+        await SkillsOtherCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
+        const ReadySkillsOtherCollectionInfo = await SkillsOtherCollection.find({}).toArray();
+        res.send(ReadySkillsOtherCollectionInfo);
+    });
 
 
     // *

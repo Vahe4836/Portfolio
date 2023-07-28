@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-export default function SkillsEditDesignForm({ setDesignData }) {
+export default function SkillsEditOtherForm({ setOtherData }) {
 
     const [displayFormBool, setDisplayFormBool] = useState(false);
 
@@ -38,7 +38,7 @@ export default function SkillsEditDesignForm({ setDesignData }) {
             alt
         ) {
 
-            await fetch("/db/admin/design/data/import", {
+            await fetch("/db/admin/other/data/import", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"
@@ -47,7 +47,7 @@ export default function SkillsEditDesignForm({ setDesignData }) {
             })
                 .then((stream) => stream.json())
                 .then((data) => {
-                    setDesignData(data);
+                    setOtherData(data);
                 })
 
 

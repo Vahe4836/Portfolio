@@ -1,18 +1,20 @@
+import SkillsEditFrontForm from './SkillsEditFrontForm/SkillsEditFrontForm';
+import SkillEditFrontItems from './SkillsEditFrontItems/SkillsEditFrontItems';
 import '../../../Pages/Skills/Skills.scss';
 import '../../../Pages/Skills/SkillsMedia.scss';
 import '../SkillsEdit.scss';
-import SkillsEditDesignItems from './SkillsEditDesignItems/SkillsEditDesignItems';
-import SkillsEditDesignForm from './SkillsEditDesignForm/SkillsEditDesignForm';
+import SkillsEditOtherItems from './SkillsEditOtherItems/SkillsEditOtherItems';
+import SkillsEditOtherForm from './SkillsEditOtherForm/SkillsEditOtherForm';
 
 
-export default function SkillsEditDesign({ designData, setDesignData }) {
+export default function SkillsEditOther({ otherData, setOtherData }) {
 
 
     const onDelete = function (id) {
 
         (async function () {
 
-            await fetch("/db/admin/design/data/export", {
+            await fetch("/db/admin/other/data/export", {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json; charset=UTF-8'
@@ -23,7 +25,7 @@ export default function SkillsEditDesign({ designData, setDesignData }) {
             })
                 .then((stream) => stream.json())
                 .then((data) => {
-                    setDesignData(data);
+                    setOtherData(data);
                 })
 
         })()
@@ -35,13 +37,13 @@ export default function SkillsEditDesign({ designData, setDesignData }) {
 
         <div className='skills_page'>
 
-            <SkillsEditDesignItems
-                designData={designData}
+            <SkillsEditOtherItems
+                otherData={otherData}
                 onDelete={onDelete}
             />
 
-            <SkillsEditDesignForm
-                setDesignData={setDesignData}
+            <SkillsEditOtherForm
+                setOtherData={setOtherData}
             />
 
         </div>
