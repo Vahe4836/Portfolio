@@ -1,23 +1,8 @@
-import { useState, useEffect } from 'react';
-import './Projects.scss';
-import './ProjectsMedia.scss';
 
 
 
-export default function Projects() {
 
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-
-        fetch("/db/projects")
-            .then(res => res.json())
-            .then(res => {
-                setData(res);
-                console.log(res, "projects");
-            })
-
-    }, [])
+export default function ProjectsEditItems({ projectsData, onDelete }) {
 
 
     return (
@@ -26,14 +11,15 @@ export default function Projects() {
             <h1 className='projects_title'>Projects</h1>
 
             <div className='projects_page_flex'>
-
-
-
-                {data.map((item) => {
+                {projectsData.map((item) => {
 
                     return (
                         <div className='projects_div'>
                             <div className='project_all_elements'>
+                                <button className='delete_skill_button' onClick={(evt) => {
+                                    evt.preventDefault();
+                                    onDelete(item._id);
+                                }}>X</button>
                                 <h3 className='project_name'>{item.name}</h3>
 
                                 <div className='project_image_div'>
@@ -71,7 +57,6 @@ export default function Projects() {
                     )
 
                 })}
-
             </div>
         </div >
     )

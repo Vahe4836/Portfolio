@@ -2,19 +2,22 @@ import { useState } from "react";
 
 
 
-export default function SkillsEditFrontForm({ setFrontEndData }) {
+
+export default function ProjectsEditForm({ setProjectsData }) {
 
     const [displayFormBool, setDisplayFormBool] = useState(false);
 
-    const [backgroundColor, setBackgroundColor] = useState("");
-    const [percentage, setPercentage] = useState("");
+    const [technologies, setTechnologies] = useState("");
+    const [projectUrl, setProjectUrl] = useState("");
+    const [githubUrl, setGithubUrl] = useState("");
+    const [duration, setDuration] = useState("");
     const [name, setName] = useState("");
     const [img, setImg] = useState("");
     const [alt, setAlt] = useState("");
 
 
     const handleChange = (setState) => (event) => {
-        setState(event.target.value);
+        setState(event.target.value)
     }
 
 
@@ -23,22 +26,26 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
         evt.preventDefault();
 
         const data = {
-            backgroundColor,
-            percentage,
+            technologies,
+            projectUrl,
+            githubUrl,
+            duration,
             name,
             img,
             alt
         }
 
         if (
-            backgroundColor &&
-            percentage &&
+            technologies &&
+            projectUrl &&
+            githubUrl &&
+            duration &&
             name &&
             img &&
             alt
         ) {
 
-            await fetch("/db/admin/front/data/import", {
+            await fetch("/db/admin/projects/import", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"
@@ -47,12 +54,14 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
             })
                 .then((stream) => stream.json())
                 .then((data) => {
-                    setFrontEndData(data);
+                    setProjectsData(data);
                 })
 
 
-            setBackgroundColor("");
-            setPercentage("");
+            setTechnologies("");
+            setProjectUrl("");
+            setGithubUrl("");
+            setDuration("");
             setName("");
             setImg("");
             setAlt("");
@@ -63,20 +72,20 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
 
 
 
+
     return (
         <>
-
             <div className="display_form_button_div">
                 <button onClick={(evt) => {
                     evt.preventDefault();
                     setDisplayFormBool(!displayFormBool);
                 }}
                     className="display_form_button"
-                >{displayFormBool ? "Close Front-End skill form" : "Open Front-End skill form"}</button>
+                >{displayFormBool ? "Close Projects form" : "Open Projects form"}</button>
             </div>
 
 
-            <div className='create_skill_form' style={{ display: `${displayFormBool ? "block" : "none"}` }}>
+            <div className='create_projects_form' style={{ display: `${displayFormBool ? "block" : "none"}` }}>
                 <form className="edit_form">
 
                     <input
@@ -90,21 +99,40 @@ export default function SkillsEditFrontForm({ setFrontEndData }) {
 
                     <input
                         type="text"
-                        name='percentage'
-                        placeholder='Percentage'
+                        name='technologies'
+                        placeholder='Technologies'
                         className="form_edit_input"
-                        value={percentage}
-                        onChange={handleChange(setPercentage)}
+                        value={technologies}
+                        onChange={handleChange(setTechnologies)}
                     />
 
                     <input
                         type="text"
-                        name='backgroundColor'
-                        placeholder='Background color'
+                        name='projectUrl'
+                        placeholder='Project Url'
                         className="form_edit_input"
-                        value={backgroundColor}
-                        onChange={handleChange(setBackgroundColor)}
+                        value={projectUrl}
+                        onChange={handleChange(setProjectUrl)}
                     />
+
+                    <input
+                        type="text"
+                        name='githubUrl'
+                        placeholder='Github Url'
+                        className="form_edit_input"
+                        value={githubUrl}
+                        onChange={handleChange(setGithubUrl)}
+                    />
+
+                    <input
+                        type="text"
+                        name='duration'
+                        placeholder='Duration'
+                        className="form_edit_input"
+                        value={duration}
+                        onChange={handleChange(setDuration)}
+                    />
+
 
                     <input
                         type="text"

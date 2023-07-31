@@ -1,6 +1,20 @@
 .projects_page {
     background-color: rgba(70, 61, 61, 0.6);
 
+    .projects_title {
+        padding: 20px 0px 20px 0px;
+        margin: 0;
+        font-size: 28px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+            'Lucida Grande', 'Lucida Sans', Arial, sans-serif,
+            'Times New Roman', Times, serif;
+        letter-spacing: 2px;
+        text-align: center;
+        color: rgb(230, 230, 230);
+        background-color: rgba(0, 0, 0, 0.4);
+        user-select: none;
+    }
+
     .projects_page_flex {
         display: flex;
         flex-direction: column;
@@ -82,7 +96,7 @@
                             font-size: 15px;
                         }
 
-                        .technologies_and_duration{
+                        .technologies_and_duration {
                             font-size: 15px;
                         }
                     }

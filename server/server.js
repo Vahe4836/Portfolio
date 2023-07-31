@@ -174,7 +174,7 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         } catch (err) {
             console.log(err);
         }
-    })
+    });
 
     app.get("/db/skills/design", async (req, res) => {
         const SkillsDesignCollection = Skillsdb.collection('SkillsDesign');
@@ -495,6 +495,31 @@ const client = new MongoClient(`${process.env.MONGODB}`);
         await SkillsOtherCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
         const ReadySkillsOtherCollectionInfo = await SkillsOtherCollection.find({}).toArray();
         res.send(ReadySkillsOtherCollectionInfo);
+    });
+
+    ///////// Projects /////////
+
+    app.post("/db/admin/projects/import", async (req, res) => {
+        const ProjectsCollection = Projectsdb.collection('Projects');
+        console.log(req.body);
+        parse(req.body.percentage);
+
+        try {
+            await ProjectsCollection.insertOne(req.body);
+            const ReadyProjectsCollectionInfo = await ProjectsCollection.find({}).toArray();
+            res.send(ReadyProjectsCollectionInfo);
+        } catch (err) {
+            console.log(err);
+        }
+    });
+
+    app.post("/db/admin/projects/export", async (req, res) => {
+        let deletingItemID = req.body.id;
+        const ProjectsCollection = Projectsdb.collection('Projects');
+        await ProjectsCollection.find({ "_id": new ObjectId(`${deletingItemID}`) }).toArray();
+        await ProjectsCollection.deleteOne({ "_id": new ObjectId(`${deletingItemID}`) });
+        const ReadyProjectsCollectionInfo = await ProjectsCollection.find({}).toArray();
+        res.send(ReadyProjectsCollectionInfo);
     });
 
 
